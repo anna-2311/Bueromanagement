@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKTE · Prüfungsvorbereitung Büromanagement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Slab:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="brand">
+        <span class="brand-mark">AKTE</span>
+        <span class="brand-sub">Büromanagement</span>
+      </div>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Menü schließen">✕</button>
+    </div>
+
+    <nav class="tabs" id="tabNav">
+      <button class="tab tab-dashboard is-active" data-target="dashboard">
+        <span class="tab-code">•</span>
+        <span class="tab-label">Dashboard</span>
+      </button>
+      <!-- Kapitel-Tabs werden per JS eingefügt -->
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="foot-stat">
+        <span class="foot-num" id="globalPercent">0%</span>
+        <span class="foot-label">Gesamtfortschritt</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="globalProgressFill"></div></div>
+    </div>
+  </aside>
+
+  <div class="sidebar-scrim" id="sidebarScrim"></div>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="topbar-title">
+        <span id="topbarEyebrow" class="topbar-eyebrow">Dashboard</span>
+        <h1 id="topbarTitle">Willkommen zurück</h1>
+      </div>
+      <div class="topbar-stamp" id="topbarStamp" hidden>
+        <span class="stamp" id="topbarStampValue">0%</span>
+      </div>
+    </header>
+
+    <!-- ============ DASHBOARD VIEW ============ -->
+    <section class="view" id="view-dashboard">
+
+      <div class="stat-row" id="statRow">
+        <!-- Stat-Kacheln per JS -->
+      </div>
+
+      <h2 class="section-heading">Deine Aktenschränke</h2>
+      <p class="section-hint">Wähle ein Kapitel, um Zusammenfassung, Karteikarten, Quiz und Prüfungsaufgaben zu öffnen.</p>
+
+      <div class="folder-grid" id="folderGrid">
+        <!-- Kapitel-Karten per JS -->
+      </div>
+    </section>
+
+    <!-- ============ CHAPTER VIEW ============ -->
+    <section class="view" id="view-chapter" hidden>
+
+      <div class="chapter-head">
+        <div class="chapter-headline">
+          <span class="chapter-tag" id="chapterTag">AKTE NR. 01</span>
+          <h2 id="chapterTitle">Kapitel</h2>
+          <p id="chapterSubtitle" class="chapter-subtitle"></p>
+        </div>
+      </div>
+
+      <nav class="subtabs" id="subtabs">
+        <button class="subtab is-active" data-sub="summary">Zusammenfassung</button>
+        <button class="subtab" data-sub="flashcards">Karteikarten</button>
+        <button class="subtab" data-sub="quiz">Quiz</button>
+        <button class="subtab" data-sub="exam">Prüfungsaufgaben</button>
+      </nav>
+
+      <!-- SUMMARY / ERKLÄR-KARTEN -->
+      <div class="subview" id="sub-summary">
+        <div class="explainer-grid" id="explainerGrid"></div>
+      </div>
+
+      <!-- FLASHCARDS -->
+      <div class="subview" id="sub-flashcards" hidden>
+        <div class="flash-wrap">
+          <div class="flash-progress">
+            <span id="flashPos">Karte 1 / 1</span>
+            <div class="flash-legend">
+              <span class="legend-dot legend-known"></span> gewusst
+              <span class="legend-dot legend-unknown"></span> nochmal
+            </div>
+          </div>
+
+          <div class="flashcard-stage">
+            <div class="index-card" id="indexCard" tabindex="0" role="button" aria-label="Karteikarte umdrehen">
+              <div class="index-card-inner" id="indexCardInner">
+                <div class="index-card-face index-card-front">
+                  <span class="index-card-kicker">Frage</span>
+                  <p id="flashFront"></p>
+                  <span class="index-card-hint">Tippen zum Umdrehen</span>
+                </div>
+                <div class="index-card-face index-card-back">
+                  <span class="index-card-kicker">Antwort</span>
+                  <p id="flashBack"></p>
+                  <span class="index-card-hint">Tippen zum Zurückdrehen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flash-controls">
+            <button class="btn btn-ghost" id="flashPrev">← Zurück</button>
+            <button class="btn btn-bad" id="flashUnknown">Nochmal üben</button>
+            <button class="btn btn-good" id="flashKnown">Gewusst ✓</button>
+            <button class="btn btn-ghost" id="flashNext">Weiter →</button>
+          </div>
+          <button class="btn btn-link" id="flashReset">Kartenstapel zurücksetzen</button>
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="subview" id="sub-quiz" hidden>
+        <div class="quiz-wrap" id="quizWrap">
+          <div class="quiz-progress">
+            <span id="quizPos">Frage 1 / 1</span>
+            <div class="progress-track quiz-track"><div class="progress-fill" id="quizProgressFill"></div></div>
+          </div>
+          <div class="quiz-card">
+            <p class="quiz-question" id="quizQuestion"></p>
+            <div class="quiz-options" id="quizOptions"></div>
+            <p class="quiz-explain" id="quizExplain" hidden></p>
+            <div class="quiz-actions">
+              <button class="btn btn-primary" id="quizNext" hidden>Nächste Frage →</button>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-result" id="quizResult" hidden>
+          <span class="stamp stamp-big" id="quizResultStamp">0%</span>
+          <h3 id="quizResultTitle">Quiz abgeschlossen</h3>
+          <p id="quizResultText"></p>
+          <button class="btn btn-primary" id="quizRestart">Quiz wiederholen</button>
+        </div>
+      </div>
+
+      <!-- EXAM TASKS -->
+      <div class="subview" id="sub-exam" hidden>
+        <div class="exam-list" id="examList"></div>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
