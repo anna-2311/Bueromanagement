@@ -22,8 +22,8 @@
   --border:     #DCD4BE;
 
   /* -- Typografie ----------------------------------------------------- */
-  --font-display: "IBM Plex Slab", Georgia, serif;
-  --font-body:    "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Calibri", "Segoe UI", Arial, sans-serif;
+  --font-body:    "Calibri", "Segoe UI", Arial, sans-serif;
   --font-mono:    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --radius-s: 6px;
