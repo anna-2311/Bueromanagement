@@ -334,6 +334,92 @@ const APP_DATA = {
           solution: "Stückdeckungsbeitrag = 50 € − 30 € = 20 €.\nBreak-Even-Menge = 40.000 € ÷ 20 € = 2.000 Stück.\nAb der 2.001. verkauften Einheit erwirtschaftet das Unternehmen Gewinn."
         }
       ]
+    },
+
+    // ======================================================================
+    // KAPITEL E
+    // ======================================================================
+    {
+      id: "bueroorganisation",
+      code: "E",
+      title: "Büroprozesse & Arbeitsorganisation",
+      subtitle: "Ergonomie, Zeitmanagement, Termine, Aufbewahrungsfristen, Auftragsbearbeitung",
+      summary: [
+        {
+          q: "Was gehört zu einem ergonomisch gestalteten Arbeitsplatz?",
+          a: "Ein höhenverstellbarer Bürostuhl mit 5 Abstützpunkten und einem 90°-Winkel zwischen Ober- und Unterschenkel, ein höhenverstellbarer Tisch (mind. 160 × 80 cm), ein Bildschirm im Abstand von 50–60 cm mit oberster Zeile leicht unterhalb der Augenhöhe sowie eine bewusste Farbgestaltung des Raumes."
+        },
+        {
+          q: "Welche Werte gelten für Akustik, Licht und Raumklima im Büro?",
+          a: "Akustik: Der Schalldruck soll so niedrig wie möglich gehalten werden (z. B. durch Schallabschirmung, dämmende Böden/Decken). Licht: mindestens 2 % Tageslicht, 500 Lux Mindestbeleuchtung, Blendung vermeiden. Raumklima: Luftfeuchtigkeit zwischen 40 % und 60 %."
+        },
+        {
+          q: "Welche Zeitmanagement-Methoden gibt es?",
+          a: "SMARTE Ziele (spezifisch, messbar, attraktiv, realistisch, terminiert), das Pareto-Prinzip (20 % der Zeit bringen 80 % der Ergebnisse), die ABC-Analyse (Aufgaben nach Wichtigkeit sortieren) und die Alpenmethode (Aufgaben auflisten, Länge kalkulieren, Pufferzeiten reservieren, Entscheidungen nach Prioritäten treffen)."
+        },
+        {
+          q: "Wie läuft die Terminorganisation ab?",
+          a: "Planen (Thema, Ziel, Zeitrahmen, Teilnehmer klären), koordinieren (feste und bewegliche Termine ohne Überschneidung einordnen) und überwachen (Zu-/Absagen prüfen, ggf. verschieben). Bei Abweichungen helfen frühzeitige Ausweichtermine und klare Deadlines für Zu-/Absagen."
+        },
+        {
+          q: "Wie lange müssen Geschäftsunterlagen aufbewahrt werden?",
+          a: "6 Jahre: empfangene und versandte Handels- bzw. Geschäftsbriefe. 10 Jahre: Bücher, Inventare, Jahresabschlüsse, Lageberichte, Eröffnungsbilanz, Buchungsbelege, Rechnungen, Handelsbücher – Grundlage sind Handelsrecht (HGB) und Steuerrecht (AO)."
+        },
+        {
+          q: "Wie läuft die Auftragsbearbeitung in 8 Schritten ab?",
+          a: "1. Anfrage (unverbindlich) → 2. Angebot (verbindlicher Antrag) → 3. Prüfung der Bonität → 4. Bestellung (Annahme) → 5. Auftragsbestätigung → 6. Lieferschein → 7. Ausgangsrechnung → 8. Überweisung/Zahlungskontrolle."
+        }
+      ],
+      flashcards: [
+        { front: "Welcher Winkel sollte am Bürostuhl zwischen Ober- und Unterschenkel bestehen?", back: "90°, bei parallel zur Tischfläche stehenden Unterarmen." },
+        { front: "Wie viele Abstützpunkte braucht ein kippsicherer Bürostuhl?", back: "5 Abstützpunkte (Rollen oder Gleiter)." },
+        { front: "Wie groß sollte eine Tischplatte mindestens sein?", back: "Mindestbreite 160 cm, Mindesttiefe 80 cm." },
+        { front: "Welcher Abstand wird zum Bildschirm empfohlen?", back: "Ca. 50–60 cm, oberste Bildschirmzeile leicht unterhalb der Augenhöhe." },
+        { front: "Welche Wirkung hat die Farbe Rot im Büro?", back: "Stimulierend, aktivierend, unterstützt Aggressionen." },
+        { front: "Welche Wirkung hat die Farbe Blau im Büro?", back: "Hilft bei der Bewältigung von Tagesstress und wirkt regenerativ." },
+        { front: "Wie hoch sollte die Mindestbeleuchtung in Büroräumen sein?", back: "Mindestens 500 Lux." },
+        { front: "Wie viel Tageslicht sollte mindestens vorhanden sein?", back: "Mindestens 2 %, bei Dachoberlicht mindestens 4 %." },
+        { front: "In welchem Bereich sollte die Luftfeuchtigkeit im Büro liegen?", back: "Zwischen 40 % und 60 %." },
+        { front: "Wofür stehen die Buchstaben bei SMARTEN Zielen?", back: "Spezifisch, Messbar, Attraktiv, Realistisch, Terminiert." },
+        { front: "Was besagt das Pareto-Prinzip?", back: "20 % der eingesetzten Zeit bringen 80 % der Ergebnisse." },
+        { front: "Wofür steht die Alpenmethode (Buchstaben)?", back: "Aufgaben auflisten, Länge/Zeitbedarf kalkulieren, Pufferzeiten reservieren, Entscheidungen nach Prioritäten." },
+        { front: "Feste vs. bewegliche Termine?", back: "Feste Termine wiederholen sich und werden langfristig eingeplant. Bewegliche Termine werden kurzfristig geplant und mit festen Terminen abgestimmt." },
+        { front: "Wie lange müssen empfangene Handelsbriefe aufbewahrt werden?", back: "6 Jahre." },
+        { front: "Wie lange müssen Jahresabschlüsse und Buchungsbelege aufbewahrt werden?", back: "10 Jahre." },
+        { front: "Was ist der Listeneinkaufspreis?", back: "Der vom Lieferanten berechnete Katalogpreis ohne Berücksichtigung von Rabatten oder Abzügen." },
+        { front: "Nenne 3 Pflichtangaben einer vollständigen Rechnung.", back: "Z. B. vollständiger Name und Anschrift beider Parteien, fortlaufende Rechnungsnummer, Ausstellungsdatum, Steuernummer/USt-ID, Entgelt und Steuerbetrag." },
+        { front: "Was prüft die Bonitätsprüfung?", back: "Die Zahlungsbereitschaft und -fähigkeit des Kunden, besonders bei Neukunden." },
+        { front: "Was enthält der Lieferschein?", back: "Die genaue Beschreibung der Artikel und deren Menge – dient der Kontrolle bei der Lieferung." },
+        { front: "Nenne die 8 Schritte der Auftragsbearbeitung.", back: "Anfrage, Angebot, Bonitätsprüfung, Bestellung, Auftragsbestätigung, Lieferschein, Ausgangsrechnung, Überweisung." }
+      ],
+      quiz: [
+        { q: "Welcher Winkel sollte zwischen Ober- und Unterschenkel am Bürostuhl bestehen?", options: ["45°", "70°", "90°", "120°"], correct: 2, explain: "Ein rechter Winkel (90°) zwischen Ober- und Unterschenkel gilt als ergonomisch korrekt." },
+        { q: "Wie viele Abstützpunkte soll ein kippsicherer Bürostuhl haben?", options: ["3", "4", "5", "6"], correct: 2, explain: "5 Abstützpunkte (Rollen oder Gleiter) sorgen für Kippsicherheit." },
+        { q: "Wie hoch sollte die Mindestbeleuchtung in Büroräumen sein?", options: ["100 Lux", "250 Lux", "500 Lux", "1.000 Lux"], correct: 2, explain: "Büroräume und Arbeitsbereiche sollten mindestens 500 Lux aufweisen." },
+        { q: "Welche Farbe wirkt laut Farbwirkungslehre stimulierend und unterstützt Aggressionen?", options: ["Blau", "Grün", "Rot", "Weiß"], correct: 2, explain: "Rot hat eine stimulierende, aktivierende Wirkung." },
+        { q: "In welchem Bereich sollte die ideale Luftfeuchtigkeit im Büro liegen?", options: ["10–20 %", "40–60 %", "70–90 %", "Über 90 %"], correct: 1, explain: "40–60 % Luftfeuchtigkeit beugt Atemwegserkrankungen vor." },
+        { q: "Wofür steht das „M“ in SMARTEN Zielen?", options: ["Motivierend", "Messbar", "Machbar", "Modern"], correct: 1, explain: "SMART steht u. a. für messbar – Ziele sollen überprüfbar formuliert sein." },
+        { q: "Was besagt das Pareto-Prinzip?", options: ["50 % Zeit = 50 % Ergebnis", "20 % Zeit = 80 % Ergebnis", "80 % Zeit = 20 % Ergebnis", "Zeit und Ergebnis sind unabhängig"], correct: 1, explain: "20 % der eingesetzten Zeit bringen häufig 80 % der Ergebnisse." },
+        { q: "Wie lange müssen empfangene Handels- oder Geschäftsbriefe aufbewahrt werden?", options: ["2 Jahre", "6 Jahre", "10 Jahre", "20 Jahre"], correct: 1, explain: "Für Handels- bzw. Geschäftsbriefe gilt eine Aufbewahrungspflicht von 6 Jahren." },
+        { q: "Wie lange müssen Jahresabschlüsse und Buchungsbelege aufbewahrt werden?", options: ["3 Jahre", "6 Jahre", "10 Jahre", "Unbegrenzt"], correct: 2, explain: "Für Jahresabschlüsse und Buchungsbelege gilt eine 10-jährige Aufbewahrungspflicht." },
+        { q: "Was ist der erste Schritt der Auftragsbearbeitung?", options: ["Angebot", "Anfrage", "Bestellung", "Lieferschein"], correct: 1, explain: "Die (rechtlich unverbindliche) Anfrage steht am Anfang der Auftragsbearbeitung." },
+        { q: "Was wird bei der Bonitätsprüfung untersucht?", options: ["Die Produktqualität", "Die Zahlungsfähigkeit und -bereitschaft des Kunden", "Die Lieferzeit", "Der Marktpreis"], correct: 1, explain: "Die Bonitätsprüfung untersucht, ob und wie zuverlässig ein Kunde zahlt." },
+        { q: "Was wird mit dem Lieferschein zur Kontrolle mitgeliefert?", options: ["Die Rechnung", "Die Artikelbeschreibung und Menge", "Der Kaufvertrag", "Die AGB"], correct: 1, explain: "Der Lieferschein enthält Artikel und Menge zur Kontrolle bei der Lieferung." }
+      ],
+      exam: [
+        {
+          title: "Auftragsbearbeitung am Beispiel Büromaterial",
+          points: 10,
+          task: "Ein Kunde möchte Büromaterial bestellen. Beschreiben Sie den Ablauf der Auftragsbearbeitung anhand der 8 Schritte – von der ersten Kontaktaufnahme bis zum Zahlungseingang.",
+          solution: "1. Anfrage: Der Kunde bittet unverbindlich um Informationen zu Produkten, Preisen und Lieferbedingungen.\n2. Angebot: Das Unternehmen unterbreitet einen verbindlichen Antrag mit Art, Menge, Preis, Liefer- und Zahlungsbedingungen sowie einer Bindefrist.\n3. Prüfung der Bonität: Vor allem bei Neukunden wird die Zahlungsfähigkeit geprüft.\n4. Bestellung: Der Kunde nimmt das Angebot unverändert an.\n5. Auftragsbestätigung: Das Unternehmen bestätigt Artikel, Preise, Versandkosten sowie Liefer-/Zahlungsbedingungen.\n6. Lieferschein: Wird der Lieferung beigelegt und dient der Kontrolle der gelieferten Menge.\n7. Ausgangsrechnung: Wird erstellt und an den Kunden versendet.\n8. Überweisung: Der Zahlungseingang wird überprüft bzw. der Betrag eingezogen."
+        },
+        {
+          title: "Ergonomische Ursachen von Kopfschmerzen im Büro",
+          points: 8,
+          task: "Ein Mitarbeiter klagt über Kopfschmerzen und Konzentrationsschwierigkeiten. Analysieren Sie mögliche ergonomische Ursachen und schlagen Sie konkrete Verbesserungen vor.",
+          solution: "Mögliche Ursachen: unzureichende Beleuchtung (unter 500 Lux oder Blendung durch Sonnenlicht), falscher Bildschirmabstand oder falsche Bildschirmhöhe, hoher Lärmpegel ohne Schallabschirmung, ungünstiges Raumklima (Luftfeuchtigkeit außerhalb 40–60 %).\nVerbesserungsvorschläge: Beleuchtung auf mindestens 500 Lux prüfen und ggf. nachrüsten, Blendschutz/Rollos einsetzen und den Bildschirm parallel zum Fenster ausrichten, Bildschirmabstand auf 50–60 cm einstellen, Lärmquellen auslagern oder Schallabschirmungen einbauen, Luftbefeuchter bzw. Pflanzen zur Regulierung des Raumklimas nutzen."
+        }
+      ]
     }
   ]
 };
