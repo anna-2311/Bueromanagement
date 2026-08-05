@@ -420,6 +420,261 @@ const APP_DATA = {
           solution: "Mögliche Ursachen: unzureichende Beleuchtung (unter 500 Lux oder Blendung durch Sonnenlicht), falscher Bildschirmabstand oder falsche Bildschirmhöhe, hoher Lärmpegel ohne Schallabschirmung, ungünstiges Raumklima (Luftfeuchtigkeit außerhalb 40–60 %).\nVerbesserungsvorschläge: Beleuchtung auf mindestens 500 Lux prüfen und ggf. nachrüsten, Blendschutz/Rollos einsetzen und den Bildschirm parallel zum Fenster ausrichten, Bildschirmabstand auf 50–60 cm einstellen, Lärmquellen auslagern oder Schallabschirmungen einbauen, Luftbefeuchter bzw. Pflanzen zur Regulierung des Raumklimas nutzen."
         }
       ]
+    },
+
+    // ======================================================================
+    // KAPITEL F
+    // ======================================================================
+    {
+      id: "marketing",
+      code: "F",
+      title: "Kundenakquise & Marketing",
+      subtitle: "Marketingmix, Produktlebenszyklus, Preis- & Kommunikationspolitik, Angebot & Nachfrage, Marktformen",
+      summary: [
+        {
+          q: "Was umfasst der Marketingmix?",
+          a: "Das Zusammenspiel der vier Marketinginstrumente: Produktpolitik (Leistungsangebot), Preispolitik (Verkaufspreis), Kommunikationspolitik (Werbung, PR, Salespromotion) und Distributionspolitik (Absatzwege). Zusammen legen sie fest, wie ein Produkt vermarktet wird."
+        },
+        {
+          q: "Wie verläuft der Produktlebenszyklus – und was sagt die BCG-Matrix dazu?",
+          a: "Vom Innovation über Variation, Differenzierung und Diversifikation bis zur Elimination. Die BCG-Matrix ordnet Produkte nach Marktwachstum und relativem Marktanteil ein: Question Marks (hohe Wachstumsrate, geringer Marktanteil), Stars (beides hoch), Cash Cows (hoher Marktanteil, geringes Wachstum) und Poor Dogs (beides gering)."
+        },
+        {
+          q: "Welche drei Ansätze der Preispolitik gibt es?",
+          a: "Kostenorientiert (Handelskalkulation ausgehend vom Einkaufspreis), konkurrenzorientiert (Mittel-, Hochpreis-, Marktdurchdringungs- oder Marktabschöpfungsstrategie) und nachfrageorientiert (der Preis wird so gewählt, dass der Gewinn maximal ist)."
+        },
+        {
+          q: "Aus welchen Bausteinen besteht die Kommunikationspolitik?",
+          a: "Werbung (Einführungs-, Expansions-, Erinnerungswerbung; Werbegrundsätze nach AIDA), Salespromotion (Verkäufer-, Händler-, Verbraucherpromotion) und Öffentlichkeitsarbeit (Sponsoring, Spenden, Tag der offenen Tür) – ergänzt durch moderne Formen wie Social Media."
+        },
+        {
+          q: "Direkter vs. indirekter Absatz – und Reisender vs. Handelsvertreter?",
+          a: "Direkter Absatz läuft ohne Zwischenstufen (eigener Laden, Onlineshop). Indirekter Absatz nutzt selbstständige Zwischenstufen (Einzel-/Großhandel). Der Reisende ist fest angestellt und weisungsgebunden, der Handelsvertreter ist selbstständig und kann für mehrere Unternehmen tätig sein."
+        },
+        {
+          q: "Wie hängen Angebot, Nachfrage und Marktformen zusammen?",
+          a: "Steigt der Preis, sinkt die Nachfrage und steigt das Angebot – am Gleichgewichtspreis stimmen beide überein. Je nach Anzahl der Anbieter/Nachfrager unterscheidet man Marktformen wie Polypol (viele/viele), Monopol (ein Anbieter) oder Oligopol (wenige Anbieter)."
+        }
+      ],
+      flashcards: [
+        { front: "Nenne die 4 Instrumente des Marketingmix.", back: "Produktpolitik, Preispolitik, Kommunikationspolitik, Distributionspolitik." },
+        { front: "Nenne 3 Bestandteile der Produktpolitik.", back: "Z. B. Produktgestaltung, Verpackung, Marke (Branding), Service, Patente." },
+        { front: "Nenne die Phasen des Produktlebenszyklus.", back: "Produktinnovation, Produktvariation, Produktdifferenzierung, Produktdiversifikation, Elimination." },
+        { front: "Was sind „Stars“ in der BCG-Matrix?", back: "Produkte mit hohem relativem Marktanteil UND hoher Wachstumsrate – Investitionen lohnen sich." },
+        { front: "Was sind „Cash Cows“ (Melkkühe) in der BCG-Matrix?", back: "Hoher Marktanteil, aber geringes Wachstum – abschöpfen, nicht mehr groß investieren." },
+        { front: "Was sind „Poor Dogs“ in der BCG-Matrix?", back: "Geringer Marktanteil und geringes Wachstum – sollten meist vom Markt genommen werden." },
+        { front: "Was ist die Mittelpreisstrategie?", back: "Die eigenen Preise entsprechen den Preisen der Konkurrenz – Dumpingpreise sind verboten." },
+        { front: "Was ist die Marktdurchdringungsstrategie?", back: "Zuerst niedrige Preise, um das Produkt bekannt zu machen – danach werden die Preise erhöht." },
+        { front: "Was ist die Marktabschöpfungsstrategie?", back: "Bei Markteinführung hohe Preise verlangen, danach schrittweise an die Konkurrenz anpassen." },
+        { front: "Wofür steht AIDA in der Werbung?", back: "Attention (Aufmerksamkeit), Interest (Interesse), Desire (Kaufwunsch), Action (Kauf)." },
+        { front: "Nenne die 4 Werbegrundsätze.", back: "Werbewirksamkeit, Werbeklarheit, Werbewahrheit, Werbewirtschaftlichkeit." },
+        { front: "Nenne die 3 Zielgruppen der Salespromotion.", back: "Verkäuferpromotion, Händlerpromotion, Verbraucherpromotion." },
+        { front: "Direkter vs. indirekter Absatz?", back: "Direkt: ohne Zwischenstufen (z. B. eigener Onlineshop). Indirekt: über selbstständige Zwischenstufen (z. B. Großhandel)." },
+        { front: "Reisender vs. Handelsvertreter?", back: "Reisender: fest angestellt, weisungsgebunden, festes Gehalt. Handelsvertreter: selbstständig, kann für mehrere Unternehmen arbeiten." },
+        { front: "Was besagt das Gesetz der Nachfrage?", back: "Bei steigendem Preis sinkt die Nachfrage, bei sinkendem Preis steigt sie." },
+        { front: "Was besagt das Gesetz des Angebots?", back: "Bei steigendem Preis steigt das Angebot, bei sinkendem Preis sinkt es." },
+        { front: "Wann entsteht ein Angebotsüberschuss?", back: "Wenn der Marktpreis über dem Gleichgewichtspreis liegt – es wird mehr angeboten als nachgefragt." },
+        { front: "Wann entsteht ein Nachfrageüberschuss?", back: "Wenn der Marktpreis unter dem Gleichgewichtspreis liegt – es wird mehr nachgefragt als angeboten." },
+        { front: "Was ist ein Polypol?", back: "Eine Marktform mit vielen Anbietern und vielen Nachfragern." },
+        { front: "Käufermarkt vs. Verkäufermarkt?", back: "Käufermarkt: Käufer hat die Marktmacht (Angebotsüberschuss). Verkäufermarkt: Verkäufer hat die Marktmacht (Nachfrageüberschuss)." }
+      ],
+      quiz: [
+        { q: "Welche 4 Instrumente gehören zum Marketingmix?", options: ["Produkt-, Preis-, Kommunikations-, Distributionspolitik", "Werbung, PR, Sponsoring, Social Media", "Einkauf, Verkauf, Lager, Logistik", "Planung, Organisation, Kontrolle, Führung"], correct: 0, explain: "Der Marketingmix besteht aus Produkt-, Preis-, Kommunikations- und Distributionspolitik." },
+        { q: "Wie werden Produkte mit hohem Marktanteil, aber geringem Wachstum in der BCG-Matrix genannt?", options: ["Stars", "Question Marks", "Cash Cows", "Poor Dogs"], correct: 2, explain: "Cash Cows (Melkkühe) haben einen hohen Marktanteil bei geringem Wachstum – sie sollten abgeschöpft werden." },
+        { q: "Welche Preisstrategie setzt zunächst niedrige Preise an, um später zu erhöhen?", options: ["Hochpreisstrategie", "Marktabschöpfungsstrategie", "Marktdurchdringungsstrategie", "Mittelpreisstrategie"], correct: 2, explain: "Die Marktdurchdringungsstrategie startet niedrig, um Bekanntheit zu schaffen, und erhöht später die Preise." },
+        { q: "Wofür steht das letzte „A“ in AIDA?", options: ["Attention", "Aktivität", "Action", "Anerkennung"], correct: 2, explain: "AIDA: Attention – Interest – Desire – Action (der tatsächliche Kauf)." },
+        { q: "Welche Werbeart wird für ein neues, noch nicht etabliertes Produkt eingesetzt?", options: ["Erinnerungswerbung", "Einführungswerbung", "Expansionswerbung", "Vergleichswerbung"], correct: 1, explain: "Einführungswerbung wird eingesetzt, wenn ein Produkt noch keinen Umsatz erzielt hat." },
+        { q: "Was kennzeichnet den direkten Absatz?", options: ["Verkauf über den Großhandel", "Verkauf ohne Einschaltung von Zwischenstufen", "Verkauf nur im Ausland", "Verkauf ausschließlich über Handelsvertreter"], correct: 1, explain: "Beim direkten Absatz verkauft das Unternehmen ohne rechtlich selbstständige Zwischenstufen." },
+        { q: "Ist ein Handelsvertreter selbstständig oder angestellt?", options: ["Fest angestellt", "Selbstständig", "Beamter", "Ehrenamtlich tätig"], correct: 1, explain: "Der Handelsvertreter ist selbstständig und per Vertrag an ein oder mehrere Unternehmen gebunden." },
+        { q: "Was passiert mit der Nachfrage laut dem Gesetz der Nachfrage bei steigendem Preis?", options: ["Sie steigt", "Sie sinkt", "Sie bleibt gleich", "Das lässt sich nicht sagen"], correct: 1, explain: "Bei steigendem Preis sinkt die Nachfrage – und umgekehrt." },
+        { q: "Wann entsteht ein Angebotsüberschuss?", options: ["Wenn der Preis unter dem Gleichgewichtspreis liegt", "Wenn der Preis über dem Gleichgewichtspreis liegt", "Wenn Angebot und Nachfrage exakt übereinstimmen", "Nur bei Monopolen"], correct: 1, explain: "Liegt der Preis über dem Gleichgewichtspreis, wird mehr angeboten als nachgefragt." },
+        { q: "Wie heißt die Marktform mit vielen Anbietern und vielen Nachfragern?", options: ["Monopol", "Oligopol", "Polypol", "Duopol"], correct: 2, explain: "Beim Polypol treffen viele Anbieter auf viele Nachfrager." },
+        { q: "Wer hat beim Käufermarkt die größere Marktmacht?", options: ["Der Verkäufer", "Der Käufer", "Der Staat", "Keiner von beiden"], correct: 1, explain: "Auf einem Käufermarkt (Angebotsüberschuss) kann der Käufer das Marktgeschehen bestimmen." }
+      ],
+      exam: [
+        {
+          title: "AIDA und Preisstrategie für ein neues Produkt",
+          points: 10,
+          task: "Ein Unternehmen bringt ein innovatives, aber noch unbekanntes Produkt auf den Markt. Erläutern Sie anhand der AIDA-Formel, wie die Werbung aufgebaut sein sollte. Schlagen Sie außerdem eine passende Preisstrategie vor und begründen Sie Ihre Wahl.",
+          solution: "AIDA-Aufbau der Werbung:\nAttention: Auffälliger Werbespot/Anzeige, um überhaupt wahrgenommen zu werden.\nInterest: Konkrete Vorteile und Alleinstellungsmerkmale des Produkts hervorheben.\nDesire: Emotionale Ansprache, die einen Kaufwunsch weckt (z. B. Testimonials, Vorher-Nachher).\nAction: Klarer Handlungsaufruf mit einfachem Kaufweg (z. B. Rabattcode, Bestell-Button).\n\nPreisstrategie: Da das Produkt neu und unbekannt ist, bietet sich die Marktdurchdringungsstrategie an – ein niedriger Einführungspreis senkt die Hemmschwelle zum Ausprobieren und verschafft schnell Marktanteile. Sobald das Produkt bekannt ist, können die Preise schrittweise erhöht werden."
+        },
+        {
+          title: "Produktportfolio nach der BCG-Matrix",
+          points: 8,
+          task: "Ein Unternehmen hat zwei Produkte: Produkt A hat einen hohen Marktanteil, aber nur noch geringes Marktwachstum. Produkt B hat einen geringen Marktanteil, aber ein hohes Marktwachstum. Ordnen Sie beide Produkte der BCG-Matrix zu und leiten Sie jeweils eine strategische Empfehlung ab.",
+          solution: "Produkt A (hoher Marktanteil, geringes Wachstum) = Cash Cow (Melkkuh). Empfehlung: Abschöpfungsstrategie – das Produkt weiterhin verkaufen und Gewinne abschöpfen, aber nicht mehr stark investieren.\n\nProdukt B (geringer Marktanteil, hohes Wachstum) = Question Mark (Fragezeichen). Empfehlung: Offensivstrategie – gezielt investieren, um Marktanteile auszubauen, bevor sich entscheidet, ob das Produkt zum Star oder zum Poor Dog wird."
+        }
+      ]
+    },
+
+    // ======================================================================
+    // KAPITEL G
+    // ======================================================================
+    {
+      id: "kommunikation",
+      code: "G",
+      title: "Gesprächssituationen & Kommunikation",
+      subtitle: "4 Seiten einer Nachricht, Sender-Empfänger-Modell, Fragetypen, Konfliktgespräche",
+      summary: [
+        {
+          q: "Was besagt das Modell der 4 Seiten einer Nachricht (Schulz von Thun)?",
+          a: "Jede Nachricht hat vier Ebenen: Sachebene (worüber ich informiere), Selbstkundgabe (was ich von mir preisgebe), Beziehungsebene (was ich vom anderen halte) und Appellseite (was ich erreichen möchte). Der Empfänger hört mit vier „Ohren“ – je nachdem, welches Ohr dominiert, kann dieselbe Nachricht ganz unterschiedlich ankommen."
+        },
+        {
+          q: "Wie funktioniert das Sender-Empfänger-Modell nach Stuart Hall?",
+          a: "Der Sender hat eine Absicht, übersetzt sie in Worte, spricht sie aus, die Nachricht wird übermittelt, der Empfänger hört sie, übersetzt und interpretiert sie. Entscheidend ist nicht nur die Absicht des Senders, sondern die tatsächliche Wirkung beim Empfänger – deshalb müssen beide Seiten aktiv an klarer Kommunikation mitarbeiten."
+        },
+        {
+          q: "Offene, geschlossene, Alternativ- und Kontrollfrage – wann setze ich was ein?",
+          a: "Offene Frage: für ausführliche Antworten und Meinungen. Geschlossene Frage: für klare Ja/Nein-Antworten. Alternativfrage: gibt zwei Antwortmöglichkeiten vor und erleichtert Entscheidungen. Kontrollfrage: prüft, ob Übereinstimmung besteht – zu viele davon wirken aber wie ein Verhör."
+        },
+        {
+          q: "Was zeigt das Eisbergmodell im Konflikt?",
+          a: "Über der Wasseroberfläche liegt das Sichtbare: Verhalten, Worte, Körpersprache. Darunter, unsichtbar, liegen die eigentlichen Ursachen: Motive, Erfahrungen, Emotionen, Bedürfnisse und Normen – sie treiben das sichtbare Verhalten an, sind aber schwer direkt zugänglich."
+        },
+        {
+          q: "Wie läuft ein gutes Konfliktgespräch ab?",
+          a: "1. Eigene Sichtweise mit Ich-Botschaft offen ansprechen. 2. Eigene Konsequenzen beschreiben. 3. Sichtweise des anderen erfragen und akzeptieren. 4. Gemeinsame Ziele/Kompromisse formulieren. 5. Kriterien für Verbesserung festlegen. 6. Mögliche Hindernisse bedenken. 7. Konkrete Vereinbarung treffen."
+        },
+        {
+          q: "Wie lässt sich Konflikten vorbeugen?",
+          a: "Gemeinsam Regeln formulieren und einhalten, auf Kompromisse eingehen und potenzielle Konfliktursachen frühzeitig minimieren – bevor aus kleinen Reibungen größere Konflikte entstehen."
+        }
+      ],
+      flashcards: [
+        { front: "Was beschreibt die Sachebene einer Nachricht?", back: "Worüber ich informiere – die reine Sachinformation." },
+        { front: "Was beschreibt die Selbstkundgabe?", back: "Was ich von mir selbst preisgebe (z. B. Stimmung, Werte)." },
+        { front: "Was beschreibt die Beziehungsebene?", back: "Was ich vom anderen halte und wie ich zu ihm stehe." },
+        { front: "Was beschreibt die Appellseite?", back: "Was ich beim Empfänger erreichen möchte." },
+        { front: "Nenne die 4 „Ohren“ des Empfängers.", back: "Sach-Ohr, Appell-Ohr, Beziehungs-Ohr, Selbstkundgabe-Ohr." },
+        { front: "Wer entwickelte das Sender-Empfänger-Modell?", back: "Stuart Hall." },
+        { front: "Was ist wichtiger als die Absicht des Senders?", back: "Die tatsächliche Wirkung, die die Worte beim Empfänger erzielen." },
+        { front: "Wofür eignet sich eine offene Frage?", back: "Um ausführliche Informationen, Meinungen oder Erzählungen zu erhalten." },
+        { front: "Wofür eignet sich eine geschlossene Frage?", back: "Um etwas klar auf den Punkt zu bringen (Ja/Nein-Antwort)." },
+        { front: "Was ist der Vorteil einer Alternativfrage?", back: "Sie gibt dem Gesprächspartner eine erste Orientierung und erleichtert die Entscheidung." },
+        { front: "Wozu dient eine Kontrollfrage?", back: "Zu überprüfen, ob der Gesprächspartner inhaltlich mit einem übereinstimmt." },
+        { front: "Was ist der Nachteil zu vieler Kontrollfragen?", back: "Der Gesprächspartner fühlt sich nicht ernst genommen – es entsteht ein Verhöreindruck." },
+        { front: "Was liegt beim Eisbergmodell ÜBER der Wasseroberfläche?", back: "Das Sichtbare: Verhalten, Worte, Taten, Körpersprache." },
+        { front: "Was liegt beim Eisbergmodell UNTER der Wasseroberfläche?", back: "Motive, Erfahrungen, Emotionen, Bedürfnisse, Normen – der eigentliche Handlungsantrieb." },
+        { front: "Was ist der erste Schritt eines Konfliktgesprächs?", back: "Die eigene Sichtweise mit einer Ich-Botschaft offen ansprechen." },
+        { front: "Was ist der letzte Schritt eines Konfliktgesprächs?", back: "Eine konkrete Vereinbarung treffen." },
+        { front: "Nenne 2 Maßnahmen zur Konfliktprävention.", back: "Gemeinsam Regeln formulieren und einhalten, auf Kompromisse eingehen, Konfliktursachen frühzeitig minimieren." },
+        { front: "Was ist eine Ich-Botschaft?", back: "Eine Aussage aus der eigenen Perspektive („Ich fühle …“), die Vorwürfe vermeidet und Eskalation verhindert." }
+      ],
+      quiz: [
+        { q: "Wer entwickelte das Modell der 4 Seiten einer Nachricht?", options: ["Stuart Hall", "Sigmund Freud", "Friedemann Schulz von Thun", "Abraham Maslow"], correct: 2, explain: "Das Kommunikationsmodell der 4 Seiten einer Nachricht stammt von Friedemann Schulz von Thun." },
+        { q: "Welche Ebene sagt aus, was ich von einer Person halte?", options: ["Sachebene", "Beziehungsebene", "Appellseite", "Selbstkundgabe"], correct: 1, explain: "Die Beziehungsebene zeigt, wie der Sender zum Empfänger steht." },
+        { q: "Mit welchem „Ohr“ interpretiert der Empfänger, was er tun soll?", options: ["Sach-Ohr", "Beziehungs-Ohr", "Appell-Ohr", "Selbstkundgabe-Ohr"], correct: 2, explain: "Das Appell-Ohr hört heraus, was der Sender vom Empfänger erreichen möchte." },
+        { q: "Wer entwickelte das Sender-Empfänger-Modell?", options: ["Stuart Hall", "Schulz von Thun", "Karl Bühler", "Paul Watzlawick"], correct: 0, explain: "Das Sender-Empfänger-Modell in dieser Form stammt von Stuart Hall." },
+        { q: "Was ist laut Sender-Empfänger-Modell wichtiger als die Absicht des Senders?", options: ["Die Lautstärke", "Die Wirkung beim Empfänger", "Die Wortwahl", "Der Zeitpunkt"], correct: 1, explain: "Entscheidend ist, wie die Nachricht beim Empfänger tatsächlich ankommt und wirkt." },
+        { q: "Welche Frageart lässt sich meist nur mit Ja oder Nein beantworten?", options: ["Offene Frage", "Geschlossene Frage", "Alternativfrage", "Kontrollfrage"], correct: 1, explain: "Geschlossene Fragen sind auf eine Ja/Nein-Antwort ausgelegt." },
+        { q: "Welche Frage gibt dem Gesprächspartner bereits zwei Antwortmöglichkeiten vor?", options: ["Offene Frage", "Kontrollfrage", "Alternativfrage", "Geschlossene Frage"], correct: 2, explain: "Die Alternativfrage lässt zwischen zwei vorgegebenen Optionen wählen." },
+        { q: "Wozu dient eine Kontrollfrage vor allem?", options: ["Um neue Themen einzuleiten", "Um zu prüfen, ob Übereinstimmung besteht", "Um Small Talk zu führen", "Um Zeit zu gewinnen"], correct: 1, explain: "Kontrollfragen überprüfen, ob beide Gesprächspartner inhaltlich übereinstimmen." },
+        { q: "Was liegt laut Eisbergmodell UNTER der Wasseroberfläche?", options: ["Sichtbares Verhalten", "Körpersprache", "Motive und Bedürfnisse", "Gesprochene Worte"], correct: 2, explain: "Unter der Oberfläche liegen die unsichtbaren Antriebe: Motive, Emotionen, Bedürfnisse, Normen." },
+        { q: "Was ist der erste Schritt eines Konfliktgesprächs?", options: ["Eine Vereinbarung treffen", "Die eigene Sichtweise mit Ich-Botschaft schildern", "Schweigen", "Sofort einen Kompromiss vorschlagen"], correct: 1, explain: "Zunächst wird die eigene Sichtweise offen über eine Ich-Botschaft angesprochen." },
+        { q: "Was passiert bei zu vielen Kontrollfragen im Gespräch?", options: ["Der Gesprächspartner fühlt sich wertgeschätzt", "Es entsteht ein Verhöreindruck", "Das Gespräch wird automatisch kürzer", "Nichts, Kontrollfragen sind immer positiv"], correct: 1, explain: "Zu viele Kontrollfragen wirken wie ein Verhör und lassen den Gesprächspartner sich missverstanden fühlen." }
+      ],
+      exam: [
+        {
+          title: "Die 4 Seiten einer Nachricht anwenden",
+          points: 9,
+          task: "Der Ausbilder sagt zum Azubi: „Die Post ist heute aber spät dran.“ Analysieren Sie diese Aussage anhand der 4 Seiten einer Nachricht nach Schulz von Thun (Sachebene, Selbstkundgabe, Beziehungsebene, Appellseite).",
+          solution: "Sachebene: Die Post wurde heute später als sonst bearbeitet – eine reine Sachinformation.\nSelbstkundgabe: Der Ausbilder ist möglicherweise gestresst oder unter Zeitdruck.\nBeziehungsebene: Je nach Tonfall kann es wie Vorwurf oder Enttäuschung wirken – der Ausbilder traut dem Azubi eigentlich mehr zu.\nAppellseite: Der eigentliche Appell könnte lauten „Bitte bearbeite die Post künftig früher“ – auch wenn das nicht wörtlich gesagt wurde.\nDas Beispiel zeigt: Je nachdem, mit welchem „Ohr“ der Azubi zuhört, kann dieselbe Aussage ganz unterschiedlich ankommen – rein sachlich oder als persönlicher Vorwurf."
+        },
+        {
+          title: "Konfliktgespräch planen",
+          points: 10,
+          task: "Ein Kollege fühlt sich bei der letzten Aufgabenverteilung übergangen und ist seitdem einsilbig. Entwerfen Sie ein Konfliktgespräch anhand der 7 Schritte.",
+          solution: "1. Eigene Sichtweise mit Ich-Botschaft schildern: „Mir ist aufgefallen, dass du seit der Aufgabenverteilung zurückhaltender bist – das beschäftigt mich.“\n2. Eigene Auswirkungen beschreiben: Die Zusammenarbeit im Team leidet, Absprachen werden schwieriger.\n3. Sichtweise des Kollegen erfragen und akzeptieren: Aktiv zuhören, warum er sich übergangen fühlt.\n4. Gemeinsame Ziele/Kompromisse formulieren: Klären, wie Aufgaben künftig fair verteilt werden.\n5. Kriterien für Verbesserung festlegen: z. B. Aufgaben künftig im Team gemeinsam besprechen.\n6. Mögliche Hindernisse bedenken: Zeitdruck, unterschiedliche Prioritäten.\n7. Konkrete Vereinbarung treffen: Feste Regel, dass Aufgaben ab sofort in der Teambesprechung verteilt werden."
+        }
+      ]
+    },
+
+    // ======================================================================
+    // KAPITEL H
+    // ======================================================================
+    {
+      id: "personal",
+      code: "H",
+      title: "Personalwirtschaft",
+      subtitle: "Personalbedarf & -beschaffung, Arbeitszeitgesetz, Lohn & Gehalt, Kündigung, Sozialversicherung",
+      summary: [
+        {
+          q: "Welche Arten von Personalbedarf gibt es?",
+          a: "Ersatzbedarf entsteht durch Fluktuation (Rente, Kündigung), Zusatzbedarf durch vorübergehenden Mehrbedarf (z. B. Auftragsspitzen) und Neubedarf durch Unternehmenserweiterung (z. B. neuer Standort). Der Nettopersonalbedarf errechnet sich aus Soll-Bestand minus Ist-Bestand plus Abgänge minus Zugänge."
+        },
+        {
+          q: "Interne vs. externe Personalbeschaffung – Vor- und Nachteile?",
+          a: "Intern: Mitarbeiter kennt das Unternehmen bereits, höhere Identifikation, geringerer Einarbeitungsaufwand, motiviert durch Aufstiegschance. Extern: größere Auswahl, neue Ideen kommen ins Unternehmen, geringere Fehlbesetzungsgefahr durch gezielte Auswahl nach Qualifikation."
+        },
+        {
+          q: "Was regelt das Arbeitszeitgesetz (ArbZG)?",
+          a: "Die tägliche Arbeitszeit beträgt grundsätzlich 8 Stunden, kann aber im 6-Monats-Durchschnitt auf bis zu 10 Stunden ausgedehnt werden. Nach Arbeitsende gilt eine ununterbrochene Ruhepause von 11 Stunden. Die Pause während der Arbeit beträgt 30 Minuten (bei 6–9 Stunden Arbeitszeit) bzw. 45 Minuten (bei über 9 Stunden)."
+        },
+        {
+          q: "Lohn vs. Gehalt – was ist der Unterschied?",
+          a: "Lohn wird meist an Arbeiter gezahlt und richtet sich nach der tatsächlich geleisteten Arbeit (Stunde, Stück, Akkord) – er kann monatlich schwanken. Gehalt wird meist an Angestellte gezahlt, ist ein monatlich festes Entgelt unabhängig von der geleisteten Arbeitsmenge; Überstunden werden auf ein Gleitzeitkonto gebucht statt direkt ausgezahlt."
+        },
+        {
+          q: "Welche Kündigungsarten und -gründe gibt es?",
+          a: "Ordentliche Kündigung: fristgerecht, mit Angabe eines Grundes (personen-, verhaltens- oder betriebsbedingt). Außerordentliche Kündigung: fristlos bei einem wichtigen Grund (z. B. Diebstahl). Das Kündigungsschutzgesetz schützt Arbeitnehmer, die länger als 6 Monate beschäftigt sind, vor sozial ungerechtfertigter Kündigung."
+        },
+        {
+          q: "Wie setzen sich die Sozialversicherungsbeiträge zusammen?",
+          a: "Krankenversicherung 14,6 % (je zur Hälfte AG/AN, plus Zusatzbeitrag), Pflegeversicherung 3,6 % (+0,6 % für Kinderlose über 23), Arbeitslosenversicherung 2,6 %, Rentenversicherung 18,6 % – jeweils hälftig von Arbeitgeber und Arbeitnehmer getragen."
+        }
+      ],
+      flashcards: [
+        { front: "Was ist Ersatzbedarf?", back: "Personalbedarf aufgrund von Fluktuation, z. B. Rente oder Kündigungen." },
+        { front: "Was ist Zusatzbedarf?", back: "Vorübergehender Personalbedarf aufgrund eines Arbeitsanstiegs." },
+        { front: "Was ist Neubedarf?", back: "Personalbedarf aufgrund von Unternehmenserweiterung, z. B. Eröffnung eines neuen Standorts." },
+        { front: "Wie berechnet man den Nettopersonalbedarf?", back: "Soll-Personalbestand − Ist-Personalbestand + Abgänge − Zugänge." },
+        { front: "Nenne einen Vorteil der internen Personalbeschaffung.", back: "Der Mitarbeiter kennt das Unternehmen bereits, geringerer Einarbeitungsaufwand." },
+        { front: "Nenne einen Vorteil der externen Personalbeschaffung.", back: "Größere Auswahlmöglichkeit, neue Ideen kommen ins Unternehmen." },
+        { front: "Wie lang ist die tägliche Arbeitszeit nach ArbZG grundsätzlich?", back: "8 Stunden – im 6-Monats-Durchschnitt auf bis zu 10 Stunden ausdehnbar." },
+        { front: "Wie lang muss die Ruhepause nach Arbeitsende mindestens sein?", back: "11 Stunden ununterbrochen." },
+        { front: "Wie lang ist die Pause bei einer Arbeitszeit von über 9 Stunden?", back: "45 Minuten." },
+        { front: "Was ist Gleitarbeitszeit?", back: "Frei geregelte Arbeitszeit innerhalb eines Rahmens mit festen Kernstunden, Anfang/Ende flexibel." },
+        { front: "Was ist Vertrauensarbeitszeit?", back: "Der Mitarbeiter legt seine Arbeitszeit eigenverantwortlich fest, ohne betriebliche Zeitmessung." },
+        { front: "Wer erhält typischerweise Lohn – Arbeiter oder Angestellte?", back: "Arbeiter – der Lohn richtet sich nach der tatsächlich geleisteten Arbeit." },
+        { front: "Welche Steuerklasse gilt für Alleinerziehende?", back: "Steuerklasse 2." },
+        { front: "Wann werden die Steuerklassen 3 und 5 kombiniert?", back: "Bei Ehepaaren mit unterschiedlich hohem Einkommen (höheres Einkommen = Klasse 3, niedrigeres = Klasse 5)." },
+        { front: "Muss eine ordentliche Kündigung begründet werden?", back: "Ja – im Gegensatz zur außerordentlichen Kündigung muss der Grund genannt werden." },
+        { front: "Nenne die 3 Arten von Kündigungsgründen.", back: "Personenbedingt, verhaltensbedingt, betriebsbedingt." },
+        { front: "Ab wann greift das Kündigungsschutzgesetz?", back: "Nach mehr als 6 Monaten Beschäftigung im Betrieb." },
+        { front: "Wie hoch ist der Beitragssatz der Rentenversicherung?", back: "18,6 % des Bruttolohns, je zur Hälfte von Arbeitgeber und Arbeitnehmer." },
+        { front: "Was ist Job-Rotation?", back: "Der Mitarbeiter wird an mehreren Arbeitsplätzen angelernt, um monotone Arbeit zu vermeiden." },
+        { front: "Was ist Job-Enrichment?", back: "Der Mitarbeiter erhält mehr Verantwortung, der Arbeitsinhalt wird qualitativ verbessert." },
+        { front: "Autoritäre vs. kooperative Führung?", back: "Autoritär: Entscheidungen werden zentral von oben getroffen. Kooperativ: Mitarbeiter werden an Entscheidungen beteiligt." }
+      ],
+      quiz: [
+        { q: "Wie nennt man Personalbedarf, der durch Fluktuation wie Kündigungen oder Renteneintritt entsteht?", options: ["Zusatzbedarf", "Neubedarf", "Ersatzbedarf", "Grundbedarf"], correct: 2, explain: "Ersatzbedarf entsteht, wenn Mitarbeiter das Unternehmen verlassen und ersetzt werden müssen." },
+        { q: "Wie lang muss die Ruhepause nach Ende der täglichen Arbeitszeit mindestens sein?", options: ["8 Stunden", "9 Stunden", "11 Stunden", "12 Stunden"], correct: 2, explain: "Nach dem ArbZG gilt eine ununterbrochene Ruhepause von mindestens 11 Stunden." },
+        { q: "Auf wie viele Stunden darf die tägliche Arbeitszeit im Durchschnitt ausgedehnt werden?", options: ["9 Stunden", "10 Stunden", "12 Stunden", "14 Stunden"], correct: 1, explain: "Im 6-Monats-Durchschnitt darf die tägliche Arbeitszeit bis zu 10 Stunden betragen." },
+        { q: "Wie lang ist die Pause bei einer Arbeitszeit von über 9 Stunden vorgeschrieben?", options: ["15 Minuten", "30 Minuten", "45 Minuten", "60 Minuten"], correct: 2, explain: "Bei mehr als 9 Stunden Arbeitszeit sind mindestens 45 Minuten Pause vorgeschrieben." },
+        { q: "Wer erhält typischerweise Lohn statt Gehalt?", options: ["Angestellte", "Arbeiter", "Geschäftsführer", "Auszubildende immer"], correct: 1, explain: "Lohn wird in der Regel an Arbeiter gezahlt und richtet sich nach der geleisteten Arbeit." },
+        { q: "Welche Steuerklasse gilt typischerweise für Alleinerziehende?", options: ["Steuerklasse 1", "Steuerklasse 2", "Steuerklasse 4", "Steuerklasse 6"], correct: 1, explain: "Steuerklasse 2 gilt für Alleinerziehende bzw. getrennt lebende Personen." },
+        { q: "Muss eine ordentliche Kündigung begründet werden?", options: ["Nein, nie", "Ja, immer", "Nur bei Azubis", "Nur mündlich"], correct: 1, explain: "Bei der ordentlichen (fristgerechten) Kündigung muss der Kündigungsgrund angegeben werden." },
+        { q: "Wie lang ist die gesetzliche Grundkündigungsfrist für Arbeitnehmer?", options: ["2 Wochen", "4 Wochen zum 15. oder Monatsende", "3 Monate", "6 Monate"], correct: 1, explain: "Die Grundkündigungsfrist beträgt 4 Wochen zum 15. eines Monats oder zum Monatsende." },
+        { q: "Wie hoch ist der Beitragssatz der Rentenversicherung vom Bruttolohn?", options: ["2,6 %", "3,6 %", "14,6 %", "18,6 %"], correct: 3, explain: "Die Rentenversicherung beträgt 18,6 % des Bruttolohns, hälftig geteilt zwischen AG und AN." },
+        { q: "Was beschreibt Job-Rotation?", options: ["Mehr Verantwortung für den Mitarbeiter", "Wechsel zwischen mehreren Arbeitsplätzen", "Zwei Mitarbeiter teilen sich eine Stelle", "Mehr gleichartige Aufgaben für den Mitarbeiter"], correct: 1, explain: "Bei Job-Rotation wird der Mitarbeiter an mehreren Arbeitsplätzen eingesetzt, um Monotonie zu vermeiden." },
+        { q: "Wie nennt man den Führungsstil, bei dem Entscheidungen zentral von oben getroffen werden?", options: ["Kooperative Führung", "Laissez-faire-Führung", "Autoritäre Führung", "Delegative Führung"], correct: 2, explain: "Bei der autoritären Führung trifft die Führungskraft die Entscheidungen allein." },
+        { q: "Ab welcher Beschäftigungsdauer greift der Kündigungsschutz?", options: ["Sofort ab Vertragsbeginn", "Nach 3 Monaten", "Nach mehr als 6 Monaten", "Erst nach 2 Jahren"], correct: 2, explain: "Das Kündigungsschutzgesetz greift bei einer Beschäftigung von mehr als 6 Monaten." }
+      ],
+      exam: [
+        {
+          title: "Nettopersonalbedarf berechnen",
+          points: 8,
+          task: "Ein Unternehmen benötigt laut Personalplanung 60 Mitarbeiter (Soll). Aktuell sind 45 Mitarbeiter beschäftigt (Ist). Es werden 6 Abgänge (z. B. Renteneintritte) und 3 bereits feststehende Zugänge erwartet. Berechnen Sie den Nettopersonalbedarf.",
+          solution: "Nettopersonalbedarf = Soll-Personalbestand − Ist-Personalbestand + Abgänge − Zugänge\n= 60 − 45 + 6 − 3\n= 18\n\nEs werden also noch 18 zusätzliche Mitarbeiter benötigt."
+        },
+        {
+          title: "Kündigungsfrist berechnen",
+          points: 7,
+          task: "Ein Mitarbeiter mit 6 Jahren Betriebszugehörigkeit wird vom Arbeitgeber betriebsbedingt gekündigt. Bestimmen Sie die gesetzliche Kündigungsfrist und erläutern Sie kurz, warum bei dieser Kündigung ein Grund angegeben werden muss.",
+          solution: "Bei einer Betriebszugehörigkeit von mindestens 5 (aber unter 8) Jahren beträgt die gesetzliche Kündigungsfrist für den Arbeitgeber 2 Monate zum Ende eines Kalendermonats.\n\nDa es sich um eine ordentliche (fristgerechte) Kündigung handelt, muss der Arbeitgeber den Kündigungsgrund angeben – hier: betriebsbedingt, z. B. wegen dringender betrieblicher Erfordernisse wie Auftragsmangel. Außerdem greift ab 6 Monaten Betriebszugehörigkeit der Kündigungsschutz, sodass die Kündigung sozial gerechtfertigt sein muss."
+        }
+      ]
     }
   ]
 };
