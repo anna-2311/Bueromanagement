@@ -675,6 +675,479 @@ const APP_DATA = {
           solution: "Bei einer Betriebszugehörigkeit von mindestens 5 (aber unter 8) Jahren beträgt die gesetzliche Kündigungsfrist für den Arbeitgeber 2 Monate zum Ende eines Kalendermonats.\n\nDa es sich um eine ordentliche (fristgerechte) Kündigung handelt, muss der Arbeitgeber den Kündigungsgrund angeben – hier: betriebsbedingt, z. B. wegen dringender betrieblicher Erfordernisse wie Auftragsmangel. Außerdem greift ab 6 Monaten Betriebszugehörigkeit der Kündigungsschutz, sodass die Kündigung sozial gerechtfertigt sein muss."
         }
       ]
+    },
+
+    // ======================================================================
+    // KAPITEL I
+    // ======================================================================
+    {
+      id: "finanzierung",
+      code: "I",
+      title: "Liquidität & Finanzierung",
+      subtitle: "Investition vs. Finanzierung, Goldene Finanzregel, Leasing, Factoring, Kreditsicherheiten, Darlehen",
+      summary: [
+        {
+          q: "Investition vs. Finanzierung – wie hängen sie zusammen?",
+          a: "Sie stehen sich spiegelbildlich gegenüber: Finanzierung ist die Beschaffung finanzieller Mittel (Passivseite der Bilanz), Investition ist deren Verwendung (Aktivseite). Finanzierung ist Voraussetzung für Investitionen."
+        },
+        {
+          q: "Was besagt die Goldene Finanzregel?",
+          a: "Die Verwendung finanzieller Mittel soll mit ihrer Fristigkeit übereinstimmen (Fristenkongruenz). Die goldene Bilanzregel konkretisiert das: langfristig gebundenes Vermögen sollte langfristig finanziert sein, kurzfristiges Vermögen kurzfristig – sonst drohen Finanzierungsprobleme."
+        },
+        {
+          q: "Eigen- vs. Fremdfinanzierung, Innen- vs. Außenfinanzierung?",
+          a: "Eigenfinanzierung: Kapital von den Eigentümern (Beteiligung oder Selbstfinanzierung aus Gewinnrücklagen). Fremdfinanzierung: Kapital von Dritten (Kredite, Rückstellungen). Außenfinanzierung kommt von außerhalb des Unternehmens (Beteiligung, Kredit), Innenfinanzierung entsteht im Unternehmen selbst (Selbstfinanzierung, Rückstellungen)."
+        },
+        {
+          q: "Was ist Leasing – Vorteile und Nachteile?",
+          a: "Leasing ist rechtlich ein Mietvertrag: Der Leasinggeber vermietet ein Gut gegen monatliche Raten. Vorteil: keine sofortige Liquiditätsbelastung, feste Raten, Steuerersparnis. Nachteil: geringe Flexibilität während der Laufzeit, insgesamt meist höhere Gesamtkosten."
+        },
+        {
+          q: "Wie funktioniert Factoring?",
+          a: "Ein Unternehmen verkauft seine Forderungen an ein Factoring-Unternehmen, das dafür sofort einen Großteil der Summe auszahlt und die Beitreibung übernimmt. Vorteil: schnelle Liquidität, keine Beitreibungsgebühren. Nachteil: meist nur Gesamtforderungsbestände abtretbar, kann als Zeichen wirtschaftlicher Schwäche gelten."
+        },
+        {
+          q: "Personalsicherheiten vs. Realsicherheiten bei Krediten?",
+          a: "Personalsicherheiten: Absicherung durch andere Personen (Bürgschaft, Garantie, Schuldübernahme). Realsicherheiten: Absicherung durch Sachen (Eigentumsvorbehalt, Grundpfandrecht, Lombardkredit, Sicherungsübereignung, Zession)."
+        }
+      ],
+      flashcards: [
+        { front: "Auf welcher Bilanzseite steht eine Investition?", back: "Auf der Aktivseite (Mittelverwendung)." },
+        { front: "Auf welcher Bilanzseite steht eine Finanzierung?", back: "Auf der Passivseite (Mittelherkunft)." },
+        { front: "Was fordert die Goldene Finanzregel?", back: "Übereinstimmung der Fristigkeit von Kapitalverwendung und Kapitalbeschaffung (Fristenkongruenz)." },
+        { front: "Was ist Beteiligungsfinanzierung?", back: "Eigenkapital wird dem Unternehmen durch Eigentümer als Einlage zur Verfügung gestellt." },
+        { front: "Was ist Selbstfinanzierung?", back: "Kapital wird durch Bildung von Gewinnrücklagen zur Verfügung gestellt – eine Form der Innenfinanzierung." },
+        { front: "Ist Leasing rechtlich ein Kauf- oder ein Mietvertrag?", back: "Ein Mietvertrag zwischen Leasingnehmer und Leasinggeber." },
+        { front: "Nenne einen Vorteil von Leasing.", back: "Keine sofortige Liquiditätsbelastung, da der Gegenstand nicht im Voraus bezahlt werden muss." },
+        { front: "Direktes vs. indirektes Leasing?", back: "Direktes Leasing: über den Hersteller. Indirektes Leasing: über eine eigenständige Leasinggesellschaft." },
+        { front: "Was passiert beim Factoring mit den Forderungen?", back: "Sie werden an ein Factoring-Unternehmen verkauft, das zur Beitreibung und zum neuen Gläubiger wird." },
+        { front: "Nenne einen Nachteil von Factoring.", back: "Meist können nur Gesamtforderungsbestände abgetreten werden – keine Auswahl einzelner Forderungen." },
+        { front: "Was ist eine Bürgschaft?", back: "Ein Dritter haftet vertraglich für die Verbindlichkeit des eigentlichen Kreditnehmers – eine Personalsicherheit." },
+        { front: "Was ist ein Grundpfandrecht?", back: "Ein Pfandrecht an Grundstücken zur Sicherung von Forderungen, eingetragen im Grundbuch – eine Realsicherheit." },
+        { front: "Was ist ein Lombardkredit?", back: "Ein kurzfristiger Kredit gegen Verpfändung von Wertpapieren, Bankguthaben oder Sachwerten (Faustpfand)." },
+        { front: "Was passiert bei einer Sicherungsübereignung?", back: "Vermögensgegenstände gehen zur Kreditsicherung ins Eigentum des Kreditgebers über, der Kreditnehmer bleibt aber Besitzer." },
+        { front: "Was ist eine Zession?", back: "Forderungsabtretung: Der Kreditnehmer überträgt Forderungen an Dritte vertraglich an den Kreditgeber." },
+        { front: "Was ist ein Kontokorrentkredit?", back: "Der klassische kurzfristige „Überziehungskredit“ (Dispo)." },
+        { front: "Wie funktioniert ein Annuitätendarlehen?", back: "Es wird in gleichbleibenden Raten (Annuitäten) getilgt – der Zinsanteil sinkt, der Tilgungsanteil steigt kontinuierlich." },
+        { front: "Was besagt der Eigentumsvorbehalt?", back: "Der Lieferer behält sich das Eigentum an der Ware bis zur vollständigen Bezahlung vor; der Käufer wird nur Besitzer." }
+      ],
+      quiz: [
+        { q: "Auf welcher Bilanzseite steht eine Investition?", options: ["Passivseite", "Aktivseite", "Beide Seiten gleichzeitig", "Im Anhang"], correct: 1, explain: "Investitionen zeigen die Mittelverwendung und stehen auf der Aktivseite." },
+        { q: "Was fordert die Goldene Finanzregel?", options: ["Maximale Fremdfinanzierung", "Übereinstimmung der Fristigkeit von Mittelverwendung und -beschaffung", "Nur Eigenkapital einzusetzen", "Kredite immer kurzfristig aufzunehmen"], correct: 1, explain: "Langfristiges Vermögen sollte langfristig finanziert sein – und umgekehrt (Fristenkongruenz)." },
+        { q: "Ist Leasing rechtlich gesehen ein …", options: ["Kaufvertrag", "Mietvertrag", "Darlehensvertrag", "Bürgschaftsvertrag"], correct: 1, explain: "Leasing ist rechtlich ein Mietvertrag zwischen Leasinggeber und -nehmer." },
+        { q: "Was passiert beim Factoring?", options: ["Der Kredit wird verpfändet", "Forderungen werden an ein Factoring-Unternehmen verkauft", "Eine Maschine wird geleast", "Ein Grundstück wird belastet"], correct: 1, explain: "Beim Factoring verkauft ein Unternehmen seine offenen Forderungen." },
+        { q: "Eine Bürgschaft zählt zu den …", options: ["Realsicherheiten", "Personalsicherheiten", "Innenfinanzierungen", "Leasingarten"], correct: 1, explain: "Bürgschaften sichern über eine dritte Person ab – Personalsicherheit." },
+        { q: "Ein Grundpfandrecht zählt zu den …", options: ["Personalsicherheiten", "Realsicherheiten", "Beteiligungsfinanzierungen", "Kontokorrentkrediten"], correct: 1, explain: "Grundpfandrechte sichern über eine Sache (Grundstück) ab – Realsicherheit." },
+        { q: "Wie nennt man den klassischen „Überziehungskredit“?", options: ["Avalkredit", "Kontokorrentkredit", "Lombardkredit", "Lieferantenkredit"], correct: 1, explain: "Der Kontokorrentkredit (Dispo) ist der klassische kurzfristige Überziehungskredit." },
+        { q: "Bei welcher Darlehensart bleibt die Rate über die Laufzeit gleich, während sich Zins- und Tilgungsanteil verschieben?", options: ["Fälligkeitsdarlehen", "Abzahlungsdarlehen", "Annuitätendarlehen", "Kündigungsdarlehen"], correct: 2, explain: "Beim Annuitätendarlehen bleibt die Gesamtrate gleich, der Tilgungsanteil steigt, der Zinsanteil sinkt." },
+        { q: "Ist Selbstfinanzierung eine Innen- oder Außenfinanzierung?", options: ["Außenfinanzierung", "Innenfinanzierung", "Weder noch", "Beides gleichzeitig"], correct: 1, explain: "Selbstfinanzierung entsteht im Unternehmen selbst (Gewinnrücklagen) – Innenfinanzierung." },
+        { q: "Was behält der Verkäufer beim Eigentumsvorbehalt bis zur vollständigen Bezahlung?", options: ["Den Besitz der Ware", "Das Eigentum an der Ware", "Nichts, der Käufer übernimmt sofort alles", "Das Nutzungsrecht"], correct: 1, explain: "Beim Eigentumsvorbehalt bleibt der Verkäufer Eigentümer, der Käufer wird nur Besitzer." }
+      ],
+      exam: [
+        {
+          title: "Leasing oder Kredit für eine neue Maschine?",
+          points: 9,
+          task: "Ein Unternehmen möchte eine neue Maschine anschaffen, verfügt aber nur über wenig liquide Mittel. Vergleichen Sie Leasing und Kreditfinanzierung als Alternativen und geben Sie eine begründete Empfehlung.",
+          solution: "Leasing: Die Maschine muss nicht sofort bezahlt werden, es fallen feste monatliche Raten an – das schont die Liquidität. Nachteile: geringere Flexibilität während der Laufzeit, insgesamt meist höhere Gesamtkosten (Verwaltungskosten, Gewinn der Leasinggesellschaft), am Ende gehört die Maschine oft nicht dem Unternehmen.\n\nKreditfinanzierung: Die Maschine wird sofort Eigentum des Unternehmens, es fallen Zinsen und Tilgung an; erfordert aber i. d. R. Sicherheiten und eine höhere Kreditwürdigkeit.\n\nEmpfehlung: Da das Unternehmen aktuell wenig liquide Mittel hat, ist Leasing die sinnvollere Wahl, um die Liquidität zu schonen und dennoch investieren zu können – vorausgesetzt, die Maschine muss nicht dauerhaft Eigentum des Unternehmens werden."
+        },
+        {
+          title: "Factoring bei Liquiditätsengpass",
+          points: 8,
+          task: "Erklären Sie anhand eines Beispiels, wie Factoring abläuft, und nennen Sie je einen Vor- und Nachteil für ein Unternehmen mit akutem Liquiditätsengpass.",
+          solution: "Beispiel: Ein Unternehmen hat offene Kundenforderungen in Höhe von 50.000 € mit 30 Tagen Zahlungsziel. Es verkauft diese Forderungen an ein Factoring-Unternehmen, das umgehend einen Großteil der Summe auszahlt (abzüglich Gebühr) und die Forderungen selbst beim Kunden eintreibt.\n\nVorteil: Das Unternehmen erhält sofort Liquidität, statt 30 Tage auf die Zahlung der Kunden warten zu müssen – wichtig bei einem akuten Engpass.\n\nNachteil: Meist müssen ganze Forderungsbestände abgetreten werden, und die Nutzung von Factoring kann von Geschäftspartnern als Zeichen wirtschaftlicher Schwäche gedeutet werden."
+        }
+      ]
+    },
+
+    // ======================================================================
+    // KAPITEL J
+    // ======================================================================
+    {
+      id: "geschaeftsprozesse",
+      code: "J",
+      title: "Geschäftsprozesse & Organisation",
+      subtitle: "Aufbau- & Ablauforganisation, Stellenarten, Leitungssysteme, Flowchart & EPK",
+      summary: [
+        {
+          q: "Aufbauorganisation vs. Ablauforganisation?",
+          a: "Die Aufbauorganisation legt die Rahmenbedingungen fest: Wer übernimmt was, wie sind Stellen und Hierarchie aufgebaut? Die Ablauforganisation regelt die Arbeits- und Informationsprozesse innerhalb dieser Struktur: Wie und wann wird eine Aufgabe erledigt?"
+        },
+        {
+          q: "Was ist das Analyse-Synthese-Konzept?",
+          a: "Die Gesamtaufgabe wird in Elementaraufgaben zerlegt (nach Verrichtung, Objekt oder Rang). Die Aufgabensynthese fasst sie zu Stellen/Abteilungen zusammen (→ Aufbauorganisation), die Arbeitssynthese zu Arbeitsprozessen (→ Ablauforganisation)."
+        },
+        {
+          q: "Welche Stellenarten gibt es?",
+          a: "Ausführende Stellen (ohne Leitungsbefugnis, z. B. Sachbearbeiter), Instanzen (mit Anordnungsbefugnis, z. B. Abteilungsleiter) und Stabstellen (beratende Hilfsstellen ohne Weisungsrecht, z. B. Rechtsabteilung)."
+        },
+        {
+          q: "Welche Leitungssysteme gibt es?",
+          a: "Einliniensystem (jede Stelle hat nur einen Vorgesetzten), Mehrliniensystem (mehrere Vorgesetzte möglich), Stabliniensystem (Einliniensystem plus beratende Stäbe), Matrixorganisation (zwei gleichberechtigte Hierarchieebenen) und Spartenorganisation (Gliederung nach Produkten/Produktgruppen)."
+        },
+        {
+          q: "Kern- vs. Unterstützungsprozesse – und wie werden sie optimiert?",
+          a: "Kerngeschäftsprozesse erbringen die Hauptleistung mit direktem Kundenbezug (z. B. Vertrieb). Unterstützungsprozesse ergänzen sie indirekt (z. B. IT, Buchhaltung). Optimierung erfolgt z. B. durch Weglassen, Zusammenfassen, Aufteilen, Umsortieren oder Parallelisieren von Vorgängen."
+        },
+        {
+          q: "Flowchart vs. Ereignisgesteuerte Prozesskette (EPK)?",
+          a: "Das Flowchart zeigt den logischen Ablauf einfach mit Oval (Start/Stopp), Rechteck (Bearbeitung) und Karo (Entscheidung). Die EPK ist umfassender: Sechseck = Ereignis, abgerundetes Rechteck = Funktion, Oval = Organisationseinheit, Rechteck = Informationsobjekt. Eine EPK startet und endet immer mit einem Ereignis."
+        }
+      ],
+      flashcards: [
+        { front: "Was regelt die Aufbauorganisation?", back: "Wer übernimmt was – die Gliederung von Aufgaben, Stellen und der Unternehmenshierarchie." },
+        { front: "Was regelt die Ablauforganisation?", back: "Wie und wann eine Aufgabe im Detail erfüllt wird – die Arbeits- und Informationsprozesse." },
+        { front: "Woraus entsteht die Aufbauorganisation im Analyse-Synthese-Konzept?", back: "Aus der Aufgabensynthese – dem Zusammenfassen von Elementaraufgaben zu Stellen und Abteilungen." },
+        { front: "Nenne die 3 Zerlegungskriterien im Analyse-Synthese-Konzept.", back: "Nach Verrichtung (was wird getan), nach Objekt (woran), nach Rang (Entscheidung oder Ausführung)." },
+        { front: "Was ist eine ausführende Stelle?", back: "Eine Stelle ohne Leitungsbefugnisse, z. B. Sachbearbeiter oder Schreibkraft." },
+        { front: "Was ist eine Instanz?", back: "Eine Stelle mit Anordnungs- und Entscheidungsbefugnis gegenüber rangniedrigeren Stellen, z. B. Abteilungsleiter." },
+        { front: "Was ist eine Stabstelle?", back: "Eine beratende Hilfsstelle einer Instanz ohne Weisungsbefugnis, z. B. Rechtsabteilung." },
+        { front: "Was kennzeichnet das Einliniensystem?", back: "Jede Stelle erhält Weisungen nur von einer einzigen übergeordneten Stelle." },
+        { front: "Was kennzeichnet das Mehrliniensystem?", back: "Mindestens eine Stelle erhält Weisungen von mehreren übergeordneten Stellen (mehrere Vorgesetzte)." },
+        { front: "Was kennzeichnet die Matrixorganisation?", back: "Die Leitungsfunktion wird auf zwei gleichberechtigte, unabhängige Dimensionen verteilt." },
+        { front: "Was kennzeichnet die Spartenorganisation?", back: "Eine Spezialisierung nach Produkten oder Produktgruppen (divisionale Organisation)." },
+        { front: "Nenne ein Beispiel für einen Kerngeschäftsprozess.", back: "Einkauf, Vertrieb oder Logistik – direkter Bezug zum Kunden und zur Wertschöpfung." },
+        { front: "Nenne ein Beispiel für einen Unterstützungsprozess.", back: "Personaleinstellung, IT oder Buchhaltung – indirekter Beitrag zur Wertschöpfung." },
+        { front: "Nenne 3 Maßnahmen zur Optimierung von Geschäftsprozessen.", back: "Z. B. Weglassen von Vorgängen, Zusammenfassen von Vorgängen, Parallelisierung von Vorgängen." },
+        { front: "Wofür steht ein Oval im Flowchart?", back: "Für Start bzw. Stopp – Anfangs- und Endpunkt des Arbeitsablaufs." },
+        { front: "Wofür steht ein Karo im Flowchart?", back: "Für einen Entscheidungsschritt mit Abzweigungen." },
+        { front: "Wofür steht ein Sechseck in der EPK?", back: "Für ein Ereignis – was sich ereignet hat." },
+        { front: "Womit startet und endet eine EPK immer?", back: "Mit Ereignissen – Ereignisse und Funktionen wechseln sich dabei immer ab." }
+      ],
+      quiz: [
+        { q: "Was regelt die Aufbauorganisation?", options: ["Wie eine Aufgabe erledigt wird", "Wer welche Aufgaben übernimmt und wie die Hierarchie aufgebaut ist", "Nur die Buchhaltung", "Die Entlohnung der Mitarbeiter"], correct: 1, explain: "Die Aufbauorganisation legt Stellen, Aufgabenverteilung und Hierarchie fest." },
+        { q: "Stellen ohne Leitungsbefugnis nennt man …", options: ["Instanzen", "Stabstellen", "Ausführende Stellen", "Führungsstellen"], correct: 2, explain: "Ausführende Stellen wie Sachbearbeiter haben keine Leitungsbefugnisse." },
+        { q: "Beratende Hilfsstellen ohne Weisungsbefugnis heißen …", options: ["Instanzen", "Stabstellen", "Linienstellen", "Zentralstellen"], correct: 1, explain: "Stabstellen (z. B. Rechtsabteilung) beraten, dürfen aber keine Weisungen erteilen." },
+        { q: "Beim Einliniensystem erhält eine Stelle Weisungen von …", options: ["mehreren übergeordneten Stellen", "nur einer übergeordneten Stelle", "gar keiner Stelle", "der Belegschaft direkt"], correct: 1, explain: "Charakteristisch für das Einliniensystem ist genau ein Vorgesetzter pro Stelle." },
+        { q: "Was ist typisch für die Matrixorganisation?", options: ["Nur eine Hierarchieebene", "Mitarbeiter haben zwei Vorgesetzte", "Keine Weisungsbefugnisse", "Nur für kleine Betriebe geeignet"], correct: 1, explain: "In der Matrixorganisation unterstehen Mitarbeiter zwei gleichberechtigten Dimensionen (z. B. Funktion und Produkt)." },
+        { q: "Kerngeschäftsprozesse zeichnen sich aus durch …", options: ["Indirekten Kundenbezug", "Direkten Bezug zur Wertschöpfung und zum Kunden", "Ausschließlich interne Verwaltung", "Keine Bedeutung für den Erfolg"], correct: 1, explain: "Kerngeschäftsprozesse wie Vertrieb haben direkten Bezug zur Wertschöpfung." },
+        { q: "Welche Maßnahme gehört NICHT zur Prozessoptimierung?", options: ["Weglassen von Vorgängen", "Parallelisierung von Vorgängen", "Zufällige Reihenfolge beibehalten", "Zusammenfassen von Vorgängen"], correct: 2, explain: "Prozessoptimierung zielt gerade auf eine durchdachte, nicht zufällige Reihenfolge ab." },
+        { q: "Im Flowchart steht ein Oval für …", options: ["Bearbeitung", "Entscheidung", "Start/Stopp", "Dokument"], correct: 2, explain: "Das Oval markiert Anfang und Ende eines Arbeitsablaufs." },
+        { q: "Im Flowchart steht ein Karo für …", options: ["Start/Stopp", "Bearbeitung", "Entscheidungsschritt mit Abzweigen", "Organisationseinheit"], correct: 2, explain: "Das Karo kennzeichnet Verzweigungen bei Entscheidungen." },
+        { q: "In der EPK steht ein Sechseck für …", options: ["Funktion", "Ereignis", "Organisationseinheit", "Informationsobjekt"], correct: 1, explain: "Das Sechseck steht für ein Ereignis – was passiert ist." },
+        { q: "Womit beginnt und endet eine EPK immer?", options: ["Mit Funktionen", "Mit Organisationseinheiten", "Mit Ereignissen", "Mit Informationsobjekten"], correct: 2, explain: "Eine EPK beginnt und endet stets mit Ereignissen, die sich mit Funktionen abwechseln." }
+      ],
+      exam: [
+        {
+          title: "Aufbau- vs. Ablauforganisation im Büroalltag",
+          points: 8,
+          task: "Erklären Sie den Unterschied zwischen Aufbau- und Ablauforganisation anhand eines Beispiels aus einem Bürobetrieb (z. B. Bearbeitung von Kundenanfragen).",
+          solution: "Die Aufbauorganisation legt fest, WER die Kundenanfragen bearbeitet – z. B. gibt es eine eigene Abteilung „Kundenservice“ mit einer Abteilungsleitung (Instanz) und mehreren Sachbearbeitern (ausführende Stellen).\n\nDie Ablauforganisation legt fest, WIE der Prozess im Detail abläuft: Die Anfrage geht per E-Mail ein, wird von einem Sachbearbeiter geprüft, innerhalb von 24 Stunden beantwortet und bei Bedarf an eine Fachabteilung weitergeleitet. Aufbauorganisation schafft also die Struktur, Ablauforganisation den konkreten Prozess innerhalb dieser Struktur."
+        },
+        {
+          title: "Prozessoptimierung Rechnungsprüfung",
+          points: 7,
+          task: "Ein Unternehmen möchte den Prozess der Rechnungsprüfung optimieren. Schlagen Sie anhand von 3 der genannten Optimierungsmaßnahmen konkrete Verbesserungen vor.",
+          solution: "1. Weglassen von Vorgängen: Eine doppelte manuelle Prüfung durch zwei verschiedene Mitarbeiter wird auf eine Prüfung reduziert, wenn die zweite keinen echten Mehrwert bringt.\n2. Parallelisierung von Vorgängen: Die rechnerische Prüfung und die inhaltliche Freigabe durch die Fachabteilung laufen gleichzeitig statt nacheinander.\n3. Zusammenfassen von Vorgängen: Rechnungsprüfung und Zahlungsfreigabe werden in einem Arbeitsschritt gebündelt, statt sie an zwei verschiedenen Tagen von unterschiedlichen Personen durchführen zu lassen."
+        }
+      ]
+    },
+
+    // ======================================================================
+    // KAPITEL K
+    // ======================================================================
+    {
+      id: "veranstaltungen",
+      code: "K",
+      title: "Veranstaltungen & Geschäftsreisen",
+      subtitle: "Protokolle, Checklisten, Sitzung vs. Besprechung, Reiseplanung, Reisekostenabrechnung",
+      summary: [
+        {
+          q: "Die drei Protokollarten im Überblick?",
+          a: "Vollprotokoll (Wortprotokoll): hält den genauen Wortlaut fest, sehr aufwändig. Verlaufsprotokoll: gibt den Ablauf zusammengefasst, aber nachvollziehbar wieder. Ergebnisprotokoll: hält nur Kernaussagen und Entscheidungen fest, keine Redebeiträge."
+        },
+        {
+          q: "Was gehört zur Vorbereitung einer betrieblichen Veranstaltung?",
+          a: "Eine Checkliste mit Terminabsprache, Raum und Unterbringung, Kostenübernahme, Referenten, Programm, Einladungsschreiben und Unterlagen. Zusätzlich müssen rechtliche Vorschriften und Versicherungen bedacht werden, z. B. Veranstaltungshaftpflicht- sowie Brand- und Diebstahlversicherung."
+        },
+        {
+          q: "Sitzung vs. Besprechung?",
+          a: "Eine Sitzung ist vorab geplant und mit Formalitäten verbunden (Einladung, Tagesordnung, Protokoll). Bei einer Besprechung tauscht nur eine kleine Gruppe informell Informationen aus – ohne Formalitäten."
+        },
+        {
+          q: "Wie läuft die Planung einer Geschäftsreise ab?",
+          a: "1. Genehmigung per Geschäftsreiseantrag, 2. Ermittlung des Reiseprofils (Reisemittel, Unterbringung, Formalitäten), 3. Vergleich und Auswahl, 4. Erstellung der Reisedokumente, 5. Reisekostenabrechnung im Anschluss."
+        },
+        {
+          q: "Was gehört zur Reisekostenabrechnung?",
+          a: "Fahrtkosten (z. B. 0,30 €/km beim PKW), Verpflegungsmehraufwand (pauschal, gestaffelt nach Abwesenheitsdauer), Übernachtungskosten sowie Reisenebenkosten (Taxi, Parkgebühren, Porto). Bußgelder zählen ausdrücklich NICHT zu den Reisekosten."
+        },
+        {
+          q: "Wie hoch sind die Pauschalen für Verpflegungsmehraufwand?",
+          a: "Bei einer Abwesenheit von mehr als 8 bis unter 24 Stunden: 12 €. Bei einer vollen Abwesenheit von 24 Stunden: 24 €. Wird eine Mahlzeit vom Arbeitgeber gestellt (z. B. Hotelfrühstück), wird ein entsprechender Betrag abgezogen (Frühstück 4,80 €)."
+        }
+      ],
+      flashcards: [
+        { front: "Was ist ein Vollprotokoll?", back: "Ein „Wortprotokoll“, das den genauen Wortlaut der Sitzung festhält – sehr aufwändig, aber lückenlos." },
+        { front: "Was ist ein Verlaufsprotokoll?", back: "Der vollständige Verlauf wird knapper und sachlicher als beim Vollprotokoll wiedergegeben." },
+        { front: "Was ist ein Ergebnisprotokoll?", back: "Nur Kernaussagen und Entscheidungen werden festgehalten – keine einzelnen Redebeiträge." },
+        { front: "Nenne 4 Pflichtinhalte eines Protokolls.", back: "Titel der Veranstaltung, Datum/Ort, Beginn und Ende, Angaben zu Teilnehmern/Leiter, Ergebnisse, Unterschrift." },
+        { front: "Sitzung vs. Besprechung?", back: "Sitzung: formal geplant, mit Einladung, Tagesordnung und Protokoll. Besprechung: informeller Austausch einer kleinen Gruppe." },
+        { front: "Nenne die 5 Schritte der Geschäftsreiseplanung.", back: "Genehmigung/Reiseantrag, Ermittlung des Reiseprofils, Vergleich und Auswahl, Erstellung der Reisedokumente, Reisekostenabrechnung." },
+        { front: "Nenne 4 Bestandteile der Reisekostenabrechnung.", back: "Fahrtkosten, Verpflegungsmehraufwand, Übernachtungskosten, Reisenebenkosten." },
+        { front: "Wie hoch ist die Kilometerpauschale für PKW-Fahrten?", back: "0,30 € pro Kilometer." },
+        { front: "Wie hoch ist der Verpflegungsmehraufwand bei Abwesenheit über 8 bis unter 24 Stunden?", back: "12 €." },
+        { front: "Wie hoch ist der Verpflegungsmehraufwand bei 24 Stunden Abwesenheit?", back: "24 €." },
+        { front: "Was zählt NICHT zu den Reisekosten?", back: "Verwarnungs- und Bußgelder." },
+        { front: "Wofür braucht man eine Veranstaltungshaftpflichtversicherung?", back: "Zum Schutz vor Schadenersatzansprüchen im Rahmen einer betrieblichen Veranstaltung." }
+      ],
+      quiz: [
+        { q: "Welches Protokoll hält den genauen Wortlaut fest?", options: ["Ergebnisprotokoll", "Verlaufsprotokoll", "Vollprotokoll", "Kurzprotokoll"], correct: 2, explain: "Das Vollprotokoll (Wortprotokoll) hält jede Aussage wortgetreu fest." },
+        { q: "Welches Protokoll hält nur Kernaussagen und Entscheidungen fest?", options: ["Vollprotokoll", "Verlaufsprotokoll", "Ergebnisprotokoll", "Detailprotokoll"], correct: 2, explain: "Beim Ergebnisprotokoll zählt nur das Ergebnis, nicht der Weg dahin." },
+        { q: "Was unterscheidet eine Sitzung von einer Besprechung?", options: ["Kein Unterschied", "Eine Sitzung ist formal geplant, eine Besprechung informell", "Besprechungen sind immer größer", "Sitzungen brauchen kein Protokoll"], correct: 1, explain: "Sitzungen sind mit Formalitäten wie Einladung und Protokoll verbunden, Besprechungen nicht." },
+        { q: "Wie hoch ist die Kilometerpauschale für PKW-Fahrten?", options: ["0,20 €/km", "0,25 €/km", "0,30 €/km", "0,35 €/km"], correct: 2, explain: "Die gängige Pauschale beträgt 0,30 € pro gefahrenem Kilometer." },
+        { q: "Wie hoch ist der Verpflegungsmehraufwand bei einer Abwesenheit von über 8 bis unter 24 Stunden?", options: ["6 €", "12 €", "18 €", "24 €"], correct: 1, explain: "Für diese Abwesenheitsdauer gilt eine Pauschale von 12 €." },
+        { q: "Wie hoch ist der Verpflegungsmehraufwand bei voller 24-Stunden-Abwesenheit?", options: ["12 €", "18 €", "24 €", "30 €"], correct: 2, explain: "Für einen vollen Abwesenheitstag (24 Std.) gilt eine Pauschale von 24 €." },
+        { q: "Zählen Verwarnungs- und Bußgelder zu den Reisekosten?", options: ["Ja, immer", "Nein", "Nur bei Dienstwagen", "Nur im Ausland"], correct: 1, explain: "Bußgelder sind ausdrücklich von den erstattungsfähigen Reisekosten ausgeschlossen." },
+        { q: "Was ist der erste Schritt bei der Planung einer Geschäftsreise?", options: ["Reisekostenabrechnung", "Genehmigung mittels Geschäftsreiseantrag", "Buchung des Hotels", "Erstellung der Reisedokumente"], correct: 1, explain: "Zuerst muss die Reise genehmigt und der Bedarf erfasst werden." },
+        { q: "Was gehört zu den Reisenebenkosten?", options: ["Übernachtungskosten", "Taxi- und Parkgebühren", "Fahrtkosten mit dem PKW", "Verpflegungsmehraufwand"], correct: 1, explain: "Reisenebenkosten umfassen z. B. Taxi, Mietwagen, Porto und Parkgebühren." },
+        { q: "Warum wird bei einem inkludierten Hotelfrühstück ein Betrag vom Verpflegungsmehraufwand abgezogen?", options: ["Aus steuerlichen Gründen ohne Zusammenhang", "Weil die Mahlzeit bereits vom Arbeitgeber gestellt wurde", "Weil Frühstück nie erstattet wird", "Nur bei Auslandsreisen"], correct: 1, explain: "Wird eine Mahlzeit vom Arbeitgeber gestellt, darf dafür kein zusätzlicher Verpflegungsmehraufwand geltend gemacht werden." }
+      ],
+      exam: [
+        {
+          title: "Checkliste für eine betriebliche Tagung",
+          points: 8,
+          task: "Planen Sie eine betriebliche Tagung anhand einer Checkliste. Nennen Sie mindestens 5 relevante Punkte, die vorab geklärt werden müssen.",
+          solution: "1. Terminabsprache mit allen relevanten Personen.\n2. Tagungsraum und Unterbringung der Teilnehmer klären.\n3. Kostenübernahme und Budget festlegen.\n4. Referenten einladen und Programm erstellen.\n5. Einladungsschreiben an die Teilnehmer versenden.\n6. Benötigte Unterlagen zusammenstellen.\n7. Relevante Versicherungen prüfen (z. B. Veranstaltungshaftpflicht) und gesetzliche Vorschriften (z. B. Versammlungsstättenverordnung) beachten."
+        },
+        {
+          title: "Reisekostenabrechnung berechnen",
+          points: 10,
+          task: "Eine Mitarbeiterin tritt eine zweitägige Geschäftsreise an: Abreise am 1. Tag um 7:00 Uhr, Rückkehr am 2. Tag um 20:00 Uhr. Sie fährt insgesamt 320 km mit dem privaten PKW (Hin- und Rückfahrt). Im Hotel ist das Frühstück (4,80 €) bereits inklusive. Berechnen Sie die Gesamterstattung aus Fahrtkosten und Verpflegungsmehraufwand.",
+          solution: "Fahrtkosten: 320 km × 0,30 € = 96,00 €.\n\nVerpflegungsmehraufwand:\nTag 1 (7:00–24:00 Uhr = 17 Std., also über 8 bis unter 24 Std.): 12,00 €\nTag 2 (0:00–20:00 Uhr = 20 Std., ebenfalls über 8 bis unter 24 Std.): 12,00 €\nZwischensumme: 24,00 €\n− Kürzung für das im Hotel enthaltene Frühstück: 4,80 €\n= Verpflegungsmehraufwand gesamt: 19,20 €\n\nGesamterstattung = 96,00 € + 19,20 € = 115,20 € (zzgl. der separat abgerechneten Hotelkosten)."
+        }
+      ]
+    },
+
+    // ======================================================================
+    // KAPITEL L
+    // ======================================================================
+    {
+      id: "projektmanagement",
+      code: "L",
+      title: "Projektplanung & -durchführung",
+      subtitle: "Projektmerkmale, Goldenes Dreieck, Projektorganisation, PSP, Angebotsvergleich, Gantt-Diagramm",
+      summary: [
+        {
+          q: "Was macht ein Projekt aus?",
+          a: "Die Einmaligkeit der Rahmenbedingungen: eine zeitliche Begrenzung (fester Start- und Endtermin), ein klares Ziel, eine projektspezifische (vorübergehende) Organisation und meist eine finanzielle Begrenzung. Routinearbeiten sind daher per Definition keine Projekte."
+        },
+        {
+          q: "Was ist das Goldene Dreieck des Projektmanagements?",
+          a: "Drei teils konkurrierende Ziele: Sachziel (Was soll erreicht werden – Leistung/Qualität), Kostenziel (Budget) und Terminziel (zeitlicher Rahmen). Bei mindestens einem Ziel muss meist ein Kompromiss eingegangen werden – „schnell, billig oder gut: wählen Sie zwei“."
+        },
+        {
+          q: "Welche Projektorganisationsformen gibt es?",
+          a: "Reine Projektorganisation (Projektleiter mit vollem Weisungsrecht, neue Infrastruktur), Linienorganisation (Projekt läuft innerhalb einer Abteilung), Stabsorganisation (Projektleiter koordiniert nur, ohne Weisungsrecht) und Matrixorganisation (Projektleiter hat Weisungsbefugnis, Mitarbeiter haben zwei Vorgesetzte)."
+        },
+        {
+          q: "Was ist ein Projektstrukturplan (PSP)?",
+          a: "Eine hierarchische Top-Down-Darstellung aller Arbeiten, die zur Zielerreichung nötig sind. Die 100 %-Regel besagt: Jede Ebene bildet die Arbeit der darunterliegenden Ebene vollständig ab. Ein guter PSP fokussiert auf Ergebnisse, nicht auf bloße Aktivitäten."
+        },
+        {
+          q: "Wie funktioniert der Angebotsvergleich – und was ist das ökonomische Prinzip?",
+          a: "Quantitativer Vergleich: anhand des Preises (Einkaufskalkulation). Qualitativer Vergleich: Kriterien werden gewichtet, jedes Angebot wird bewertet (1–5 Punkte) und die gewichteten Punkte werden addiert. Das ökonomische Prinzip fordert dabei entweder maximalen Erfolg bei gegebenen Mitteln (Maximalprinzip) oder minimalen Mitteleinsatz bei festem Ziel (Minimalprinzip)."
+        },
+        {
+          q: "Was zeigt ein Gantt-Diagramm?",
+          a: "Ein horizontales Balkendiagramm, das den Projektplan auf einer Zeitachse abbildet: Zeitspanne und Dauer jeder Aufgabe, Reihenfolge und Abhängigkeiten, Fortschritt sowie Meilensteine. Es dient der Planung, Überwachung und Kommunikation im Projektverlauf."
+        }
+      ],
+      flashcards: [
+        { front: "Nenne die 4 Rahmenbedingungen eines Projekts.", back: "Zeitliche Begrenzung, klares Ziel, projektspezifische Organisation, oft finanzielle Begrenzung." },
+        { front: "Nenne die 3 Ziele des Goldenen Dreiecks.", back: "Sachziel, Kostenziel, Terminziel." },
+        { front: "Was beschreibt das Sachziel eines Projekts?", back: "Was geplant und erreicht werden soll – die Leistung bzw. Qualität des Ergebnisses." },
+        { front: "Was beschreibt das Terminziel eines Projekts?", back: "Den zeitlichen Rahmen mit Fristen und Deadlines." },
+        { front: "Was ist ein Vorteil der reinen Projektorganisation?", back: "Hohe Konzentration auf das Projekt und kurze Kommunikationswege." },
+        { front: "Was ist ein Nachteil der reinen Projektorganisation?", back: "Die Rückkehr der Mitarbeiter in ihre alten Positionen nach Projektende ist oft schwierig." },
+        { front: "Was ist ein Nachteil der Matrixorganisation im Projekt?", back: "Mitarbeiter haben zwei Vorgesetzte (Projekt und ursprüngliche Abteilung) – hoher Kommunikationsaufwand." },
+        { front: "Was besagt die 100 %-Regel im PSP?", back: "Jede Ebene des PSP muss die Arbeit der darunterliegenden Ebene vollständig (zu 100 %) abbilden." },
+        { front: "Worauf sollte ein guter PSP fokussieren?", back: "Auf Ergebnisse (was soll entstehen), nicht auf bloße Aktivitäten (was tun wir)." },
+        { front: "Nenne 2 Qualitätsmerkmale eines guten PSP.", back: "Verwaltbar/verantwortlich (klare Zuständigkeit) und schätzbar (Dauer und Kosten bezifferbar)." },
+        { front: "Was besagt das Maximalprinzip?", back: "Mit den gegebenen Mitteln soll der größtmögliche Erfolg erzielt werden." },
+        { front: "Was besagt das Minimalprinzip?", back: "Ein geplanter Erfolg soll mit dem geringstmöglichen Mitteleinsatz erzielt werden." },
+        { front: "Wie läuft der qualitative Angebotsvergleich ab?", back: "Kriterien aufstellen, gewichten (insgesamt 100 %), jedes Angebot bewerten (1–5 Punkte), Erfüllungsgrad × Prozentsatz, Ergebnisse addieren – höchste Punktzahl gewinnt." },
+        { front: "Was zeigt die Länge der Balken im Gantt-Diagramm?", back: "Wie viel Zeit für eine Aufgabe eingeplant ist (Dauer)." },
+        { front: "Wofür wird das Gantt-Diagramm im Projektverlauf genutzt?", back: "Zur Planung, Überwachung des Fortschritts und Kommunikation des Status an das Team." }
+      ],
+      quiz: [
+        { q: "Welches Merkmal kennzeichnet KEIN Projekt?", options: ["Zeitliche Begrenzung", "Ein klares Ziel", "Beliebige Wiederholbarkeit als Routinearbeit", "Eine projektspezifische Organisation"], correct: 2, explain: "Projekte sind einmalig – Routinearbeiten zählen per Definition nicht als Projekt." },
+        { q: "Nenne die 3 Ziele des Goldenen Dreiecks.", options: ["Sach-, Kosten-, Terminziel", "Qualität, Quantität, Zeit", "Personal, Budget, Ort", "Planung, Kontrolle, Steuerung"], correct: 0, explain: "Das Goldene Dreieck besteht aus Sachziel, Kostenziel und Terminziel." },
+        { q: "Bei der reinen Projektorganisation hat der Projektleiter …", options: ["kein Weisungsrecht", "volles Weisungsrecht bis Projektende", "nur beratende Funktion", "Weisungsrecht nur über sich selbst"], correct: 1, explain: "In der reinen Projektorganisation besitzt der Projektleiter volles Weisungsrecht über die Projektmitarbeiter." },
+        { q: "Was ist typisch für Mitarbeiter in der Matrixorganisation eines Projekts?", options: ["Sie haben keinen Vorgesetzten", "Sie haben zwei Vorgesetzte", "Sie arbeiten nur remote", "Sie sind immer freigestellt"], correct: 1, explain: "In der Matrixorganisation unterstehen Mitarbeiter sowohl der Projektleitung als auch ihrer Fachabteilung." },
+        { q: "Was besagt die 100 %-Regel im Projektstrukturplan?", options: ["Jedes Arbeitspaket kostet gleich viel", "Jede Ebene bildet die darunterliegende Ebene vollständig ab", "Das Projekt muss zu 100 % im Budget bleiben", "Alle Mitarbeiter müssen zu 100 % ausgelastet sein"], correct: 1, explain: "Die Summe der untergeordneten Elemente muss immer genau das übergeordnete Element ergeben." },
+        { q: "Worauf sollte sich ein guter PSP konzentrieren?", options: ["Auf Aktivitäten", "Auf Ergebnisse", "Auf Personalkosten", "Auf Meetings"], correct: 1, explain: "Ein guter PSP beschreibt, was entstehen soll (Ergebnisse), nicht nur was getan wird." },
+        { q: "Was besagt das Minimalprinzip?", options: ["Maximaler Erfolg mit gegebenen Mitteln", "Ein Ziel mit geringstmöglichem Mitteleinsatz erreichen", "Immer die billigste Option wählen", "Kosten sind irrelevant"], correct: 1, explain: "Das Minimalprinzip fordert, ein geplantes Ziel mit möglichst wenig Mitteleinsatz zu erreichen." },
+        { q: "Wie läuft der qualitative Angebotsvergleich grundsätzlich ab?", options: ["Nur der günstigste Preis zählt", "Kriterien werden gewichtet und bewertet, Punkte addiert", "Zufällige Auswahl", "Nur die Lieferzeit wird verglichen"], correct: 1, explain: "Kriterien werden gewichtet, jedes Angebot bewertet, die gewichteten Punkte werden addiert." },
+        { q: "Was zeigt ein Gantt-Diagramm NICHT direkt?", options: ["Dauer von Aufgaben", "Reihenfolge von Aufgaben", "Die genaue Rechtsform des Unternehmens", "Meilensteine"], correct: 2, explain: "Ein Gantt-Diagramm zeigt Zeitspannen, Dauer, Reihenfolge und Meilensteine – keine Rechtsformen." },
+        { q: "Was ist die letzte Phase eines Projekts?", options: ["Projektstrukturplan", "Projektabschluss", "Projektstart", "Angebotsvergleich"], correct: 1, explain: "Der Projektabschluss bildet die letzte Phase und berücksichtigt die Interessen aller Beteiligten." }
+      ],
+      exam: [
+        {
+          title: "Projektstrukturplan für eine Firmenfeier",
+          points: 9,
+          task: "Erstellen Sie in Textform einen einfachen Projektstrukturplan für die Planung einer Firmenfeier mit mindestens 3 Teilprojekten und je 2 Arbeitspaketen.",
+          solution: "Projekt: Firmenfeier\n\nTeilprojekt 1 – Location & Catering:\n– Arbeitspaket: Räumlichkeiten anfragen und buchen\n– Arbeitspaket: Catering-Angebote einholen und beauftragen\n\nTeilprojekt 2 – Programm & Unterhaltung:\n– Arbeitspaket: Ablaufplan erstellen\n– Arbeitspaket: Musik/Unterhaltung organisieren\n\nTeilprojekt 3 – Einladung & Kommunikation:\n– Arbeitspaket: Einladungen gestalten und versenden\n– Arbeitspaket: Rückmeldungen erfassen und Teilnehmerliste pflegen\n\n(Gemäß 100 %-Regel decken die Arbeitspakete jeweils vollständig das zugehörige Teilprojekt ab.)"
+        },
+        {
+          title: "Qualitativer Angebotsvergleich",
+          points: 9,
+          task: "Ein Unternehmen vergleicht zwei Lieferantenangebote anhand der Kriterien Qualität (Gewichtung 60 %) und Preis (Gewichtung 40 %). Angebot A erfüllt die Qualität voll (5 Punkte) und den Preis nur teilweise (3 Punkte). Angebot B erfüllt die Qualität teilweise (3 Punkte) und den Preis voll (5 Punkte). Berechnen Sie die gewichteten Punktzahlen und geben Sie eine Empfehlung ab.",
+          solution: "Angebot A: (60 % × 5) + (40 % × 3) = 3,0 + 1,2 = 4,2 Punkte\nAngebot B: (60 % × 3) + (40 % × 5) = 1,8 + 2,0 = 3,8 Punkte\n\nEmpfehlung: Angebot A erzielt mit 4,2 Punkten die höhere Gesamtbewertung und sollte gewählt werden, da die Qualität hier stärker gewichtet ist und Angebot A in diesem wichtigeren Kriterium besser abschneidet."
+        }
+      ]
+    },
+
+    // ======================================================================
+    // KAPITEL M
+    // ======================================================================
+    {
+      id: "rechtsformen",
+      code: "M",
+      title: "Firma & Rechtsformen",
+      subtitle: "Handelsregister, Einzelunternehmen, OHG, KG, GmbH, AG, Prokura, Kaufmannsarten",
+      summary: [
+        {
+          q: "Was ist die „Firma“ eines Kaufmanns – und welche Grundsätze gelten?",
+          a: "Die Firma ist der Handelsname, unter dem ein Kaufmann seine Geschäfte betreibt (Personen-, Sach-, Fantasie- oder Mischfirma). Die Firmengrundsätze aus dem HGB: Firmenöffentlichkeit (Handelsregistereintrag), Firmenbeständigkeit, Firmenunterscheidbarkeit und Firmenwahrheit."
+        },
+        {
+          q: "Handelsregister – Abteilung A vs. B?",
+          a: "Abteilung A: Einzelkaufleute und Personengesellschaften (z. B. OHG, KG). Abteilung B: ausschließlich Kapitalgesellschaften (z. B. GmbH, AG). Das Handelsregister ist öffentlich einsehbar."
+        },
+        {
+          q: "Einzelunternehmen, OHG und KG im Vergleich?",
+          a: "Einzelunternehmen: ein Inhaber, unbeschränkte Haftung. OHG: mind. 2 Gesellschafter, alle haften unbeschränkt und solidarisch. KG: mind. 2 Gesellschafter – der Komplementär haftet unbeschränkt und führt die Geschäfte, der Kommanditist haftet nur mit seiner Einlage und ist von der Geschäftsführung ausgeschlossen."
+        },
+        {
+          q: "GmbH vs. AG – die wichtigsten Eckdaten?",
+          a: "GmbH: Mindestkapital 25.000 €, davon mind. 12.500 € bar einzuzahlen, Haftung nur mit dem Gesellschaftsvermögen, Gründung ab 1 Person möglich. AG: Mindestkapital 50.000 € (Grundkapital, aufgeteilt in Aktien), Organe sind Vorstand, Aufsichtsrat und Hauptversammlung."
+        },
+        {
+          q: "Prokura vs. einfache Handlungsvollmacht?",
+          a: "Prokura wird ins Handelsregister eingetragen und berechtigt umfassend (u. a. Grundstückserwerb, Personal einstellen/kündigen, Darlehen aufnehmen) – aber NICHT zum Verkauf des Unternehmens oder zur Insolvenzanmeldung. Handlungsvollmacht ist enger gefasst (General-, Art- oder Einzelhandlungsvollmacht) und muss nicht ins Handelsregister eingetragen werden."
+        },
+        {
+          q: "Die vier Kaufmannsarten?",
+          a: "Ist-Kaufmann (auch ohne Eintrag Kaufmann, Eintrag deklaratorisch), Form-Kaufmann (kraft Rechtsform, Eintrag konstitutiv), Fiktiv-Kaufmann (versehentlich eingetragen, eigentlich kein Kaufmann) und Kann-Kaufmann (freiwillige Eintragung möglich, dann konstitutiv)."
+        }
+      ],
+      flashcards: [
+        { front: "Was ist die „Firma“ eines Kaufmanns?", back: "Der Name, unter dem der Kaufmann seine Geschäfte betreibt – der Handelsname." },
+        { front: "Nenne die 4 Firmengrundsätze.", back: "Firmenöffentlichkeit, Firmenbeständigkeit, Firmenunterscheidbarkeit, Firmenwahrheit." },
+        { front: "Was wird in Handelsregister-Abteilung A eingetragen?", back: "Einzelkaufleute und Personengesellschaften." },
+        { front: "Was wird in Handelsregister-Abteilung B eingetragen?", back: "Ausschließlich Kapitalgesellschaften." },
+        { front: "Wie haftet ein Einzelunternehmer?", back: "Unbeschränkt mit Privat- und Geschäftsvermögen." },
+        { front: "Wie viele Gesellschafter braucht eine OHG mindestens?", back: "Mindestens 2." },
+        { front: "Wie haften die Gesellschafter einer OHG?", back: "Unmittelbar, solidarisch und unbeschränkt mit dem Privatvermögen." },
+        { front: "Komplementär vs. Kommanditist bei der KG?", back: "Komplementär: Vollhafter, führt die Geschäfte. Kommanditist: Teilhafter, haftet nur mit seiner Einlage, keine Geschäftsführung." },
+        { front: "Wie hoch ist das gesetzliche Mindestkapital einer GmbH?", back: "25.000 €, davon mind. 12.500 € bar einzuzahlen." },
+        { front: "Wie haftet eine GmbH?", back: "Nur mit dem Gesellschaftsvermögen (den Einlagen)." },
+        { front: "Wie hoch ist das Mindestkapital (Grundkapital) einer AG?", back: "50.000 €, zerlegt in Aktien." },
+        { front: "Nenne die 3 Organe einer AG.", back: "Vorstand, Aufsichtsrat, Hauptversammlung." },
+        { front: "Wer überwacht den Vorstand einer AG?", back: "Der Aufsichtsrat – er bestellt und beruft den Vorstand ab." },
+        { front: "Darf ein Prokurist das Unternehmen verkaufen?", back: "Nein – das gehört nicht zu den Befugnissen der Prokura." },
+        { front: "Einzelprokura vs. Gesamtprokura?", back: "Einzelprokura: der Prokurist darf allein handeln. Gesamtprokura: mehrere Prokuristen müssen gemeinschaftlich handeln." },
+        { front: "Was ist ein Ist-Kaufmann?", back: "Ein Kaufmann auch ohne Handelsregistereintrag – der Eintrag ist deklaratorisch (rechtserklärend), aber verpflichtend." },
+        { front: "Was ist ein Kann-Kaufmann?", back: "Kann sich freiwillig ins Handelsregister eintragen lassen – der Eintrag ist dann konstitutiv (rechtsbegründend)." },
+        { front: "Was ist ein Fiktiv-Kaufmann?", back: "Eine Person, die sich versehentlich hat eintragen lassen – kein echter Kaufmann nach HGB, Eintrag jederzeit löschbar." }
+      ],
+      quiz: [
+        { q: "Was versteht man unter der „Firma“ eines Kaufmanns?", options: ["Das Betriebsgebäude", "Den Handelsnamen, unter dem er Geschäfte betreibt", "Die Rechtsform", "Das Startkapital"], correct: 1, explain: "Die Firma ist der Name, mit dem der Kaufmann im Geschäftsverkehr auftritt." },
+        { q: "In welcher Handelsregisterabteilung werden Kapitalgesellschaften eingetragen?", options: ["Abteilung A", "Abteilung B", "Abteilung C", "Es gibt keine Abteilungen"], correct: 1, explain: "Abteilung B ist ausschließlich Kapitalgesellschaften vorbehalten." },
+        { q: "Wie haftet der Einzelunternehmer?", options: ["Nur mit der Einlage", "Unbeschränkt mit Privat- und Geschäftsvermögen", "Gar nicht", "Nur mit dem halben Vermögen"], correct: 1, explain: "Der Einzelunternehmer haftet unbeschränkt, auch mit seinem Privatvermögen." },
+        { q: "Wie viele Gesellschafter braucht eine OHG mindestens?", options: ["1", "2", "3", "5"], correct: 1, explain: "Eine OHG erfordert mindestens 2 Gesellschafter." },
+        { q: "Bei der KG haftet der Kommanditist …", options: ["unbeschränkt", "nur mit seiner Einlage", "gar nicht", "wie der Komplementär"], correct: 1, explain: "Der Kommanditist ist Teilhafter und haftet nur bis zur Höhe seiner Einlage." },
+        { q: "Wie hoch ist das gesetzliche Mindestkapital einer GmbH?", options: ["12.500 €", "25.000 €", "50.000 €", "100.000 €"], correct: 1, explain: "Das Mindestkapital einer GmbH beträgt 25.000 €." },
+        { q: "Wie hoch ist das Mindestkapital (Grundkapital) einer AG?", options: ["25.000 €", "50.000 €", "100.000 €", "250.000 €"], correct: 1, explain: "Das Grundkapital einer AG beträgt mindestens 50.000 €." },
+        { q: "Wer überwacht den Vorstand einer AG?", options: ["Die Hauptversammlung direkt", "Der Aufsichtsrat", "Das Handelsregister", "Die IHK"], correct: 1, explain: "Der Aufsichtsrat bestellt, überwacht und beruft den Vorstand ab." },
+        { q: "Darf ein Prokurist Bilanzen unterschreiben?", options: ["Ja, immer", "Nein", "Nur mit Zustimmung der IHK", "Nur bei kleinen Unternehmen"], correct: 1, explain: "Das Unterschreiben von Bilanzen/Steuererklärungen gehört nicht zu den Befugnissen der Prokura." },
+        { q: "Was ist ein Kann-Kaufmann?", options: ["Muss sich zwingend eintragen lassen", "Kann sich freiwillig eintragen lassen", "Ist nie Kaufmann", "Ist automatisch Kaufmann ohne Eintrag"], correct: 1, explain: "Der Kann-Kaufmann kann sich freiwillig eintragen lassen – der Eintrag ist dann konstitutiv." },
+        { q: "Was bedeutet „deklaratorisch“ bei einem Handelsregistereintrag?", options: ["Rechtsbegründend", "Rechtserklärend/bekundend, ohne die Rechtskraft zu erzeugen", "Ungültig", "Nur für GmbHs relevant"], correct: 1, explain: "Deklaratorisch bedeutet rechtserklärend – die Rechtskraft besteht bereits vorher (z. B. beim Ist-Kaufmann)." }
+      ],
+      exam: [
+        {
+          title: "Einzelunternehmen oder GmbH?",
+          points: 10,
+          task: "Ein Existenzgründer überlegt, ob er sein risikoreiches Geschäftsmodell als Einzelunternehmen oder als GmbH gründen soll. Vergleichen Sie beide Rechtsformen hinsichtlich Haftung und Mindestkapital und geben Sie eine begründete Empfehlung.",
+          solution: "Einzelunternehmen: Keine Mindestkapitalanforderung, einfache und schnelle Gründung. Der Unternehmer haftet jedoch unbeschränkt – auch mit seinem gesamten Privatvermögen. Bei einem risikoreichen Geschäftsmodell ist das gefährlich, da im Fall von Verlusten das Privatvermögen (Haus, Ersparnisse) angreifbar ist.\n\nGmbH: Erfordert ein Mindestkapital von 25.000 € (mind. 12.500 € bar), zudem höheren Gründungsaufwand (notarielle Beurkundung, Handelsregistereintrag). Dafür haftet die Gesellschaft nur mit dem Gesellschaftsvermögen – das Privatvermögen des Gründers bleibt geschützt.\n\nEmpfehlung: Bei einem risikoreichen Geschäftsmodell ist die GmbH trotz höherem Gründungsaufwand vorzuziehen, da die Haftungsbeschränkung das persönliche finanzielle Risiko des Gründers deutlich reduziert."
+        },
+        {
+          title: "Prokura vs. Handlungsvollmacht",
+          points: 8,
+          task: "Erklären Sie den Unterschied zwischen Prokura und einfacher Handlungsvollmacht anhand von 2 Beispielen: Was darf ein Prokurist, was ein einfacher Handlungsbevollmächtigter nicht darf?",
+          solution: "Die Prokura ist wesentlich umfassender als eine einfache Handlungsvollmacht und wird ins Handelsregister eingetragen.\n\nBeispiel 1: Ein Prokurist darf Grundstücke für das Unternehmen erwerben – ein Handlungsbevollmächtigter mit einfacher Arthandlungsvollmacht (z. B. nur für den Einkauf) darf das in der Regel nicht, da dies außerhalb seines zugewiesenen Geschäftsbereichs liegt.\n\nBeispiel 2: Ein Prokurist darf Personal einstellen oder kündigen – ein Handlungsbevollmächtigter mit Einzelhandlungsvollmacht (nur für ein einzelnes Rechtsgeschäft bevollmächtigt, z. B. den Abschluss eines bestimmten Kaufvertrags) hat dafür überhaupt keine Befugnis, da seine Vollmacht auf dieses eine Geschäft begrenzt ist."
+        }
+      ]
+    },
+
+    // ======================================================================
+    // KAPITEL N
+    // ======================================================================
+    {
+      id: "datenschutz",
+      code: "N",
+      title: "Datenschutz & Datensicherung",
+      subtitle: "Personenbezogene Daten, Rechte der Betroffenen, technische Datensicherung",
+      summary: [
+        {
+          q: "Was ist Datenschutz – und welches Gesetz regelt ihn?",
+          a: "Datenschutz umfasst alle Maßnahmen zum Schutz personenbezogener Daten vor Missbrauch durch unberechtigte Übertragung, Weitergabe oder unberechtigten Zugriff. In Deutschland regelt das Bundesdatenschutzgesetz (BDSG) den Umgang, die Erhebung und Verarbeitung dieser Daten."
+        },
+        {
+          q: "Welche Rechte haben Betroffene?",
+          a: "Auskunftsrecht (wer besitzt welche Daten und an wen werden sie weitergegeben?), Berichtigungsrecht (unrichtige Daten korrigieren), Löschungsrecht (unzulässig gespeicherte Daten löschen), Benachrichtigungsrecht (Information bei erstmaliger Speicherung) und Sperrungsrecht (wenn Daten nicht mehr für den ursprünglichen Zweck nötig sind)."
+        },
+        {
+          q: "Datenschutz vs. Datensicherung – wo liegt der Unterschied?",
+          a: "Datenschutz regelt RECHTLICH, wer welche personenbezogenen Daten wie verarbeiten darf. Datensicherung sorgt TECHNISCH dafür, dass gespeicherte Daten vor Verlust, Beschädigung, Verfälschung oder unerlaubtem Zugriff geschützt sind – physisch wie digital."
+        },
+        {
+          q: "Was zählt zu personenbezogenen Daten?",
+          a: "Einzelangaben über persönliche Verhältnisse (z. B. Alter, Gesundheit) und über sachliche Verhältnisse (z. B. Vermögen, Schulden) einer bestimmten oder bestimmbaren natürlichen Person."
+        },
+        {
+          q: "Welche Rolle spielt der Datenschutzbeauftragte?",
+          a: "Er überwacht im Unternehmen die Einhaltung der Datenschutzvorschriften und ist Ansprechpartner für Betroffene und Behörden bei Fragen zum Umgang mit personenbezogenen Daten."
+        }
+      ],
+      flashcards: [
+        { front: "Was umfasst Datenschutz?", back: "Alle Maßnahmen zum Schutz personenbezogener Daten vor Missbrauch durch unberechtigte Übertragung, Weitergabe oder Zugriff." },
+        { front: "Welches Gesetz regelt in Deutschland den Datenschutz?", back: "Das Bundesdatenschutzgesetz (BDSG)." },
+        { front: "Was besagt das Auskunftsrecht?", back: "Betroffene dürfen erfahren, wer welche Daten über sie besitzt und an wen sie weitergegeben werden." },
+        { front: "Was besagt das Berichtigungsrecht?", back: "Unrichtige personenbezogene Daten müssen korrigiert werden." },
+        { front: "Was besagt das Löschungsrecht?", back: "Unzulässig gespeicherte Daten müssen gelöscht werden." },
+        { front: "Was besagt das Benachrichtigungsrecht?", back: "Betroffene müssen informiert werden, wenn erstmalig personenbezogene Daten über sie gespeichert werden." },
+        { front: "Was besagt das Sperrungsrecht?", back: "Daten müssen gesperrt werden, wenn sie für den ursprünglichen Zweck nicht mehr erforderlich sind." },
+        { front: "Nenne 2 Beispiele für personenbezogene Daten.", back: "Z. B. Alter, Gesundheitsdaten, Vermögen oder Schulden einer Person." },
+        { front: "Was schützt die Datensicherung?", back: "Gespeicherte Daten vor Verlust, Beschädigung, Verfälschung und unerlaubtem Zugriff – physisch und digital." },
+        { front: "Datenschutz vs. Datensicherung – kurz erklärt?", back: "Datenschutz regelt rechtlich den Umgang mit personenbezogenen Daten, Datensicherung schützt technisch vor Verlust/Missbrauch." },
+        { front: "Wer überwacht die Einhaltung des Datenschutzes im Unternehmen?", back: "Der Datenschutzbeauftragte." },
+        { front: "Darf der Zugang zu personenbezogenen Daten physisch ODER digital unbefugt erfolgen?", back: "Nein – weder physisch (z. B. Aktenzugriff vor Ort) noch digital darf ein unbefugter Zugang möglich sein." }
+      ],
+      quiz: [
+        { q: "Welches Gesetz regelt in Deutschland den Umgang mit personenbezogenen Daten?", options: ["HGB", "BBiG", "BDSG", "ArbZG"], correct: 2, explain: "Das Bundesdatenschutzgesetz (BDSG) regelt Erhebung und Verarbeitung personenbezogener Daten." },
+        { q: "Welches Recht ermöglicht zu erfahren, wer welche Daten über eine Person besitzt?", options: ["Löschungsrecht", "Auskunftsrecht", "Sperrungsrecht", "Berichtigungsrecht"], correct: 1, explain: "Das Auskunftsrecht gibt Betroffenen Einblick, wer welche Daten über sie gespeichert hat." },
+        { q: "Welches Recht verlangt die Korrektur falscher Daten?", options: ["Berichtigungsrecht", "Benachrichtigungsrecht", "Auskunftsrecht", "Löschungsrecht"], correct: 0, explain: "Unrichtige Daten müssen laut Berichtigungsrecht korrigiert werden." },
+        { q: "Welches Recht fordert die Entfernung unzulässig gespeicherter Daten?", options: ["Sperrungsrecht", "Löschungsrecht", "Auskunftsrecht", "Berichtigungsrecht"], correct: 1, explain: "Das Löschungsrecht verlangt die Entfernung unzulässig gespeicherter Daten." },
+        { q: "Wann greift laut Text das Sperrungsrecht?", options: ["Wenn Daten fehlerhaft sind", "Wenn Daten für den ursprünglichen Zweck nicht mehr erforderlich sind", "Immer nach einem Jahr", "Nur bei Kündigung"], correct: 1, explain: "Sind Daten für den ursprünglichen Zweck nicht mehr nötig, greift das Sperrungsrecht." },
+        { q: "Was schützt die Datensicherung?", options: ["Nur den Datenschutzbeauftragten", "Vor Verlust, Beschädigung, Verfälschung und unerlaubtem Zugriff", "Nur digitale Daten", "Nur physische Akten"], correct: 1, explain: "Datensicherung schützt umfassend – sowohl physisch als auch digital." },
+        { q: "Wer überwacht im Unternehmen die Einhaltung der Datenschutzvorschriften?", options: ["Die IHK", "Der Datenschutzbeauftragte", "Der Betriebsrat", "Das Finanzamt"], correct: 1, explain: "Der Datenschutzbeauftragte ist für die Einhaltung der Vorschriften im Unternehmen zuständig." },
+        { q: "Ist das Alter einer Person ein personenbezogenes Datum?", options: ["Nein, nie", "Ja", "Nur bei Minderjährigen", "Nur mit Zustimmung"], correct: 1, explain: "Angaben zu persönlichen Verhältnissen wie das Alter zählen zu den personenbezogenen Daten." }
+      ],
+      exam: [
+        {
+          title: "Auskunfts- und Löschungsrecht anwenden",
+          points: 8,
+          task: "Ein Kunde bittet ein Unternehmen um Auskunft, welche Daten über ihn gespeichert sind, und verlangt zusätzlich die Löschung veralteter Einträge. Erklären Sie, welche Rechte hier greifen und wie das Unternehmen reagieren muss.",
+          solution: "Es greifen zwei Rechte: Das Auskunftsrecht verpflichtet das Unternehmen, dem Kunden mitzuteilen, welche personenbezogenen Daten über ihn gespeichert sind und an wen diese ggf. weitergegeben wurden.\nDas Löschungsrecht verpflichtet das Unternehmen zusätzlich dazu, veraltete bzw. unzulässig gespeicherte Daten tatsächlich zu löschen, sofern kein gesetzlicher Aufbewahrungsgrund entgegensteht (z. B. Aufbewahrungsfristen für Rechnungen).\nDas Unternehmen muss also zeitnah und vollständig Auskunft erteilen und alle Daten löschen, die nicht mehr benötigt werden oder deren Speicherung unzulässig war."
+        },
+        {
+          title: "Maßnahmen der Datensicherung im Büro",
+          points: 7,
+          task: "Nennen und erläutern Sie 3 technische oder organisatorische Maßnahmen der Datensicherung in einem Büro.",
+          solution: "1. Zugriffsbeschränkung: Nur berechtigte Mitarbeiter erhalten Zugang zu sensiblen Daten, z. B. durch Passwortschutz oder abgeschlossene Aktenschränke.\n2. Regelmäßige Datensicherung (Backups): Digitale Daten werden in regelmäßigen Abständen auf einem separaten System gesichert, um sie bei Verlust wiederherstellen zu können.\n3. Physischer Schutz: Serverräume und Aktenarchive werden gegen unbefugten Zutritt gesichert (z. B. abschließbare Türen, Alarmanlagen), um sowohl digitalen als auch physischen unerlaubten Zugriff zu verhindern."
+        }
+      ]
     }
   ]
 };
