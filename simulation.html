@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IHK-Prüfungssimulation · Büromanagement</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .exam-header {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-m);
+            padding: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-card);
+        }
+        .timer-box {
+            font-family: var(--font-mono);
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--stamp);
+            background: var(--stamp-soft);
+            padding: 8px 16px;
+            border-radius: var(--radius-s);
+            border: 1px solid var(--stamp);
+        }
+        .question-block {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-l);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-card);
+        }
+        .question-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: var(--ink);
+            margin-bottom: 12px;
+        }
+        .question-points {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--ochre);
+            background: #FBF3E1;
+            padding: 2px 8px;
+            border-radius: 99px;
+            float: right;
+        }
+        textarea.essay-input {
+            width: 100%;
+            height: 120px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-s);
+            font-family: inherit;
+            font-size: 14px;
+            margin-top: 10px;
+            resize: vertical;
+            background: var(--paper);
+        }
+        .self-eval {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: var(--paper-dim);
+            border-left: 4px solid var(--ochre);
+            border-radius: 0 var(--radius-s) var(--radius-s) 0;
+        }
+        .result-screen {
+            display: none;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-l);
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+        }
+        .grade-badge {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--ink);
+            margin: 16px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main" style="max-width: 900px; margin: 0 auto;">
+    
+    <!-- HEADER MIT TIMER -->
+    <div class="exam-header">
+        <div>
+            <h1 style="font-size: 22px; color: var(--ink);">IHK-Prüfungssimulation</h1>
+            <span style="font-size: 13px; color: var(--muted);">Fachqualifikation Büromanagement</span>
+        </div>
+        <div class="timer-box" id="timer">60:00</div>
+    </div>
+
+    <form id="examForm">
+        
+        <!-- FRAGE 1: MULTIPLE CHOICE -->
+        <div class="question-block">
+            <span class="question-points">10 Punkte</span>
+            <div class="question-title">Frage 1: Kaufvertragsstörungen (Multiple-Choice)</div>
+            <p style="margin-bottom: 14px;">Ein Lieferant liefert die bestellte Ware erst 2 Wochen nach dem vereinbarten fixen Liefertermin. Um welche Art der Kaufvertragsstörung handelt es sich?</p>
+            <div class="quiz-options">
+                <label class="quiz-option">
+                    <input type="radio" name="q1" value="0"> Schlechtleistung (Mangelhafte Lieferung)
+                </label>
+                <label class="quiz-option">
+                    <input type="radio" name="q1" value="10"> Lieferungsverzug (Nicht-Rechtzeitig-Lieferung)
+                </label>
+                <label class="quiz-option">
+                    <input type="radio" name="q1" value="0"> Zahlungsverzug
+                </label>
+                <label class="quiz-option">
+                    <input type="radio" name="q1" value="0"> Annahmeverzug
+                </label>
+            </div>
+        </div>
+
+        <!-- FRAGE 2: MULTIPLE CHOICE -->
+        <div class="question-block">
+            <span class="question-points">10 Punkte</span>
+            <div class="question-title">Frage 2: Arbeitsrecht (Multiple-Choice)</div>
+            <p style="margin-bottom: 14px;">Wie lang ist die gesetzliche Mindestkündigungsfrist während einer vereinbarten Probezeit laut BGB (§ 622)?</p>
+            <div class="quiz-options">
+                <label class="quiz-option">
+                    <input type="radio" name="q2" value="0"> 4 Wochen zum Monatsende
+                </label>
+                <label class="quiz-option">
+                    <input type="radio" name="q2" value="10"> 2 Wochen zu einem beliebigen Tag
+                </label>
+                <label class="quiz-option">
+                    <input type="radio" name="q2" value="0"> 1 Monat zum 15. oder Monatsende
+                </label>
+                <label class="quiz-option">
+                    <input type="radio" name="q2" value="0"> Fristlos ohne Grund
+                </label>
+            </div>
+        </div>
+
+        <!-- FRAGE 3: FREITEXT / AUSFORMULIERUNG -->
+        <div class="question-block">
+            <span class="question-points">30 Punkte</span>
+            <div class="question-title">Frage 3: Handlungssituation Büroprozesse (Freitext)</div>
+            <p style="margin-bottom: 10px;">Ein Kunde beschwert sich telefonisch verärgert über eine beschädigte Lieferung. Beschreiben Sie stichpunktartig oder in kurzen Sätzen **drei wichtige Regeln für ein professionelles Beschwerdegespräch**.</p>
+            <textarea class="essay-input" id="q3_text" placeholder="Ihre Antwort hier eingeben..."></textarea>
+            
+            <div class="self-eval" id="eval_q3">
+                <strong> Musterlösung / Korrekturhinweis:</strong>
+                <ul style="margin: 8px 0; padding-left: 20px; font-size: 13.5px;">
+                    <li>Ruhe bewahren & Kunden ausreden lassen (Aktiv zuhören).</li>
+                    <li>Verständnis & Empathie zeigen (ohne voreiliges Schuldeingeständnis).</li>
+                    <li>Sachverhalt notieren / gezielte Rückfragen stellen.</li>
+                    <li>Lösungsvorschlag oder konkrete Weiterbearbeitung zügig anbieten.</li>
+                </ul>
+                <label style="font-size: 13px; font-weight: bold; margin-top: 10px; display: block;">
+                    Bewerten Sie Ihre Antwort selbst (0 bis 30 Punkte): 
+                    <input type="number" id="q3_score" min="0" max="30" value="0" style="width: 60px; padding: 4px;"> Punkte
+                </label>
+            </div>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <button type="button" class="btn btn-primary" id="submitBtn" onclick="finishExam()" style="width: 100%; padding: 16px; font-size: 16px;">
+            Prüfung jetzt abgeben & auswerten
+        </button>
+    </form>
+
+    <!-- ERGEBNISSCHIRM -->
+    <div class="result-screen" id="resultScreen">
+        <div class="stamp stamp-big">IHK</div>
+        <h2>Prüfung ausgewertet!</h2>
+        <p>Hier ist Ihr Gesamtergebnis nach dem IHK-Schlüssel:</p>
+        
+        <div class="grade-badge" id="gradeText">0 %</div>
+        <p id="ihkGrade" style="font-weight: bold; font-size: 18px; color: var(--ochre);"></p>
+
+        <div style="margin-top: 24px;">
+            <button class="btn btn-ghost" onclick="location.reload()">Simulation neu starten</button>
+            <a href="index.html" class="btn btn-primary" style="text-decoration: none; margin-left: 10px;">Zurück zum Dashboard</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // TIMER LOGIK (60 Minuten)
+    let timeLeft = 60 * 60;
+    const timerEl = document.getElementById('timer');
+    
+    const timerInterval = setInterval(() => {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        timerEl.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            alert("Die Zeit ist abgelaufen! Die Prüfung wird jetzt automatisch ausgewertet.");
+            finishExam();
+        }
+        timeLeft--;
+    }, 1000);
+
+    let isSubmitted = false;
+
+    function finishExam() {
+        if (!isSubmitted) {
+            // Schritt 1: Freitext-Bewertung einblenden
+            isSubmitted = true;
+            document.querySelectorAll('.self-eval').forEach(el => el.style.display = 'block');
+            document.getElementById('submitBtn').textContent = "Eingetragene Punkte bestätigen & Endnote berechnen";
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            return;
+        }
+
+        // Schritt 2: Punkte berechnen
+        clearInterval(timerInterval);
+        
+        let scoreMC1 = parseInt(document.querySelector('input[name="q1"]:checked')?.value || 0);
+        let scoreMC2 = parseInt(document.querySelector('input[name="q2"]:checked')?.value || 0);
+        let scoreEssay3 = parseInt(document.getElementById('q3_score').value || 0);
+
+        let totalPoints = scoreMC1 + scoreMC2 + scoreEssay3; // Max 50 Punkte
+        let maxPoints = 50;
+        let percentage = Math.round((totalPoints / maxPoints) * 100);
+
+        // IHK-Notenschlüssel
+        let grade = "";
+        if (percentage >= 92) grade = "Note 1 (Sehr gut)";
+        else if (percentage >= 81) grade = "Note 2 (Gut)";
+        else if (percentage >= 67) grade = "Note 3 (Befriedigend)";
+        else if (percentage >= 50) grade = "Note 4 (Ausreichend - Bestanden)";
+        else if (percentage >= 30) grade = "Note 5 (Mangelhaft)";
+        else grade = "Note 6 (Ungenügend)";
+
+        // Ergebnis anzeigen
+        document.getElementById('examForm').style.display = 'none';
+        document.getElementById('resultScreen').style.display = 'block';
+        document.getElementById('gradeText').textContent = `${percentage} % (${totalPoints} / ${maxPoints} Punkte)`;
+        document.getElementById('ihkGrade').textContent = grade;
+    }
+</script>
+
+</body>
+</html>
