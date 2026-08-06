@@ -21,6 +21,7 @@
   };
   const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
   const findChapter = (id) => DATA.find((c) => c.id === id);
+  const pad2 = (n) => String(n).padStart(2, "0");
 
   /* ---------------------------------------------------------------- */
   /* Progress (persisted, degrades gracefully without storage)         */
@@ -222,7 +223,7 @@
       card.setAttribute("aria-label", "Kapitel öffnen: " + ch.title);
       card.innerHTML =
         '<div class="folder-top">' +
-          '<span class="folder-code">Akte Nr. 0' + (DATA.indexOf(ch) + 1) + ' · ' + ch.code + '</span>' +
+          '<span class="folder-code">Akte Nr. ' + pad2(DATA.indexOf(ch) + 1) + ' · ' + ch.code + '</span>' +
           '<span class="stamp" style="width:40px;height:40px;font-size:10.5px;">' + s.percent + '%</span>' +
         '</div>' +
         '<h3>' + ch.title + '</h3>' +
@@ -257,7 +258,7 @@
     const idx = DATA.indexOf(ch) + 1;
     $("#topbarEyebrow").textContent = "Kapitel " + ch.code;
     $("#topbarTitle").textContent = ch.title;
-    $("#chapterTag").textContent = "AKTE NR. 0" + idx + " / " + ch.code;
+    $("#chapterTag").textContent = "AKTE NR. " + pad2(idx) + " / " + ch.code;
     $("#chapterTitle").textContent = ch.title;
     $("#chapterSubtitle").textContent = ch.subtitle;
 
