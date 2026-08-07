@@ -22,6 +22,14 @@
   const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
   const findChapter = (id) => DATA.find((c) => c.id === id);
   const pad2 = (n) => String(n).padStart(2, "0");
+  const shuffle = (arr) => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
 
   /* ---------------------------------------------------------------- */
   /* Progress (persisted, degrades gracefully without storage)         */
@@ -119,6 +127,68 @@
   }
 
   /* ---------------------------------------------------------------- */
+  /* Prüfungssimulation – Fragenpool & letztes Ergebnis (persistiert)  */
+  /* ---------------------------------------------------------------- */
+
+  const EXAMSIM_KEY = "akte-buero-examsim-v1";
+  const EXAMSIM_PASS_PERCENT = 50;
+  const EXAMSIM_SECONDS_PER_QUESTION = 180; // 3 Min./Frage → 20 Fragen = 60 Minuten
+
+  function buildExamPool() {
+    const pool = [];
+    DATA.forEach((ch) => {
+      ch.quiz.forEach((q) => {
+        pool.push({
+          q: q.q,
+          options: q.options,
+          correct: q.correct,
+          explain: q.explain,
+          chapterCode: ch.code,
+          chapterTitle: ch.title
+        });
+      });
+    });
+    return pool;
+  }
+
+  const EXAM_POOL_TOTAL = buildExamPool().length;
+
+  const EXAMSIM_PRESETS = [
+    { count: 10, label: "Kurztest", meta: "10 Fragen · ca. 30 Minuten" },
+    { count: 20, label: "Klausursimulation", meta: "20 Fragen · ca. 60 Minuten" },
+    { count: 40, label: "Große Simulation", meta: "40 Fragen · ca. 120 Minuten" },
+    { count: EXAM_POOL_TOTAL, label: "Alle Fragen (Marathon)", meta: EXAM_POOL_TOTAL + " Fragen · ca. " + Math.round(EXAM_POOL_TOTAL * EXAMSIM_SECONDS_PER_QUESTION / 60) + " Minuten" }
+  ];
+
+  function loadLastExamResult() {
+    try {
+      const raw = window.localStorage.getItem(EXAMSIM_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveLastExamResult(result) {
+    try {
+      window.localStorage.setItem(EXAMSIM_KEY, JSON.stringify(result));
+    } catch (e) {
+      /* kein Speicher verfügbar – Ergebnis bleibt nur für diese Sitzung sichtbar */
+    }
+  }
+
+  const examState = {
+    active: false,
+    finished: false,
+    questions: [],
+    answers: [],
+    index: 0,
+    totalSeconds: 0,
+    remainingSeconds: 0,
+    timerId: null
+  };
+
+  /* ---------------------------------------------------------------- */
   /* State                                                             */
   /* ---------------------------------------------------------------- */
 
@@ -151,6 +221,8 @@
       const target = btn.dataset.target;
       if (target === "dashboard") {
         goDashboard();
+      } else if (target === "examsim") {
+        goExamSim();
       } else {
         goChapter(target.split(":")[1]);
       }
@@ -162,6 +234,8 @@
     $all(".tab").forEach((t) => t.classList.remove("is-active"));
     if (state.view === "dashboard") {
       $(".tab-dashboard").classList.add("is-active");
+    } else if (state.view === "examsim") {
+      $(".tab-examsim").classList.add("is-active");
     } else {
       const btn = $('.tab[data-target="chapter:' + state.chapterId + '"]');
       if (btn) btn.classList.add("is-active");
@@ -186,6 +260,7 @@
     state.view = "dashboard";
     $("#view-dashboard").hidden = false;
     $("#view-chapter").hidden = true;
+    $("#view-examsim").hidden = true;
     $("#topbarEyebrow").textContent = "Dashboard";
     $("#topbarTitle").textContent = "Willkommen zurück";
     $("#topbarStamp").hidden = true;
@@ -253,6 +328,7 @@
 
     $("#view-dashboard").hidden = true;
     $("#view-chapter").hidden = false;
+    $("#view-examsim").hidden = true;
 
     const ch = findChapter(id);
     const idx = DATA.indexOf(ch) + 1;
@@ -544,6 +620,215 @@
     $("#globalPercent").textContent = g.globalPercent + "%";
     $("#globalProgressFill").style.width = g.globalPercent + "%";
   }
+
+  /* ---------------------------------------------------------------- */
+  /* View: Prüfungssimulation                                          */
+  /* ---------------------------------------------------------------- */
+
+  function goExamSim() {
+    state.view = "examsim";
+    $("#view-dashboard").hidden = true;
+    $("#view-chapter").hidden = true;
+    $("#view-examsim").hidden = false;
+    $("#topbarEyebrow").textContent = "Prüfungssimulation";
+    $("#topbarTitle").textContent = "Große Prüfungssimulation";
+    $("#topbarStamp").hidden = true;
+    setActiveTab();
+
+    if (examState.active && !examState.finished) {
+      showExamPanel("running");
+      renderExamQuestion();
+    } else if (examState.finished) {
+      showExamPanel("result");
+      renderExamResult();
+    } else {
+      showExamPanel("setup");
+      renderExamSetup();
+    }
+    window.scrollTo(0, 0);
+  }
+
+  function showExamPanel(which) {
+    $("#examsimSetup").hidden = which !== "setup";
+    $("#examsimRunning").hidden = which !== "running";
+    $("#examsimResult").hidden = which !== "result";
+  }
+
+  function renderExamSetup() {
+    const wrap = $("#examsimOptions");
+    wrap.innerHTML = "";
+    EXAMSIM_PRESETS.forEach((preset) => {
+      const card = el("button", "examsim-option-card");
+      card.innerHTML =
+        '<span class="examsim-option-title">' + preset.label + '</span>' +
+        '<span class="examsim-option-meta">' + preset.meta + '</span>';
+      card.addEventListener("click", () => startExamSim(preset.count));
+      wrap.appendChild(card);
+    });
+
+    const last = loadLastExamResult();
+    const lastEl = $("#examsimLast");
+    if (last) {
+      lastEl.hidden = false;
+      lastEl.textContent =
+        "Letzter Versuch: " + last.percent + "% (" + last.correct + " / " + last.total + " Fragen, " +
+        (last.percent >= EXAMSIM_PASS_PERCENT ? "bestanden" : "nicht bestanden") + ") – " + last.date;
+    } else {
+      lastEl.hidden = true;
+    }
+  }
+
+  function startExamSim(count) {
+    const pool = shuffle(buildExamPool());
+    examState.questions = pool.slice(0, Math.min(count, pool.length));
+    examState.answers = new Array(examState.questions.length).fill(null);
+    examState.index = 0;
+    examState.totalSeconds = examState.questions.length * EXAMSIM_SECONDS_PER_QUESTION;
+    examState.remainingSeconds = examState.totalSeconds;
+    examState.active = true;
+    examState.finished = false;
+
+    showExamPanel("running");
+    renderExamQuestion();
+    startExamTimer();
+  }
+
+  function startExamTimer() {
+    stopExamTimer();
+    updateExamTimerDisplay();
+    examState.timerId = window.setInterval(() => {
+      examState.remainingSeconds -= 1;
+      updateExamTimerDisplay();
+      if (examState.remainingSeconds <= 0) {
+        finishExamSim();
+      }
+    }, 1000);
+  }
+
+  function stopExamTimer() {
+    if (examState.timerId) {
+      window.clearInterval(examState.timerId);
+      examState.timerId = null;
+    }
+  }
+
+  function updateExamTimerDisplay() {
+    const secs = Math.max(0, examState.remainingSeconds);
+    const mm = pad2(Math.floor(secs / 60));
+    const ss = pad2(secs % 60);
+    const timerEl = $("#examsimTimer");
+    timerEl.textContent = mm + ":" + ss;
+    timerEl.classList.toggle("is-low", secs <= 60);
+  }
+
+  function renderExamQuestion() {
+    const total = examState.questions.length;
+    const i = examState.index;
+    const qData = examState.questions[i];
+
+    $("#examsimPos").textContent = "Frage " + (i + 1) + " / " + total;
+    $("#examsimProgressFill").style.width = Math.round((i / total) * 100) + "%";
+    $("#examsimQChapter").textContent = "Kapitel " + qData.chapterCode + " · " + qData.chapterTitle;
+    $("#examsimQuestion").textContent = qData.q;
+
+    const answeredCount = examState.answers.filter((a) => a !== null).length;
+    $("#examsimAnswered").textContent = answeredCount + " von " + total + " beantwortet";
+
+    const optionsWrap = $("#examsimOptionsList");
+    optionsWrap.innerHTML = "";
+    const letters = ["A", "B", "C", "D", "E", "F"];
+    const selected = examState.answers[i];
+
+    qData.options.forEach((optText, oi) => {
+      const optBtn = el("button", "quiz-option");
+      if (selected === oi) optBtn.classList.add("is-selected");
+      optBtn.innerHTML = '<span class="opt-letter">' + letters[oi] + '</span><span>' + optText + '</span>';
+      optBtn.addEventListener("click", () => {
+        examState.answers[i] = oi;
+        renderExamQuestion();
+      });
+      optionsWrap.appendChild(optBtn);
+    });
+
+    $("#examsimPrev").disabled = i === 0;
+    const isLast = i === total - 1;
+    $("#examsimNext").hidden = isLast;
+    $("#examsimSubmit").hidden = !isLast;
+  }
+
+  function goExamQuestion(delta) {
+    examState.index = clamp(examState.index + delta, 0, examState.questions.length - 1);
+    renderExamQuestion();
+  }
+
+  function finishExamSim() {
+    stopExamTimer();
+    examState.active = false;
+    examState.finished = true;
+
+    const total = examState.questions.length;
+    const correct = examState.questions.filter((q, i) => examState.answers[i] === q.correct).length;
+    const percent = total ? Math.round((correct / total) * 100) : 0;
+
+    saveLastExamResult({
+      percent, correct, total,
+      date: new Date().toLocaleDateString("de-DE")
+    });
+
+    showExamPanel("result");
+    renderExamResult();
+  }
+
+  function renderExamResult() {
+    const total = examState.questions.length;
+    const correct = examState.questions.filter((q, i) => examState.answers[i] === q.correct).length;
+    const percent = total ? Math.round((correct / total) * 100) : 0;
+    const passed = percent >= EXAMSIM_PASS_PERCENT;
+
+    $("#examsimResultStamp").textContent = percent + "%";
+    $("#examsimResultTitle").textContent = passed ? "Bestanden!" : "Noch nicht bestanden";
+    $("#examsimResultText").textContent =
+      correct + " von " + total + " Fragen richtig (" + percent + " %). Bestehensgrenze: " + EXAMSIM_PASS_PERCENT + " %.";
+
+    const review = $("#examsimReview");
+    review.innerHTML = "";
+    const letters = ["A", "B", "C", "D", "E", "F"];
+
+    examState.questions.forEach((qData, i) => {
+      const given = examState.answers[i];
+      const isCorrect = given === qData.correct;
+      const card = el("div", "exam-card " + (isCorrect ? "review-item-correct" : "review-item-wrong"));
+      const givenText = given === null || given === undefined ? "keine Antwort" : letters[given] + " – " + qData.options[given];
+      const correctText = letters[qData.correct] + " – " + qData.options[qData.correct];
+
+      card.innerHTML =
+        '<div class="exam-top">' +
+          '<span class="exam-title">' + qData.q + '</span>' +
+          '<span class="exam-points">Kapitel ' + qData.chapterCode + '</span>' +
+        '</div>' +
+        '<p class="review-answer"><span class="review-answer-label">Deine Antwort</span>' + givenText + '</p>' +
+        (isCorrect ? '' : '<p class="review-answer"><span class="review-answer-label">Richtig wäre</span>' + correctText + '</p>') +
+        '<div class="exam-solution" style="margin-top:8px;">' + qData.explain + '</div>';
+
+      review.appendChild(card);
+    });
+  }
+
+  function resetExamSim() {
+    stopExamTimer();
+    examState.active = false;
+    examState.finished = false;
+    examState.questions = [];
+    examState.answers = [];
+    examState.index = 0;
+    showExamPanel("setup");
+    renderExamSetup();
+  }
+
+  $("#examsimPrev").addEventListener("click", () => goExamQuestion(-1));
+  $("#examsimNext").addEventListener("click", () => goExamQuestion(1));
+  $("#examsimSubmit").addEventListener("click", finishExamSim);
+  $("#examsimRestart").addEventListener("click", resetExamSim);
 
   /* ---------------------------------------------------------------- */
   /* Mobile menu wiring                                                 */
