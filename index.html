@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Slab:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -27,6 +27,10 @@
       <button class="tab tab-dashboard is-active" data-target="dashboard">
         <span class="tab-code">•</span>
         <span class="tab-label">Dashboard</span>
+      </button>
+      <button class="tab tab-examsim" data-target="examsim">
+        <span class="tab-code">⏱</span>
+        <span class="tab-label">Prüfungssimulation</span>
       </button>
       <!-- Kapitel-Tabs werden per JS eingefügt -->
     </nav>
@@ -165,13 +169,60 @@
 
     </section>
 
+    <!-- ============ EXAM SIMULATION VIEW ============ -->
+    <section class="view" id="view-examsim" hidden>
+
+      <!-- Setup -->
+      <div class="examsim-setup" id="examsimSetup">
+        <div class="chapter-head">
+          <span class="chapter-tag">Prüfungssimulation</span>
+          <h2>Große Prüfungssimulation</h2>
+          <p class="chapter-subtitle">Zufällig gemischte Fragen aus allen Kapiteln, unter Zeitdruck wie in der echten Abschlussprüfung. Bestehensgrenze: 50 %.</p>
+        </div>
+        <div class="examsim-options" id="examsimOptions"></div>
+        <p class="examsim-last" id="examsimLast" hidden></p>
+      </div>
+
+      <!-- Running -->
+      <div class="examsim-running" id="examsimRunning" hidden>
+        <div class="examsim-topbar">
+          <span id="examsimPos">Frage 1 / 20</span>
+          <span class="examsim-timer" id="examsimTimer">60:00</span>
+        </div>
+        <div class="progress-track quiz-track"><div class="progress-fill" id="examsimProgressFill"></div></div>
+
+        <div class="quiz-card">
+          <span class="exam-points examsim-chaptertag" id="examsimQChapter"></span>
+          <p class="quiz-question" id="examsimQuestion"></p>
+          <div class="quiz-options" id="examsimOptionsList"></div>
+        </div>
+
+        <div class="examsim-nav">
+          <button class="btn btn-ghost" id="examsimPrev">← Zurück</button>
+          <span class="examsim-answered" id="examsimAnswered"></span>
+          <button class="btn btn-primary" id="examsimNext">Weiter →</button>
+          <button class="btn btn-good" id="examsimSubmit" hidden>Abgeben</button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="examsim-result" id="examsimResult" hidden>
+        <div class="quiz-result examsim-result-card">
+          <span class="stamp stamp-big" id="examsimResultStamp">0%</span>
+          <h3 id="examsimResultTitle">Ergebnis</h3>
+          <p id="examsimResultText"></p>
+          <button class="btn btn-primary" id="examsimRestart">Neue Simulation starten</button>
+        </div>
+        <h3 class="section-heading examsim-review-heading">Alle Antworten im Detail</h3>
+        <div class="exam-list" id="examsimReview"></div>
+      </div>
+
+    </section>
+
   </main>
 </div>
 
-<script src="data.js"></script>
-<script src="app.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
-<a class="btn btn-quiz" href="simulation.html" style="background-color: #A93B3B; border-color: #A93B3B;">
-   ⏱️ IHK-Prüfungssimulation starten
-</a>
