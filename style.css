@@ -22,8 +22,8 @@
   --border:     #DCD4BE;
 
   /* -- Typografie ----------------------------------------------------- */
-  --font-display: "Calibri", "Segoe UI", Arial, sans-serif;
-  --font-body:    "Calibri", "Segoe UI", Arial, sans-serif;
+  --font-display: "IBM Plex Slab", Georgia, serif;
+  --font-body:    "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono:    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --radius-s: 6px;
@@ -656,6 +656,8 @@ p { margin: 0; }
   display: grid; place-items: center;
   flex: none;
 }
+.quiz-option.is-selected { background: var(--ochre-soft); border-color: var(--ochre); }
+.quiz-option.is-selected .opt-letter { background: var(--ochre); color: #fff; }
 .quiz-option.is-correct { background: var(--success-soft); border-color: var(--success); }
 .quiz-option.is-correct .opt-letter { background: var(--success); color: #fff; }
 .quiz-option.is-wrong { background: var(--stamp-soft); border-color: var(--stamp); }
@@ -741,6 +743,82 @@ p { margin: 0; }
   align-items: center;
   gap: 6px;
 }
+
+/* ==========================================================================
+   PRÜFUNGSSIMULATION
+   ========================================================================== */
+
+.examsim-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+  max-width: 780px;
+}
+
+.examsim-option-card {
+  text-align: left;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: 18px;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+}
+.examsim-option-card:hover { border-color: var(--ochre); transform: translateY(-2px); }
+.examsim-option-title { font-family: var(--font-display); font-size: 16.5px; color: var(--ink); display: block; margin-bottom: 6px; }
+.examsim-option-meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+.examsim-last {
+  margin-top: 22px;
+  font-size: 13.5px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+.examsim-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+.examsim-timer {
+  font-weight: 600;
+  color: var(--ink);
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: var(--paper-dim);
+  letter-spacing: .03em;
+}
+.examsim-timer.is-low {
+  color: #fff;
+  background: var(--stamp);
+  animation: examsimPulse 1s infinite;
+}
+@keyframes examsimPulse { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+
+.examsim-chaptertag { margin-bottom: 14px; display: inline-block; }
+
+.examsim-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.examsim-answered { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+.examsim-result-card { margin-bottom: 32px; }
+.examsim-review-heading { margin-bottom: 16px; }
+
+.review-item-correct { border-left: 3px solid var(--success); }
+.review-item-wrong { border-left: 3px solid var(--stamp); }
+.review-answer { font-size: 13.5px; margin-bottom: 4px; }
+.review-answer-label { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-right: 6px; }
 
 /* ==========================================================================
    RESPONSIVE
