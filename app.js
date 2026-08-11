@@ -338,6 +338,10 @@
     $("#chapterTitle").textContent = ch.title;
     $("#chapterSubtitle").textContent = ch.subtitle;
 
+    const hasDiagrams = !!(ch.diagrams && ch.diagrams.length);
+    $("#subtabDiagrams").hidden = !hasDiagrams;
+    if (state.sub === "diagrams" && !hasDiagrams) state.sub = "summary";
+
     const s = chapterStats(ch);
     $("#topbarStamp").hidden = false;
     $("#topbarStampValue").textContent = s.percent + "%";
@@ -350,7 +354,7 @@
 
   function setActiveSubtab() {
     $all(".subtab").forEach((t) => t.classList.toggle("is-active", t.dataset.sub === state.sub));
-    ["summary", "flashcards", "quiz", "exam"].forEach((s) => {
+    ["summary", "diagrams", "flashcards", "quiz", "exam"].forEach((s) => {
       $("#sub-" + s).hidden = s !== state.sub;
     });
   }
@@ -358,6 +362,7 @@
   function renderSub() {
     const ch = findChapter(state.chapterId);
     if (state.sub === "summary") renderSummary(ch);
+    if (state.sub === "diagrams") renderDiagrams(ch);
     if (state.sub === "flashcards") renderFlashcards(ch);
     if (state.sub === "quiz") renderQuiz(ch);
     if (state.sub === "exam") renderExam(ch);
@@ -401,6 +406,23 @@
       card.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); }
       });
+      grid.appendChild(card);
+    });
+  }
+
+  /* ---------------------------------------------------------------- */
+  /* Sub-view: Diagramme                                               */
+  /* ---------------------------------------------------------------- */
+
+  function renderDiagrams(ch) {
+    const grid = $("#diagramsGrid");
+    grid.innerHTML = "";
+    (ch.diagrams || []).forEach((d) => {
+      const card = el("div", "diagram-card");
+      card.innerHTML =
+        '<span class="diagram-title">' + d.title + '</span>' +
+        '<span class="diagram-note">' + d.note + '</span>' +
+        '<div class="diagram-svg-wrap">' + d.svg + '</div>';
       grid.appendChild(card);
     });
   }
