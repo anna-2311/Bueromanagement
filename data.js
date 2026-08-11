@@ -62,6 +62,18 @@ const APP_DATA = {
           </svg>`
         }
       ],
+      terms: [
+        { word: "AUSBILDUNGSVERTRAG", clue: "Regelt Dauer, Vergütung und Probezeit individuell zwischen Azubi und Betrieb" },
+        { word: "BERUFSSCHULE", clue: "Zweiter Lernort der dualen Ausbildung" },
+        { word: "BEDUERFNIS", clue: "Wunsch, einen Mangel zu beheben" },
+        { word: "PYRAMIDE", clue: "Form des Maslow-Modells der Bedürfnisse" },
+        { word: "KREISLAUF", clue: "Modell der Geld- und Güterströme zwischen Wirtschaftssubjekten" },
+        { word: "KONJUNKTUR", clue: "Auf und Ab der wirtschaftlichen Gesamtlage" },
+        { word: "REZESSION", clue: "Abschwungphase der Konjunktur" },
+        { word: "LEITZINS", clue: "Wichtigstes Steuerungsinstrument der EZB" },
+        { word: "SUBVENTION", clue: "Finanzielle Hilfe des Staates an Unternehmen" },
+        { word: "VIERECK", clue: "Vier teils widersprüchliche Ziele der Wirtschaftspolitik (Magisches ...)" }
+      ],
       summary: [
         {
           q: "Ausbildungsordnung vs. Ausbildungsvertrag – was regelt was?",
@@ -257,6 +269,18 @@ const APP_DATA = {
             <text x="390" y="298" text-anchor="middle" class="dt-mono" font-size="10">Bilanzsumme (gleich hoch)</text>
           </svg>`
         }
+      ],
+      terms: [
+        { word: "BILANZ", clue: "Gegenüberstellung von Vermögen und Kapital zum Stichtag" },
+        { word: "AKTIVA", clue: "Linke Seite der Bilanz" },
+        { word: "PASSIVA", clue: "Rechte Seite der Bilanz" },
+        { word: "SOLL", clue: "Linke Seite eines Kontos" },
+        { word: "HABEN", clue: "Rechte Seite eines Kontos" },
+        { word: "UMSATZSTEUER", clue: "Steuer, die beim Verkauf anfällt" },
+        { word: "VORSTEUER", clue: "Steuer, die beim Einkauf anfällt" },
+        { word: "ABSCHREIBUNG", clue: "Wertminderung von Anlagevermögen über die Nutzungsdauer" },
+        { word: "SKONTO", clue: "Preisnachlass bei schneller Zahlung" },
+        { word: "EIGENKAPITAL", clue: "Vermögen abzüglich Schulden" }
       ],
       summary: [
         {
