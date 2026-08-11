@@ -94,6 +94,8 @@
         <button class="subtab" data-sub="flashcards">Karteikarten</button>
         <button class="subtab" data-sub="quiz">Quiz</button>
         <button class="subtab" data-sub="exam">Prüfungsaufgaben</button>
+        <button class="subtab" data-sub="hangman" id="subtabHangman" hidden>Begriffe raten</button>
+        <button class="subtab" data-sub="crossword" id="subtabCrossword" hidden>Kreuzworträtsel</button>
       </nav>
 
       <!-- SUMMARY / ERKLÄR-KARTEN -->
@@ -171,6 +173,36 @@
       <!-- EXAM TASKS -->
       <div class="subview" id="sub-exam" hidden>
         <div class="exam-list" id="examList"></div>
+      </div>
+
+      <!-- HANGMAN -->
+      <div class="subview" id="sub-hangman" hidden>
+        <div class="hangman-wrap">
+          <div class="hangman-stage" id="hangmanStage"></div>
+          <p class="hangman-clue" id="hangmanClue"></p>
+          <p class="hangman-word" id="hangmanWord"></p>
+          <p class="hangman-status" id="hangmanStatus" hidden></p>
+          <div class="hangman-keyboard" id="hangmanKeyboard"></div>
+          <div class="hangman-footer">
+            <span class="hangman-tally" id="hangmanTally"></span>
+            <button class="btn btn-primary" id="hangmanNext" hidden>Nächster Begriff →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CROSSWORD -->
+      <div class="subview" id="sub-crossword" hidden>
+        <div class="crossword-wrap">
+          <div class="crossword-grid-scroll">
+            <div class="crossword-grid" id="crosswordGrid"></div>
+          </div>
+          <div class="crossword-clues" id="crosswordClues"></div>
+          <div class="crossword-footer">
+            <button class="btn btn-primary" id="crosswordCheck">Prüfen</button>
+            <button class="btn btn-ghost" id="crosswordSolve">Lösung anzeigen</button>
+            <span class="crossword-feedback" id="crosswordFeedback"></span>
+          </div>
+        </div>
       </div>
 
     </section>
