@@ -13,6 +13,55 @@ const APP_DATA = {
       code: "A",
       title: "Ausbildung & Wirtschaft",
       subtitle: "Ausbildungsordnung, Bedürfnisse, Wirtschaftskreislauf, Konjunktur- & Geldpolitik",
+      diagrams: [
+        {
+          title: "Bedürfnispyramide nach Maslow",
+          note: "Von der Basis (existenziell) bis zur Spitze (Selbstverwirklichung).",
+          svg: `<svg viewBox="0 0 560 320" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="46,244 254,244 280,300 20,300" class="df-ink"/>
+            <polygon points="72,188 228,188 254,244 46,244" class="df-ink-soft"/>
+            <polygon points="98,132 202,132 228,188 72,188" class="df-success"/>
+            <polygon points="124,76 176,76 202,132 98,132" class="df-ochre-soft"/>
+            <polygon points="150,20 124,76 176,76" class="df-ochre"/>
+            <line x1="267" y1="272" x2="296" y2="272" class="ds-border" stroke-width="1.5"/>
+            <line x1="241" y1="216" x2="296" y2="216" class="ds-border" stroke-width="1.5"/>
+            <line x1="215" y1="160" x2="296" y2="160" class="ds-border" stroke-width="1.5"/>
+            <line x1="189" y1="104" x2="296" y2="104" class="ds-border" stroke-width="1.5"/>
+            <line x1="163" y1="48" x2="296" y2="48" class="ds-border" stroke-width="1.5"/>
+            <text x="302" y="276" class="dt-mono" font-size="12">Physiologische Bedürfnisse</text>
+            <text x="302" y="220" class="dt-mono" font-size="12">Sicherheitsbedürfnisse</text>
+            <text x="302" y="164" class="dt-mono" font-size="12">Soziale Bedürfnisse</text>
+            <text x="302" y="108" class="dt-mono" font-size="12">Wertschätzung</text>
+            <text x="302" y="52" class="dt-mono" font-size="12">Selbstverwirklichung</text>
+          </svg>`
+        },
+        {
+          title: "Das Magische Viereck",
+          note: "Vier Ziele der Wirtschaftspolitik – gestrichelt: typische Zielkonflikte.",
+          svg: `<svg viewBox="0 0 480 400" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <line x1="240" y1="60" x2="240" y2="320" class="ds-stamp" stroke-width="1.5" stroke-dasharray="4 5"/>
+            <line x1="70" y1="190" x2="410" y2="190" class="ds-stamp" stroke-width="1.5" stroke-dasharray="4 5"/>
+            <line x1="240" y1="60" x2="410" y2="190" class="ds-border" stroke-width="1.5"/>
+            <line x1="410" y1="190" x2="240" y2="320" class="ds-border" stroke-width="1.5"/>
+            <line x1="240" y1="320" x2="70" y2="190" class="ds-border" stroke-width="1.5"/>
+            <line x1="70" y1="190" x2="240" y2="60" class="ds-border" stroke-width="1.5"/>
+            <text x="240" y="196" text-anchor="middle" class="dt-mono" font-size="10">Zielkonflikte</text>
+            <circle cx="240" cy="60" r="44" class="df-ink"/>
+            <text x="240" y="56" text-anchor="middle" class="dt-white" font-size="11">Preisniveau-</text>
+            <text x="240" y="70" text-anchor="middle" class="dt-white" font-size="11">stabilität</text>
+            <circle cx="410" cy="190" r="44" class="df-ink"/>
+            <text x="410" y="186" text-anchor="middle" class="dt-white" font-size="11">Vollbe-</text>
+            <text x="410" y="200" text-anchor="middle" class="dt-white" font-size="11">schäftigung</text>
+            <circle cx="240" cy="320" r="44" class="df-ink"/>
+            <text x="240" y="316" text-anchor="middle" class="dt-white" font-size="11">Wirtschafts-</text>
+            <text x="240" y="330" text-anchor="middle" class="dt-white" font-size="11">wachstum</text>
+            <circle cx="70" cy="190" r="44" class="df-ink"/>
+            <text x="70" y="180" text-anchor="middle" class="dt-white" font-size="9">Außenwirt-</text>
+            <text x="70" y="192" text-anchor="middle" class="dt-white" font-size="9">schaftliches</text>
+            <text x="70" y="204" text-anchor="middle" class="dt-white" font-size="9">Gleichgewicht</text>
+          </svg>`
+        }
+      ],
       summary: [
         {
           q: "Ausbildungsordnung vs. Ausbildungsvertrag – was regelt was?",
@@ -181,6 +230,34 @@ const APP_DATA = {
       code: "C",
       title: "Wertströme & Buchführung",
       subtitle: "Bilanz, Bestands- & Erfolgskonten, Umsatzsteuer, Abschreibungen",
+      diagrams: [
+        {
+          title: "Bilanz-Schema",
+          note: "Aktiva und Passiva sind immer gleich hoch (Bilanzsumme).",
+          svg: `<svg viewBox="0 0 520 300" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <text x="130" y="24" text-anchor="middle" class="dt-mono" font-size="12">AKTIVA</text>
+            <text x="390" y="24" text-anchor="middle" class="dt-mono" font-size="12">PASSIVA</text>
+            <rect x="20" y="34" width="220" height="150" rx="4" class="df-ink"/>
+            <text x="130" y="100" text-anchor="middle" class="dt-white" font-size="13">Anlagevermögen</text>
+            <text x="130" y="118" text-anchor="middle" class="dt-white-mono" font-size="10">(langfristig gebunden)</text>
+            <rect x="20" y="188" width="220" height="90" rx="4" class="df-ink-soft"/>
+            <text x="130" y="228" text-anchor="middle" class="dt-white" font-size="13">Umlaufvermögen</text>
+            <text x="130" y="246" text-anchor="middle" class="dt-white-mono" font-size="10">(kurzfristig gebunden)</text>
+            <rect x="280" y="34" width="220" height="100" rx="4" class="df-success"/>
+            <text x="390" y="80" text-anchor="middle" class="dt-white" font-size="13">Eigenkapital</text>
+            <rect x="280" y="138" width="220" height="70" rx="4" class="df-ochre"/>
+            <text x="390" y="170" text-anchor="middle" class="dt-white" font-size="12">Langfristige</text>
+            <text x="390" y="184" text-anchor="middle" class="dt-white" font-size="12">Verbindlichkeiten</text>
+            <rect x="280" y="212" width="220" height="66" rx="4" class="df-stamp"/>
+            <text x="390" y="242" text-anchor="middle" class="dt-white" font-size="12">Kurzfristige</text>
+            <text x="390" y="256" text-anchor="middle" class="dt-white" font-size="12">Verbindlichkeiten</text>
+            <line x1="20" y1="288" x2="240" y2="288" class="ds-border" stroke-width="1.5"/>
+            <line x1="280" y1="288" x2="500" y2="288" class="ds-border" stroke-width="1.5"/>
+            <text x="130" y="298" text-anchor="middle" class="dt-mono" font-size="10">Bilanzsumme</text>
+            <text x="390" y="298" text-anchor="middle" class="dt-mono" font-size="10">Bilanzsumme (gleich hoch)</text>
+          </svg>`
+        }
+      ],
       summary: [
         {
           q: "Wie ist die Bilanz aufgebaut?",
@@ -430,6 +507,49 @@ const APP_DATA = {
       code: "F",
       title: "Kundenakquise & Marketing",
       subtitle: "Marketingmix, Produktlebenszyklus, Preis- & Kommunikationspolitik, Angebot & Nachfrage, Marktformen",
+      diagrams: [
+        {
+          title: "BCG-Matrix (Portfolio-Analyse)",
+          note: "Einordnung von Produkten nach Marktwachstum und relativem Marktanteil.",
+          svg: `<svg viewBox="0 0 480 420" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="80" y="40" width="180" height="160" class="df-ochre-soft"/>
+            <rect x="260" y="40" width="180" height="160" class="df-success-soft"/>
+            <rect x="80" y="200" width="180" height="160" class="df-stamp-soft"/>
+            <rect x="260" y="200" width="180" height="160" class="df-paper-dim"/>
+            <text x="170" y="110" text-anchor="middle" class="dt" font-size="15" font-weight="600">Question Marks</text>
+            <text x="170" y="130" text-anchor="middle" class="dt-mono" font-size="10">hohes Wachstum, geringer Anteil</text>
+            <text x="350" y="110" text-anchor="middle" class="dt" font-size="15" font-weight="600">Stars</text>
+            <text x="350" y="130" text-anchor="middle" class="dt-mono" font-size="10">hohes Wachstum, hoher Anteil</text>
+            <text x="170" y="270" text-anchor="middle" class="dt" font-size="15" font-weight="600">Poor Dogs</text>
+            <text x="170" y="290" text-anchor="middle" class="dt-mono" font-size="10">geringes Wachstum, geringer Anteil</text>
+            <text x="350" y="270" text-anchor="middle" class="dt" font-size="15" font-weight="600">Cash Cows</text>
+            <text x="350" y="290" text-anchor="middle" class="dt-mono" font-size="10">geringes Wachstum, hoher Anteil</text>
+            <line x1="80" y1="40" x2="80" y2="360" class="ds-ink" stroke-width="1.5"/>
+            <line x1="80" y1="360" x2="440" y2="360" class="ds-ink" stroke-width="1.5"/>
+            <text x="40" y="200" text-anchor="middle" class="dt-mono" font-size="11" transform="rotate(-90 40 200)">Marktwachstum</text>
+            <text x="260" y="386" text-anchor="middle" class="dt-mono" font-size="11">Relativer Marktanteil</text>
+          </svg>`
+        },
+        {
+          title: "Angebot, Nachfrage & Gleichgewichtspreis",
+          note: "Wo sich Angebots- und Nachfragekurve schneiden, entsteht der Marktpreis.",
+          svg: `<svg viewBox="0 0 420 340" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <line x1="60" y1="20" x2="60" y2="300" class="ds-ink" stroke-width="1.5"/>
+            <line x1="60" y1="300" x2="390" y2="300" class="ds-ink" stroke-width="1.5"/>
+            <text x="26" y="24" class="dt-mono" font-size="11">Preis</text>
+            <text x="356" y="318" class="dt-mono" font-size="11">Menge</text>
+            <polyline points="90,60 220,165 350,260" fill="none" class="ds-stamp" stroke-width="2"/>
+            <text x="352" y="256" class="dt" font-size="11">Nachfrage</text>
+            <polyline points="90,270 220,165 350,70" fill="none" class="ds-success" stroke-width="2"/>
+            <text x="352" y="68" class="dt" font-size="11">Angebot</text>
+            <line x1="220" y1="165" x2="220" y2="300" stroke-dasharray="3 4" class="ds-border" stroke-width="1.5"/>
+            <line x1="60" y1="165" x2="220" y2="165" stroke-dasharray="3 4" class="ds-border" stroke-width="1.5"/>
+            <circle cx="220" cy="165" r="4" class="df-ink"/>
+            <text x="64" y="158" class="dt-mono" font-size="10">Gleichgewichtspreis</text>
+            <text x="168" y="316" class="dt-mono" font-size="10">Gleichgewichtsmenge</text>
+          </svg>`
+        }
+      ],
       summary: [
         {
           q: "Was umfasst der Marketingmix?",
@@ -515,6 +635,47 @@ const APP_DATA = {
       code: "G",
       title: "Gesprächssituationen & Kommunikation",
       subtitle: "4 Seiten einer Nachricht, Sender-Empfänger-Modell, Fragetypen, Konfliktgespräche",
+      diagrams: [
+        {
+          title: "Die 4 Seiten einer Nachricht",
+          note: "Modell nach Schulz von Thun – jede Nachricht hat 4 Ebenen.",
+          svg: `<svg viewBox="0 0 480 420" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <line x1="240" y1="80" x2="240" y2="165" class="ds-border" stroke-width="1.5"/>
+            <line x1="240" y1="235" x2="240" y2="320" class="ds-border" stroke-width="1.5"/>
+            <line x1="150" y1="200" x2="170" y2="200" class="ds-border" stroke-width="1.5"/>
+            <line x1="310" y1="200" x2="330" y2="200" class="ds-border" stroke-width="1.5"/>
+            <rect x="170" y="20" width="140" height="60" rx="8" class="df-success"/>
+            <text x="240" y="46" text-anchor="middle" class="dt-white" font-size="13">Sachinhalt</text>
+            <text x="240" y="64" text-anchor="middle" class="dt-white-mono" font-size="9">worüber ich informiere</text>
+            <rect x="170" y="165" width="140" height="70" rx="8" class="df-ink"/>
+            <text x="240" y="205" text-anchor="middle" class="dt-white" font-size="15">Nachricht</text>
+            <rect x="20" y="165" width="130" height="70" rx="8" class="df-ochre"/>
+            <text x="85" y="192" text-anchor="middle" class="dt-white" font-size="12">Selbstkundgabe</text>
+            <text x="85" y="212" text-anchor="middle" class="dt-white-mono" font-size="9">was ich von mir zeige</text>
+            <rect x="330" y="165" width="130" height="70" rx="8" class="df-ink-soft"/>
+            <text x="395" y="192" text-anchor="middle" class="dt-white" font-size="13">Appell</text>
+            <text x="395" y="212" text-anchor="middle" class="dt-white-mono" font-size="9">was ich erreichen will</text>
+            <rect x="170" y="320" width="140" height="60" rx="8" class="df-stamp"/>
+            <text x="240" y="346" text-anchor="middle" class="dt-white" font-size="13">Beziehung</text>
+            <text x="240" y="364" text-anchor="middle" class="dt-white-mono" font-size="9">was ich von dir halte</text>
+          </svg>`
+        },
+        {
+          title: "Das Eisbergmodell",
+          note: "Nur ein kleiner Teil eines Konflikts ist sichtbar – der Rest liegt unter der Oberfläche.",
+          svg: `<svg viewBox="0 0 420 280" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="140" width="420" height="140" class="df-paper-dim"/>
+            <line x1="0" y1="140" x2="420" y2="140" class="ds-ink" stroke-width="1.5"/>
+            <polygon points="170,70 250,70 225,140 195,140" class="df-card" stroke="var(--ink)" stroke-width="1.5"/>
+            <polygon points="195,140 225,140 300,258 260,272 160,272 120,258" class="df-ink-soft"/>
+            <text x="210" y="30" text-anchor="middle" class="dt" font-size="12" font-weight="600">Verhalten, Worte, Taten,</text>
+            <text x="210" y="46" text-anchor="middle" class="dt-mono" font-size="10">Körpersprache (bewusst)</text>
+            <text x="210" y="200" text-anchor="middle" class="dt-white" font-size="12" font-weight="600">Motive, Bedürfnisse,</text>
+            <text x="210" y="218" text-anchor="middle" class="dt-white" font-size="12" font-weight="600">Emotionen, Normen</text>
+            <text x="210" y="234" text-anchor="middle" class="dt-white-mono" font-size="10">(unbewusst)</text>
+          </svg>`
+        }
+      ],
       summary: [
         {
           q: "Was besagt das Modell der 4 Seiten einer Nachricht (Schulz von Thun)?",
@@ -767,6 +928,43 @@ const APP_DATA = {
       code: "J",
       title: "Geschäftsprozesse & Organisation",
       subtitle: "Aufbau- & Ablauforganisation, Stellenarten, Leitungssysteme, Flowchart & EPK",
+      diagrams: [
+        {
+          title: "Einliniensystem vs. Mehrliniensystem",
+          note: "Einliniensystem: ein Vorgesetzter pro Stelle. Mehrliniensystem: mehrere Vorgesetzte möglich (rot = doppelte Weisungslinie).",
+          svg: `<svg viewBox="0 0 560 260" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <line x1="280" y1="10" x2="280" y2="250" class="ds-border" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <line x1="130" y1="48" x2="60" y2="90" class="ds-ink" stroke-width="1.5"/>
+            <line x1="130" y1="48" x2="200" y2="90" class="ds-ink" stroke-width="1.5"/>
+            <line x1="60" y1="122" x2="60" y2="164" class="ds-ink" stroke-width="1.5"/>
+            <line x1="200" y1="122" x2="200" y2="164" class="ds-ink" stroke-width="1.5"/>
+            <rect x="90" y="16" width="80" height="32" rx="6" class="df-ink"/>
+            <text x="130" y="37" text-anchor="middle" class="dt-white" font-size="12">Leitung</text>
+            <rect x="20" y="90" width="80" height="32" rx="6" class="df-ink-soft"/>
+            <text x="60" y="111" text-anchor="middle" class="dt-white" font-size="11">Abt. A</text>
+            <rect x="160" y="90" width="80" height="32" rx="6" class="df-ink-soft"/>
+            <text x="200" y="111" text-anchor="middle" class="dt-white" font-size="11">Abt. B</text>
+            <rect x="20" y="164" width="80" height="32" rx="6" class="df-ochre"/>
+            <text x="60" y="185" text-anchor="middle" class="dt-white" font-size="11">Team 1</text>
+            <rect x="160" y="164" width="80" height="32" rx="6" class="df-ochre"/>
+            <text x="200" y="185" text-anchor="middle" class="dt-white" font-size="11">Team 2</text>
+            <text x="130" y="226" text-anchor="middle" class="dt-mono" font-size="11">Einliniensystem</text>
+            <line x1="430" y1="48" x2="360" y2="90" class="ds-ink" stroke-width="1.5"/>
+            <line x1="430" y1="48" x2="500" y2="90" class="ds-ink" stroke-width="1.5"/>
+            <line x1="360" y1="122" x2="380" y2="164" class="ds-stamp" stroke-width="1.5"/>
+            <line x1="500" y1="122" x2="420" y2="164" class="ds-stamp" stroke-width="1.5"/>
+            <rect x="390" y="16" width="80" height="32" rx="6" class="df-ink"/>
+            <text x="430" y="37" text-anchor="middle" class="dt-white" font-size="12">Leitung</text>
+            <rect x="320" y="90" width="80" height="32" rx="6" class="df-ink-soft"/>
+            <text x="360" y="111" text-anchor="middle" class="dt-white" font-size="10">Fachbereich</text>
+            <rect x="460" y="90" width="80" height="32" rx="6" class="df-ink-soft"/>
+            <text x="500" y="111" text-anchor="middle" class="dt-white" font-size="11">Projekt</text>
+            <rect x="360" y="164" width="100" height="32" rx="6" class="df-stamp"/>
+            <text x="410" y="185" text-anchor="middle" class="dt-white" font-size="10">Mitarbeiter</text>
+            <text x="430" y="226" text-anchor="middle" class="dt-mono" font-size="11">Mehrliniensystem</text>
+          </svg>`
+        }
+      ],
       summary: [
         {
           q: "Aufbauorganisation vs. Ablauforganisation?",
@@ -926,6 +1124,58 @@ const APP_DATA = {
       code: "L",
       title: "Projektplanung & -durchführung",
       subtitle: "Projektmerkmale, Goldenes Dreieck, Projektorganisation, PSP, Angebotsvergleich, Gantt-Diagramm",
+      diagrams: [
+        {
+          title: "Das Goldene Dreieck des Projektmanagements",
+          note: "Sach-, Kosten- und Terminziel stehen in Konkurrenz zueinander.",
+          svg: `<svg viewBox="0 0 420 380" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="210,60 66,318 354,318" fill="none" class="ds-border" stroke-width="2"/>
+            <text x="210" y="238" text-anchor="middle" class="dt" font-size="13" font-weight="600">Projekt-</text>
+            <text x="210" y="256" text-anchor="middle" class="dt" font-size="13" font-weight="600">erfolg</text>
+            <circle cx="210" cy="60" r="46" class="df-ink"/>
+            <text x="210" y="56" text-anchor="middle" class="dt-white" font-size="12">Sachziel</text>
+            <text x="210" y="72" text-anchor="middle" class="dt-white-mono" font-size="9">Leistung/Qualität</text>
+            <circle cx="66" cy="318" r="46" class="df-success"/>
+            <text x="66" y="314" text-anchor="middle" class="dt-white" font-size="12">Kostenziel</text>
+            <text x="66" y="330" text-anchor="middle" class="dt-white-mono" font-size="9">Budget</text>
+            <circle cx="354" cy="318" r="46" class="df-stamp"/>
+            <text x="354" y="314" text-anchor="middle" class="dt-white" font-size="12">Terminziel</text>
+            <text x="354" y="330" text-anchor="middle" class="dt-white-mono" font-size="9">Zeitrahmen</text>
+          </svg>`
+        },
+        {
+          title: "Gantt-Diagramm (Beispiel)",
+          note: "Balken zeigen Dauer und Reihenfolge der Arbeitsschritte auf der Zeitachse.",
+          svg: `<svg viewBox="0 0 560 226" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="24" class="dt-mono" font-size="11">Aufgabe</text>
+            <text x="171" y="24" text-anchor="middle" class="dt-mono" font-size="10">KW 1</text>
+            <text x="234" y="24" text-anchor="middle" class="dt-mono" font-size="10">KW 2</text>
+            <text x="297" y="24" text-anchor="middle" class="dt-mono" font-size="10">KW 3</text>
+            <text x="360" y="24" text-anchor="middle" class="dt-mono" font-size="10">KW 4</text>
+            <text x="423" y="24" text-anchor="middle" class="dt-mono" font-size="10">KW 5</text>
+            <text x="486" y="24" text-anchor="middle" class="dt-mono" font-size="10">KW 6</text>
+            <g class="ds-border" stroke-width="1">
+              <line x1="140" y1="34" x2="140" y2="214"/>
+              <line x1="203" y1="34" x2="203" y2="214"/>
+              <line x1="266" y1="34" x2="266" y2="214"/>
+              <line x1="329" y1="34" x2="329" y2="214"/>
+              <line x1="392" y1="34" x2="392" y2="214"/>
+              <line x1="455" y1="34" x2="455" y2="214"/>
+              <line x1="518" y1="34" x2="518" y2="214"/>
+            </g>
+            <text x="10" y="66" class="dt" font-size="11">Konzept</text>
+            <rect x="140" y="52" width="126" height="20" rx="4" class="df-ochre"/>
+            <text x="10" y="106" class="dt" font-size="11">Umsetzung</text>
+            <rect x="266" y="92" width="126" height="20" rx="4" class="df-success"/>
+            <text x="10" y="146" class="dt" font-size="11">Testing</text>
+            <rect x="392" y="132" width="63" height="20" rx="4" class="df-ink-soft"/>
+            <text x="10" y="186" class="dt" font-size="11">Rollout</text>
+            <rect x="455" y="172" width="63" height="20" rx="4" class="df-ink"/>
+            <polygon points="518,168 528,182 518,196 508,182" class="df-stamp"/>
+            <text x="525" y="150" class="dt-mono" font-size="9">Meilenstein</text>
+          </svg>`
+        }
+      ],
       summary: [
         {
           q: "Was macht ein Projekt aus?",
