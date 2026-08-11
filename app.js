@@ -342,6 +342,11 @@
     $("#subtabDiagrams").hidden = !hasDiagrams;
     if (state.sub === "diagrams" && !hasDiagrams) state.sub = "summary";
 
+    const hasGames = !!(ch.terms && ch.terms.length);
+    $("#subtabHangman").hidden = !hasGames;
+    $("#subtabCrossword").hidden = !hasGames;
+    if ((state.sub === "hangman" || state.sub === "crossword") && !hasGames) state.sub = "summary";
+
     const s = chapterStats(ch);
     $("#topbarStamp").hidden = false;
     $("#topbarStampValue").textContent = s.percent + "%";
@@ -354,7 +359,7 @@
 
   function setActiveSubtab() {
     $all(".subtab").forEach((t) => t.classList.toggle("is-active", t.dataset.sub === state.sub));
-    ["summary", "diagrams", "flashcards", "quiz", "exam"].forEach((s) => {
+    ["summary", "diagrams", "flashcards", "quiz", "exam", "hangman", "crossword"].forEach((s) => {
       $("#sub-" + s).hidden = s !== state.sub;
     });
   }
@@ -366,6 +371,8 @@
     if (state.sub === "flashcards") renderFlashcards(ch);
     if (state.sub === "quiz") renderQuiz(ch);
     if (state.sub === "exam") renderExam(ch);
+    if (state.sub === "hangman") renderHangman(ch);
+    if (state.sub === "crossword") renderCrossword(ch);
   }
 
   $("#subtabs").addEventListener("click", (e) => {
@@ -426,6 +433,386 @@
       grid.appendChild(card);
     });
   }
+
+  /* ---------------------------------------------------------------- */
+  /* Sub-view: Hangman ("Begriffe raten")                              */
+  /* ---------------------------------------------------------------- */
+
+  const HANGMAN_MAX_WRONG = 6;
+  const HANGMAN_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+  const hangState = {
+    chapterId: null,
+    order: [],
+    index: 0,
+    guessed: new Set(),
+    wrong: 0,
+    finished: false,
+    won: false
+  };
+
+  function initHangman(ch) {
+    if (hangState.chapterId === ch.id) return;
+    hangState.chapterId = ch.id;
+    hangState.order = shuffle(ch.terms.map((_, i) => i));
+    hangState.index = 0;
+    hangState.guessed = new Set();
+    hangState.wrong = 0;
+    hangState.finished = false;
+    hangState.won = false;
+  }
+
+  function currentHangmanTerm(ch) {
+    return ch.terms[hangState.order[hangState.index]];
+  }
+
+  function hangmanStageSVG(wrong) {
+    const parts = [
+      wrong >= 1 ? '<circle cx="130" cy="58" r="16" fill="none" class="ds-stamp" stroke-width="3"/>' : "",
+      wrong >= 2 ? '<line x1="130" y1="74" x2="130" y2="132" class="ds-stamp" stroke-width="3" stroke-linecap="round"/>' : "",
+      wrong >= 3 ? '<line x1="130" y1="92" x2="108" y2="116" class="ds-stamp" stroke-width="3" stroke-linecap="round"/>' : "",
+      wrong >= 4 ? '<line x1="130" y1="92" x2="152" y2="116" class="ds-stamp" stroke-width="3" stroke-linecap="round"/>' : "",
+      wrong >= 5 ? '<line x1="130" y1="132" x2="110" y2="168" class="ds-stamp" stroke-width="3" stroke-linecap="round"/>' : "",
+      wrong >= 6 ? '<line x1="130" y1="132" x2="150" y2="168" class="ds-stamp" stroke-width="3" stroke-linecap="round"/>' : ""
+    ].join("");
+    return '<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">' +
+      '<line x1="20" y1="200" x2="120" y2="200" class="ds-ink" stroke-width="4" stroke-linecap="round"/>' +
+      '<line x1="50" y1="200" x2="50" y2="20" class="ds-ink" stroke-width="4" stroke-linecap="round"/>' +
+      '<line x1="50" y1="20" x2="130" y2="20" class="ds-ink" stroke-width="4" stroke-linecap="round"/>' +
+      '<line x1="130" y1="20" x2="130" y2="42" class="ds-ink" stroke-width="4" stroke-linecap="round"/>' +
+      parts +
+      "</svg>";
+  }
+
+  function renderHangman(ch) {
+    initHangman(ch);
+    const term = currentHangmanTerm(ch);
+    const word = term.word;
+
+    $("#hangmanStage").innerHTML = hangmanStageSVG(hangState.wrong);
+    $("#hangmanClue").textContent = term.clue;
+
+    const displayed = word
+      .split("")
+      .map((letter) => (hangState.guessed.has(letter) || hangState.finished ? letter : "_"))
+      .join(" ");
+    $("#hangmanWord").textContent = displayed;
+
+    const statusEl = $("#hangmanStatus");
+    const nextBtn = $("#hangmanNext");
+    if (hangState.finished) {
+      statusEl.hidden = false;
+      if (hangState.won) {
+        statusEl.textContent = "Richtig erraten! 🎉";
+        statusEl.className = "hangman-status is-win";
+      } else {
+        statusEl.textContent = "Leider verloren – gesucht war: " + word;
+        statusEl.className = "hangman-status is-lose";
+      }
+      nextBtn.hidden = false;
+    } else {
+      statusEl.hidden = true;
+      nextBtn.hidden = true;
+    }
+
+    $("#hangmanTally").textContent =
+      "Fehler: " + hangState.wrong + " / " + HANGMAN_MAX_WRONG + " · Begriff " + (hangState.index + 1) + " / " + ch.terms.length;
+
+    const kb = $("#hangmanKeyboard");
+    kb.innerHTML = "";
+    HANGMAN_ALPHABET.forEach((letter) => {
+      const btn = el("button", "hangman-key");
+      btn.textContent = letter;
+      const used = hangState.guessed.has(letter);
+      btn.disabled = used || hangState.finished;
+      if (used) btn.classList.add(word.includes(letter) ? "is-correct" : "is-wrong");
+      btn.addEventListener("click", () => guessHangmanLetter(ch, letter));
+      kb.appendChild(btn);
+    });
+  }
+
+  function guessHangmanLetter(ch, letter) {
+    if (hangState.finished || hangState.guessed.has(letter)) return;
+    hangState.guessed.add(letter);
+    const term = currentHangmanTerm(ch);
+    if (!term.word.includes(letter)) hangState.wrong += 1;
+
+    const allGuessed = term.word.split("").every((l) => hangState.guessed.has(l));
+    if (allGuessed) {
+      hangState.finished = true;
+      hangState.won = true;
+    } else if (hangState.wrong >= HANGMAN_MAX_WRONG) {
+      hangState.finished = true;
+      hangState.won = false;
+    }
+    renderHangman(ch);
+  }
+
+  $("#hangmanNext").addEventListener("click", () => {
+    const ch = findChapter(state.chapterId);
+    hangState.index += 1;
+    if (hangState.index >= hangState.order.length) {
+      hangState.order = shuffle(ch.terms.map((_, i) => i));
+      hangState.index = 0;
+    }
+    hangState.guessed = new Set();
+    hangState.wrong = 0;
+    hangState.finished = false;
+    hangState.won = false;
+    renderHangman(ch);
+  });
+
+  /* ---------------------------------------------------------------- */
+  /* Sub-view: Kreuzworträtsel                                         */
+  /* ---------------------------------------------------------------- */
+
+  const crosswordState = { chapterId: null, puzzle: null };
+
+  function buildCrossword(terms) {
+    const words = terms
+      .map((t) => ({ word: t.word.toUpperCase().replace(/[^A-Z]/g, ""), clue: t.clue }))
+      .filter((w) => w.word.length > 0)
+      .sort((a, b) => b.word.length - a.word.length);
+
+    const cells = {};
+    const placed = [];
+
+    function canPlace(word, row, col, dir) {
+      for (let i = 0; i < word.length; i++) {
+        const r = dir === "V" ? row + i : row;
+        const c = dir === "H" ? col + i : col;
+        const existing = cells[r + "," + c];
+        if (existing && existing !== word[i]) return false;
+      }
+      const beforeR = dir === "V" ? row - 1 : row;
+      const beforeC = dir === "H" ? col - 1 : col;
+      if (cells[beforeR + "," + beforeC]) return false;
+      const afterR = dir === "V" ? row + word.length : row;
+      const afterC = dir === "H" ? col + word.length : col;
+      if (cells[afterR + "," + afterC]) return false;
+
+      for (let i = 0; i < word.length; i++) {
+        const r = dir === "V" ? row + i : row;
+        const c = dir === "H" ? col + i : col;
+        if (cells[r + "," + c]) continue; // Kreuzungspunkt, erlaubt
+        if (dir === "H") {
+          if (cells[(r - 1) + "," + c] || cells[(r + 1) + "," + c]) return false;
+        } else {
+          if (cells[r + "," + (c - 1)] || cells[r + "," + (c + 1)]) return false;
+        }
+      }
+      return true;
+    }
+
+    function place(word, row, col, dir) {
+      for (let i = 0; i < word.length; i++) {
+        const r = dir === "V" ? row + i : row;
+        const c = dir === "H" ? col + i : col;
+        cells[r + "," + c] = word[i];
+      }
+      placed.push({ word, row, col, dir });
+    }
+
+    place(words[0].word, 0, 0, "H");
+    words[0]._pos = { row: 0, col: 0, dir: "H" };
+
+    for (let wi = 1; wi < words.length; wi++) {
+      const w = words[wi].word;
+      let bestPlacement = null;
+
+      outer: for (const p of placed) {
+        for (let pi = 0; pi < p.word.length; pi++) {
+          const letter = p.word[pi];
+          for (let wj = 0; wj < w.length; wj++) {
+            if (w[wj] !== letter) continue;
+            const dir = p.dir === "H" ? "V" : "H";
+            const crossR = p.dir === "H" ? p.row : p.row + pi;
+            const crossC = p.dir === "H" ? p.col + pi : p.col;
+            const row = dir === "V" ? crossR - wj : crossR;
+            const col = dir === "H" ? crossC - wj : crossC;
+            if (canPlace(w, row, col, dir)) {
+              bestPlacement = { row, col, dir };
+              break outer;
+            }
+          }
+        }
+      }
+
+      if (bestPlacement) {
+        place(w, bestPlacement.row, bestPlacement.col, bestPlacement.dir);
+        words[wi]._pos = bestPlacement;
+      } else {
+        let maxRow = 0;
+        placed.forEach((p) => {
+          const endRow = p.dir === "V" ? p.row + p.word.length - 1 : p.row;
+          maxRow = Math.max(maxRow, endRow);
+        });
+        const row = maxRow + 2;
+        place(w, row, 0, "H");
+        words[wi]._pos = { row, col: 0, dir: "H" };
+      }
+    }
+
+    let minR = Infinity, maxR = -Infinity, minC = Infinity, maxC = -Infinity;
+    Object.keys(cells).forEach((k) => {
+      const [r, c] = k.split(",").map(Number);
+      minR = Math.min(minR, r);
+      maxR = Math.max(maxR, r);
+      minC = Math.min(minC, c);
+      maxC = Math.max(maxC, c);
+    });
+
+    const startsMap = {};
+    const orderedStarts = placed
+      .map((p) => ({ key: p.row + "," + p.col, row: p.row, col: p.col }))
+      .sort((a, b) => (a.row === b.row ? a.col - b.col : a.row - b.row));
+    let num = 1;
+    orderedStarts.forEach((s) => {
+      if (!(s.key in startsMap)) {
+        startsMap[s.key] = num;
+        num++;
+      }
+    });
+
+    const across = [];
+    const down = [];
+    words.forEach((w) => {
+      const pos = w._pos;
+      const key = pos.row + "," + pos.col;
+      const entry = { number: startsMap[key], clue: w.clue, word: w.word, row: pos.row, col: pos.col, dir: pos.dir, length: w.word.length };
+      if (pos.dir === "H") across.push(entry);
+      else down.push(entry);
+    });
+    across.sort((a, b) => a.number - b.number);
+    down.sort((a, b) => a.number - b.number);
+
+    return { cells, minR, maxR, minC, maxC, startsMap, across, down };
+  }
+
+  function findCrosswordInput(r, c) {
+    return document.querySelector('#crosswordGrid input[data-r="' + r + '"][data-c="' + c + '"]');
+  }
+
+  function focusCrosswordWord(entry) {
+    $all("#crosswordGrid .cw-cell.is-highlighted").forEach((c) => c.classList.remove("is-highlighted"));
+    for (let i = 0; i < entry.length; i++) {
+      const r = entry.dir === "V" ? entry.row + i : entry.row;
+      const c = entry.dir === "H" ? entry.col + i : entry.col;
+      const input = findCrosswordInput(r, c);
+      if (input) input.closest(".cw-cell").classList.add("is-highlighted");
+    }
+    const first = findCrosswordInput(entry.row, entry.col);
+    if (first) first.focus();
+  }
+
+  function buildCrosswordDOM(puzzle) {
+    const rows = puzzle.maxR - puzzle.minR + 1;
+    const cols = puzzle.maxC - puzzle.minC + 1;
+    const gridEl = $("#crosswordGrid");
+    gridEl.innerHTML = "";
+    gridEl.style.gridTemplateColumns = "repeat(" + cols + ", 30px)";
+    gridEl.style.gridTemplateRows = "repeat(" + rows + ", 30px)";
+
+    for (let r = puzzle.minR; r <= puzzle.maxR; r++) {
+      for (let c = puzzle.minC; c <= puzzle.maxC; c++) {
+        const key = r + "," + c;
+        const letter = puzzle.cells[key];
+        const cellDiv = el("div", "cw-cell" + (letter ? "" : " is-blocked"));
+
+        if (letter) {
+          const num = puzzle.startsMap[key];
+          if (num) cellDiv.appendChild(el("span", "cw-number", String(num)));
+
+          const input = document.createElement("input");
+          input.type = "text";
+          input.setAttribute("maxlength", "1");
+          input.dataset.r = r;
+          input.dataset.c = c;
+          input.dataset.answer = letter;
+          input.addEventListener("input", (e) => {
+            e.target.value = e.target.value.toUpperCase().replace(/[^A-Z]/g, "").slice(-1);
+            e.target.closest(".cw-cell").classList.remove("is-correct", "is-wrong");
+            if (e.target.value) {
+              const right = findCrosswordInput(r, c + 1);
+              if (right) right.focus();
+            }
+          });
+          input.addEventListener("keydown", (e) => {
+            if (e.key === "Backspace" && !e.target.value) {
+              const left = findCrosswordInput(r, c - 1);
+              if (left) left.focus();
+            }
+          });
+          cellDiv.appendChild(input);
+        }
+        gridEl.appendChild(cellDiv);
+      }
+    }
+
+    const cluesEl = $("#crosswordClues");
+    cluesEl.innerHTML = "";
+
+    const acrossGroup = el("div", "crossword-clue-group", "<h4>Waagerecht</h4>");
+    const acrossList = el("ol", "crossword-clue-list");
+    puzzle.across.forEach((entry) => {
+      const li = el("li", "crossword-clue-item", '<span class="cw-clue-num">' + entry.number + ".</span>" + entry.clue);
+      li.addEventListener("click", () => focusCrosswordWord(entry));
+      acrossList.appendChild(li);
+    });
+    acrossGroup.appendChild(acrossList);
+
+    const downGroup = el("div", "crossword-clue-group", "<h4>Senkrecht</h4>");
+    const downList = el("ol", "crossword-clue-list");
+    puzzle.down.forEach((entry) => {
+      const li = el("li", "crossword-clue-item", '<span class="cw-clue-num">' + entry.number + ".</span>" + entry.clue);
+      li.addEventListener("click", () => focusCrosswordWord(entry));
+      downList.appendChild(li);
+    });
+    downGroup.appendChild(downList);
+
+    cluesEl.appendChild(acrossGroup);
+    cluesEl.appendChild(downGroup);
+    $("#crosswordFeedback").textContent = "";
+  }
+
+  function renderCrossword(ch) {
+    if (crosswordState.chapterId !== ch.id) {
+      crosswordState.chapterId = ch.id;
+      crosswordState.puzzle = buildCrossword(ch.terms);
+      buildCrosswordDOM(crosswordState.puzzle);
+    }
+  }
+
+  $("#crosswordCheck").addEventListener("click", () => {
+    const inputs = $all("#crosswordGrid input");
+    let correct = 0, filled = 0;
+    inputs.forEach((inp) => {
+      const cellDiv = inp.closest(".cw-cell");
+      cellDiv.classList.remove("is-correct", "is-wrong");
+      if (inp.value) {
+        filled++;
+        if (inp.value === inp.dataset.answer) {
+          correct++;
+          cellDiv.classList.add("is-correct");
+        } else {
+          cellDiv.classList.add("is-wrong");
+        }
+      }
+    });
+    const feedback = $("#crosswordFeedback");
+    feedback.textContent =
+      correct === inputs.length ? "🎉 Vollständig gelöst!" : correct + " von " + inputs.length + " Feldern richtig (" + filled + " ausgefüllt).";
+  });
+
+  $("#crosswordSolve").addEventListener("click", () => {
+    $all("#crosswordGrid input").forEach((inp) => {
+      inp.value = inp.dataset.answer;
+      const cellDiv = inp.closest(".cw-cell");
+      cellDiv.classList.remove("is-wrong");
+      cellDiv.classList.add("is-correct");
+    });
+    $("#crosswordFeedback").textContent = "Lösung eingeblendet.";
+  });
 
   /* ---------------------------------------------------------------- */
   /* Sub-view: Karteikarten                                            */
