@@ -74,6 +74,16 @@ const APP_DATA = {
         { word: "SUBVENTION", clue: "Finanzielle Hilfe des Staates an Unternehmen" },
         { word: "VIERECK", clue: "Vier teils widersprüchliche Ziele der Wirtschaftspolitik (Magisches ...)" }
       ],
+      hangmanTerms: [
+        { word: "PROBEZEIT", clue: "Testphase zu Beginn der Ausbildung" },
+        { word: "WOHLSTAND", clue: "Ziel des stetigen Wirtschaftswachstums" },
+        { word: "PRODUKTIONSFAKTOR", clue: "Boden, Arbeit oder Kapital" },
+        { word: "DISPOSITION", clue: "Flexible Ergänzung wiederkehrender Aufgaben" },
+        { word: "IMPROVISATION", clue: "Spontane Lösung einer unvorhergesehenen Situation" },
+        { word: "FISKALPOLITIK", clue: "Wirtschaftspolitik des Staates über Steuern und Ausgaben" },
+        { word: "AUSSENHANDEL", clue: "Export und Import zwischen Ländern" },
+        { word: "WACHSTUM", clue: "Vermehrung von Wohlstand und Produktion" }
+      ],
       summary: [
         {
           q: "Ausbildungsordnung vs. Ausbildungsvertrag – was regelt was?",
@@ -158,6 +168,26 @@ const APP_DATA = {
       code: "B",
       title: "Verträge & Beschaffung",
       subtitle: "Geschäftsfähigkeit, Rechtsgeschäfte, Kaufvertragsarten, Kaufvertragsstörungen, Verjährung",
+      terms: [
+        { word: "KAUFVERTRAG", clue: "Mehrseitig verpflichtendes Rechtsgeschäft zwischen Käufer und Verkäufer" },
+        { word: "VERJAEHRUNG", clue: "Verlust des gerichtlichen Durchsetzungsrechts nach Fristablauf" },
+        { word: "LIEFERVERZUG", clue: "Ware wird zu spät oder gar nicht geliefert" },
+        { word: "ANNAHMEVERZUG", clue: "Kunde nimmt die richtig gelieferte Ware nicht an" },
+        { word: "GATTUNGSKAUF", clue: "Kauf einer vertretbaren, ersetzbaren Sache" },
+        { word: "STUECKKAUF", clue: "Kauf einer nicht vertretbaren Sache, z. B. ein Gemälde" },
+        { word: "RECHTSGESCHAEFT", clue: "Tatbestand aus mind. einer Willenserklärung mit Rechtsfolge" },
+        { word: "WILLENSERKLAERUNG", clue: "Äußerung mit dem Ziel, rechtlich etwas zu bewirken" }
+      ],
+      hangmanTerms: [
+        { word: "MINDERJAEHRIG", clue: "Person zwischen 7 und 18 Jahren, beschränkt geschäftsfähig" },
+        { word: "GENEHMIGUNG", clue: "Zustimmung NACH Abschluss eines Rechtsgeschäfts" },
+        { word: "EINWILLIGUNG", clue: "Zustimmung VOR Abschluss eines Rechtsgeschäfts" },
+        { word: "SACHMANGEL", clue: "Ware ist beschädigt oder hat falsche Menge" },
+        { word: "RECHTSMANGEL", clue: "Ein Dritter kann Rechte an der Ware geltend machen" },
+        { word: "FIXKAUF", clue: "Lieferung muss zu einem exakt vereinbarten Termin erfolgen" },
+        { word: "ERFUELLUNGSORT", clue: "Ort, an dem der Schuldner seine Leistung erbringen muss" },
+        { word: "NACHERFUELLUNG", clue: "Vorrangiges Recht bei Schlechtleistung" }
+      ],
       summary: [
         {
           q: "Die drei Stufen der Geschäftsfähigkeit im Überblick?",
@@ -282,6 +312,16 @@ const APP_DATA = {
         { word: "SKONTO", clue: "Preisnachlass bei schneller Zahlung" },
         { word: "EIGENKAPITAL", clue: "Vermögen abzüglich Schulden" }
       ],
+      hangmanTerms: [
+        { word: "BUCHUNGSSATZ", clue: "Formale Anweisung, welches Konto im Soll und Haben bebucht wird" },
+        { word: "ANLAGEVERMOEGEN", clue: "Langfristig im Unternehmen gebundenes Vermögen" },
+        { word: "UMLAUFVERMOEGEN", clue: "Kurzfristig gebundenes, sich ständig veränderndes Vermögen" },
+        { word: "GEWINN", clue: "Entsteht, wenn Erträge größer sind als Aufwendungen" },
+        { word: "VERLUST", clue: "Entsteht, wenn Aufwendungen größer sind als Erträge" },
+        { word: "ZAHLLAST", clue: "Betrag, der ans Finanzamt gezahlt werden muss" },
+        { word: "BESTANDSKONTO", clue: "Erfasst Bestände und deren Veränderung" },
+        { word: "ERFOLGSKONTO", clue: "Unterkonto des Eigenkapitals ohne Anfangsbestand" }
+      ],
       summary: [
         {
           q: "Wie ist die Bilanz aufgebaut?",
@@ -365,6 +405,26 @@ const APP_DATA = {
       code: "D",
       title: "Kalkulation & Kosten",
       subtitle: "Vor-/Rückwärtskalkulation, Deckungsbeitrag, Break-Even, Kostenrechnung",
+      terms: [
+        { word: "DECKUNGSBEITRAG", clue: "Verkaufspreis minus variable Stückkosten" },
+        { word: "SELBSTKOSTEN", clue: "Bezugspreis plus Handlungskostenzuschlag" },
+        { word: "GEWINNZUSCHLAG", clue: "Aufschlag auf die Selbstkosten zur Gewinnerzielung" },
+        { word: "HANDELSSPANNE", clue: "Anteil des Verkaufspreises, der im Unternehmen verbleibt" },
+        { word: "FIXKOSTEN", clue: "Kosten, die unabhängig von der Produktionsmenge anfallen" },
+        { word: "KALKULATIONSFAKTOR", clue: "Verhältnis von Listenverkaufspreis zu Bezugspreis" },
+        { word: "GEWINNSCHWELLE", clue: "Anderer Begriff für Break-Even-Point" },
+        { word: "EINZELKOSTEN", clue: "Kosten, die einem Produkt direkt zurechenbar sind" }
+      ],
+      hangmanTerms: [
+        { word: "BEZUGSPREIS", clue: "Bareinkaufspreis plus Bezugskosten" },
+        { word: "LISTENPREIS", clue: "Katalogpreis des Lieferanten ohne Abzüge" },
+        { word: "LIEFERRABATT", clue: "Erster Abzug vom Listeneinkaufspreis" },
+        { word: "GEMEINKOSTEN", clue: "Kosten, die nur über Schlüssel verteilt werden können" },
+        { word: "PREISUNTERGRENZE", clue: "Mindestpreis, den ein Unternehmen verlangen muss" },
+        { word: "VORKALKULATION", clue: "Planung der Kosten im Voraus" },
+        { word: "NACHKALKULATION", clue: "Kontrolle der Kosten im Nachhinein" },
+        { word: "ZUSCHLAGSSATZ", clue: "Prozentualer Aufschlag auf den Bezugspreis" }
+      ],
       summary: [
         {
           q: "Wie läuft die Vorwärtskalkulation ab?",
@@ -445,6 +505,26 @@ const APP_DATA = {
       code: "E",
       title: "Büroprozesse & Arbeitsorganisation",
       subtitle: "Ergonomie, Zeitmanagement, Termine, Aufbewahrungsfristen, Auftragsbearbeitung",
+      terms: [
+        { word: "ERGONOMIE", clue: "Gestaltung der Arbeitsumgebung zur Optimierung und Entlastung" },
+        { word: "BUEROSTUHL", clue: "Sollte 5 Abstützpunkte und höhenverstellbare Sitzfläche haben" },
+        { word: "BILDSCHIRM", clue: "Abstand von 50-60 cm zum Kopf empfohlen" },
+        { word: "ZEITMANAGEMENT", clue: "Methoden wie SMART oder Pareto zur Aufgabenplanung" },
+        { word: "TERMINPLANUNG", clue: "Organisation, Koordination und Überwachung von Terminen" },
+        { word: "AUFBEWAHRUNGSFRIST", clue: "Gesetzlich vorgeschriebene Dauer der Dokumentenaufbewahrung" },
+        { word: "AUFTRAGSBESTAETIGUNG", clue: "5. Schritt der Auftragsbearbeitung" },
+        { word: "RAUMKLIMA", clue: "Sollte eine Luftfeuchtigkeit von 40-60 % haben" }
+      ],
+      hangmanTerms: [
+        { word: "AKUSTIK", clue: "Der Schalldruck im Büro soll so niedrig wie möglich sein" },
+        { word: "BELEUCHTUNG", clue: "Mindestens 500 Lux in Büroräumen" },
+        { word: "PARETOPRINZIP", clue: "20 Prozent der Zeit bringen 80 Prozent der Ergebnisse" },
+        { word: "ALPENMETHODE", clue: "Aufgaben auflisten, Länge kalkulieren, Puffer, Entscheidung" },
+        { word: "LIEFERSCHEIN", clue: "Wird zur Kontrolle mit der Ware mitgeliefert" },
+        { word: "BONITAETSPRUEFUNG", clue: "Prüfung der Zahlungsfähigkeit eines Kunden" },
+        { word: "ANFRAGE", clue: "Erster, rechtlich unverbindlicher Schritt der Auftragsbearbeitung" },
+        { word: "RECHNUNGSNUMMER", clue: "Muss auf jeder vollständigen Rechnung fortlaufend sein" }
+      ],
       summary: [
         {
           q: "Was gehört zu einem ergonomisch gestalteten Arbeitsplatz?",
@@ -531,6 +611,26 @@ const APP_DATA = {
       code: "F",
       title: "Kundenakquise & Marketing",
       subtitle: "Marketingmix, Produktlebenszyklus, Preis- & Kommunikationspolitik, Angebot & Nachfrage, Marktformen",
+      terms: [
+        { word: "MARKETINGMIX", clue: "Zusammenspiel aus Produkt-, Preis-, Kommunikations- und Distributionspolitik" },
+        { word: "PRODUKTLEBENSZYKLUS", clue: "Von der Innovation bis zur Elimination eines Produkts" },
+        { word: "PREISPOLITIK", clue: "Legt den Verkaufspreis in Abhängigkeit von Kosten und Markt fest" },
+        { word: "MARKTDURCHDRINGUNG", clue: "Preisstrategie: erst niedrig, dann Preis erhöhen" },
+        { word: "NACHFRAGE", clue: "Sinkt laut Gesetz bei steigendem Preis" },
+        { word: "ANGEBOT", clue: "Steigt laut Gesetz bei steigendem Preis" },
+        { word: "GLEICHGEWICHTSPREIS", clue: "Preis, bei dem sich Angebot und Nachfrage entsprechen" },
+        { word: "POLYPOL", clue: "Marktform mit vielen Anbietern und vielen Nachfragern" }
+      ],
+      hangmanTerms: [
+        { word: "PRODUKTPOLITIK", clue: "Umfasst alle Entscheidungen zum Leistungsangebot" },
+        { word: "DISTRIBUTIONSPOLITIK", clue: "Regelt die Absatzwege eines Produkts" },
+        { word: "WERBUNG", clue: "Teil der Kommunikationspolitik nach dem AIDA-Prinzip" },
+        { word: "SALESPROMOTION", clue: "Förderung von Verkäufern, Händlern und Verbrauchern" },
+        { word: "HANDELSVERTRETER", clue: "Selbstständiger Vertreter, der für mehrere Firmen arbeiten kann" },
+        { word: "MONOPOL", clue: "Marktform mit nur einem Anbieter" },
+        { word: "MELKKUH", clue: "BCG-Begriff für hohen Marktanteil, geringes Wachstum" },
+        { word: "FRAGEZEICHEN", clue: "BCG-Begriff für geringen Marktanteil, hohes Wachstum" }
+      ],
       diagrams: [
         {
           title: "BCG-Matrix (Portfolio-Analyse)",
@@ -659,6 +759,26 @@ const APP_DATA = {
       code: "G",
       title: "Gesprächssituationen & Kommunikation",
       subtitle: "4 Seiten einer Nachricht, Sender-Empfänger-Modell, Fragetypen, Konfliktgespräche",
+      terms: [
+        { word: "KOMMUNIKATION", clue: "Austausch von Informationen auf verschiedene Arten" },
+        { word: "SACHINHALT", clue: "Ebene der Nachricht: worüber ich informiere" },
+        { word: "SELBSTKUNDGABE", clue: "Ebene der Nachricht: was ich von mir zeige" },
+        { word: "BEZIEHUNG", clue: "Ebene der Nachricht: was ich vom anderen halte" },
+        { word: "APPELL", clue: "Ebene der Nachricht: was ich erreichen möchte" },
+        { word: "SENDER", clue: "Person, die eine Nachricht übermittelt" },
+        { word: "EMPFAENGER", clue: "Person, die eine Nachricht empfängt und interpretiert" },
+        { word: "GESCHLOSSENEFRAGE", clue: "Frage, die nur mit Ja oder Nein beantwortet wird" }
+      ],
+      hangmanTerms: [
+        { word: "KONFLIKTGESPRAECH", clue: "Gespräch zur Klärung von Meinungsverschiedenheiten" },
+        { word: "EISBERGMODELL", clue: "Nur ein kleiner Teil eines Konflikts ist sichtbar" },
+        { word: "KONTROLLFRAGE", clue: "Überprüft, ob man inhaltlich übereinstimmt" },
+        { word: "ALTERNATIVFRAGE", clue: "Lässt dem Gesprächspartner zwei Antwortmöglichkeiten" },
+        { word: "ICHBOTSCHAFT", clue: "Eigene Sichtweise offen ansprechen im Konfliktgespräch" },
+        { word: "KOERPERSPRACHE", clue: "Sichtbarer Teil der Kommunikation über der Wasserlinie" },
+        { word: "OFFENEFRAGE", clue: "Fordert den Gesprächspartner zum Erzählen auf" },
+        { word: "ZUHOEREN", clue: "Wichtige Aufgabe des Empfängers B im Sender-Empfänger-Modell" }
+      ],
       diagrams: [
         {
           title: "Die 4 Seiten einer Nachricht",
@@ -783,6 +903,26 @@ const APP_DATA = {
       code: "H",
       title: "Personalwirtschaft",
       subtitle: "Personalbedarf & -beschaffung, Arbeitszeitgesetz, Lohn & Gehalt, Kündigung, Sozialversicherung",
+      terms: [
+        { word: "PERSONALBEDARF", clue: "Ermittlung der benötigten Mitarbeiterzahl" },
+        { word: "PERSONALBESCHAFFUNG", clue: "Deckung des festgestellten Personalbedarfs" },
+        { word: "ARBEITSZEITGESETZ", clue: "Regelt Höchstarbeitszeit und Ruhepausen" },
+        { word: "KUENDIGUNGSFRIST", clue: "Zeitraum, der bei ordentlicher Kündigung eingehalten werden muss" },
+        { word: "ARBEITSVERTRAG", clue: "Schriftstück, das das Arbeitsverhältnis festigt" },
+        { word: "ARBEITSZEUGNIS", clue: "Wird bei Ausscheiden aus dem Unternehmen ausgestellt" },
+        { word: "LOHNSTEUERKLASSE", clue: "Bestimmt die Höhe der steuerlichen Abzüge" },
+        { word: "PROBEZEIT", clue: "Anfangsphase eines Arbeitsverhältnisses" }
+      ],
+      hangmanTerms: [
+        { word: "KUENDIGUNGSSCHUTZ", clue: "Schützt Arbeitnehmer ab 6 Monaten Betriebszugehörigkeit" },
+        { word: "ABMAHNUNG", clue: "Vor einer verhaltensbedingten Kündigung meist erforderlich" },
+        { word: "RENTENVERSICHERUNG", clue: "Beitragssatz von 18,6 % des Bruttolohns" },
+        { word: "KRANKENVERSICHERUNG", clue: "Beitragssatz von 14,6 % des Bruttolohns" },
+        { word: "GLEITZEIT", clue: "Arbeitszeitmodell mit festen Kernstunden" },
+        { word: "VERTRAUENSARBEITSZEIT", clue: "Mitarbeiter legt Arbeitszeit eigenverantwortlich fest" },
+        { word: "FUEHRUNGSSTIL", clue: "Autoritär oder kooperativ" },
+        { word: "SOZIALVERSICHERUNG", clue: "Umfasst KV, PV, AV und RV" }
+      ],
       summary: [
         {
           q: "Welche Arten von Personalbedarf gibt es?",
@@ -870,6 +1010,26 @@ const APP_DATA = {
       code: "I",
       title: "Liquidität & Finanzierung",
       subtitle: "Investition vs. Finanzierung, Goldene Finanzregel, Leasing, Factoring, Kreditsicherheiten, Darlehen",
+      terms: [
+        { word: "LEASING", clue: "Rechtlich ein Mietvertrag über einen Gegenstand" },
+        { word: "FACTORING", clue: "Verkauf von Forderungen an ein spezialisiertes Unternehmen" },
+        { word: "BUERGSCHAFT", clue: "Personalsicherheit, bei der ein Dritter für die Schuld haftet" },
+        { word: "GRUNDPFANDRECHT", clue: "Realsicherheit, eingetragen im Grundbuch" },
+        { word: "KONTOKORRENTKREDIT", clue: "Klassischer kurzfristiger Überziehungskredit" },
+        { word: "ANNUITAETENDARLEHEN", clue: "Gleichbleibende Rate, Zinsanteil sinkt, Tilgung steigt" },
+        { word: "EIGENTUMSVORBEHALT", clue: "Verkäufer bleibt Eigentümer bis zur vollständigen Bezahlung" },
+        { word: "ZESSION", clue: "Andere Bezeichnung für Forderungsabtretung" }
+      ],
+      hangmanTerms: [
+        { word: "INVESTITION", clue: "Verwendung finanzieller Mittel, steht auf der Aktivseite" },
+        { word: "FINANZIERUNG", clue: "Beschaffung finanzieller Mittel, steht auf der Passivseite" },
+        { word: "FINANZREGEL", clue: "Fordert Fristenkongruenz von Mittelverwendung und -beschaffung" },
+        { word: "SELBSTFINANZIERUNG", clue: "Kapital aus gebildeten Gewinnrücklagen" },
+        { word: "LOMBARDKREDIT", clue: "Kurzfristiger Kredit gegen Verpfändung von Wertpapieren" },
+        { word: "KREDITSICHERHEIT", clue: "Sichert den Gläubiger vor Verlusten aus dem Kredit ab" },
+        { word: "DARLEHEN", clue: "Wird oft als Unterbegriff des Kredits verwendet" },
+        { word: "AUSSENFINANZIERUNG", clue: "Kapital, das von außerhalb des Unternehmens kommt" }
+      ],
       summary: [
         {
           q: "Investition vs. Finanzierung – wie hängen sie zusammen?",
@@ -952,6 +1112,26 @@ const APP_DATA = {
       code: "J",
       title: "Geschäftsprozesse & Organisation",
       subtitle: "Aufbau- & Ablauforganisation, Stellenarten, Leitungssysteme, Flowchart & EPK",
+      terms: [
+        { word: "AUFBAUORGANISATION", clue: "Legt fest, wer welche Aufgaben übernimmt" },
+        { word: "ABLAUFORGANISATION", clue: "Regelt, wie und wann Aufgaben erledigt werden" },
+        { word: "STABSTELLE", clue: "Beratende Hilfsstelle ohne Weisungsbefugnis" },
+        { word: "INSTANZ", clue: "Stelle mit Anordnungs- und Entscheidungsbefugnis" },
+        { word: "EINLINIENSYSTEM", clue: "Jede Stelle hat nur einen Vorgesetzten" },
+        { word: "MEHRLINIENSYSTEM", clue: "Eine Stelle kann mehrere Vorgesetzte haben" },
+        { word: "MATRIXORGANISATION", clue: "Leitungsfunktion auf zwei gleichberechtigte Ebenen verteilt" },
+        { word: "FLOWCHART", clue: "Grafische Darstellung eines Ablaufs mit Oval, Rechteck, Karo" }
+      ],
+      hangmanTerms: [
+        { word: "SPARTENORGANISATION", clue: "Gliederung nach Produkten oder Produktgruppen" },
+        { word: "GESCHAEFTSPROZESS", clue: "Zusammenfassung von Aufgaben zur Erreichung eines Ziels" },
+        { word: "KERNPROZESS", clue: "Hat direkten Bezug zum Kunden und zur Wertschöpfung" },
+        { word: "EREIGNIS", clue: "In der EPK durch ein Sechseck dargestellt" },
+        { word: "FUNKTION", clue: "In der EPK durch ein abgerundetes Rechteck dargestellt" },
+        { word: "PROZESSKETTE", clue: "Andere Bezeichnung für die ereignisgesteuerte EPK" },
+        { word: "ORGANISATIONSEINHEIT", clue: "In der EPK durch ein Oval dargestellt" },
+        { word: "PARALLELISIERUNG", clue: "Maßnahme zur Prozessoptimierung: Vorgänge gleichzeitig ablaufen lassen" }
+      ],
       diagrams: [
         {
           title: "Einliniensystem vs. Mehrliniensystem",
@@ -1072,6 +1252,26 @@ const APP_DATA = {
       code: "K",
       title: "Veranstaltungen & Geschäftsreisen",
       subtitle: "Protokolle, Checklisten, Sitzung vs. Besprechung, Reiseplanung, Reisekostenabrechnung",
+      terms: [
+        { word: "VOLLPROTOKOLL", clue: "Hält den genauen Wortlaut einer Sitzung fest" },
+        { word: "ERGEBNISPROTOKOLL", clue: "Hält nur Kernaussagen und Entscheidungen fest" },
+        { word: "REISEKOSTENABRECHNUNG", clue: "Letzter Schritt der Geschäftsreiseplanung" },
+        { word: "GESCHAEFTSREISE", clue: "Wird in 5 Schritten geplant, beginnend mit dem Reiseantrag" },
+        { word: "CHECKLISTE", clue: "Hilfsmittel zur Vorbereitung einer Veranstaltung" },
+        { word: "SITZUNG", clue: "Formal geplantes Treffen mit Einladung und Protokoll" },
+        { word: "BESPRECHUNG", clue: "Informeller Austausch einer kleinen Gruppe" },
+        { word: "VERPFLEGUNGSMEHRAUFWAND", clue: "Pauschale für Abwesenheit auf Geschäftsreisen" }
+      ],
+      hangmanTerms: [
+        { word: "VERLAUFSPROTOKOLL", clue: "Gibt den Ablauf einer Sitzung zusammengefasst wieder" },
+        { word: "KILOMETERPAUSCHALE", clue: "Beträgt 0,30 Euro pro gefahrenem Kilometer" },
+        { word: "REISENEBENKOSTEN", clue: "Zum Beispiel Taxi, Parkgebühren oder Porto" },
+        { word: "VERANSTALTUNGSHAFTPFLICHT", clue: "Versicherung gegen Schadenersatzansprüche bei Events" },
+        { word: "TAGUNGSRAUM", clue: "Muss bei der Planung einer Veranstaltung reserviert werden" },
+        { word: "REISEPROFIL", clue: "Umfasst Reisemittel, Unterbringung und Formalitäten" },
+        { word: "GENEHMIGUNG", clue: "Erster Schritt bei der Planung einer Geschäftsreise" },
+        { word: "UEBERNACHTUNGSKOSTEN", clue: "Bestandteil der Reisekostenabrechnung" }
+      ],
       summary: [
         {
           q: "Die drei Protokollarten im Überblick?",
@@ -1148,6 +1348,26 @@ const APP_DATA = {
       code: "L",
       title: "Projektplanung & -durchführung",
       subtitle: "Projektmerkmale, Goldenes Dreieck, Projektorganisation, PSP, Angebotsvergleich, Gantt-Diagramm",
+      terms: [
+        { word: "PROJEKTSTRUKTURPLAN", clue: "Hierarchische Top-Down-Darstellung aller Projektarbeiten" },
+        { word: "GANTTDIAGRAMM", clue: "Horizontales Balkendiagramm zur Zeitplanung" },
+        { word: "SACHZIEL", clue: "Ziel des Goldenen Dreiecks: was soll erreicht werden" },
+        { word: "KOSTENZIEL", clue: "Ziel des Goldenen Dreiecks: Budget des Projekts" },
+        { word: "TERMINZIEL", clue: "Ziel des Goldenen Dreiecks: zeitlicher Rahmen" },
+        { word: "MEILENSTEIN", clue: "Wichtiger Eckpunkt im Projektverlauf" },
+        { word: "PROJEKTORGANISATION", clue: "Reine, Linien-, Stabs- oder Matrixform" },
+        { word: "ANGEBOTSVERGLEICH", clue: "Quantitativ oder qualitativ nach Kriterien" }
+      ],
+      hangmanTerms: [
+        { word: "MAXIMALPRINZIP", clue: "Größtmöglicher Erfolg mit gegebenen Mitteln" },
+        { word: "MINIMALPRINZIP", clue: "Ziel mit geringstmöglichem Mitteleinsatz erreichen" },
+        { word: "ARBEITSPAKET", clue: "Kleinstes Element im Projektstrukturplan" },
+        { word: "STABSORGANISATION", clue: "Projektleiter hat nur koordinierende Funktion" },
+        { word: "PROJEKTABSCHLUSS", clue: "Letzte Phase eines Projekts" },
+        { word: "LINIENORGANISATION", clue: "Projekt läuft innerhalb einer bestehenden Abteilung" },
+        { word: "ZUSTANDEKOMMEN", clue: "Ein Kaufvertrag entsteht durch Antrag und Annahme" },
+        { word: "KOMPROMISS", clue: "Muss bei mindestens einem Ziel des Goldenen Dreiecks eingegangen werden" }
+      ],
       diagrams: [
         {
           title: "Das Goldene Dreieck des Projektmanagements",
@@ -1279,6 +1499,26 @@ const APP_DATA = {
       code: "M",
       title: "Firma & Rechtsformen",
       subtitle: "Handelsregister, Einzelunternehmen, OHG, KG, GmbH, AG, Prokura, Kaufmannsarten",
+      terms: [
+        { word: "HANDELSREGISTER", clue: "Öffentliches Register, Abteilung A und B" },
+        { word: "EINZELUNTERNEHMEN", clue: "Ein Inhaber haftet unbeschränkt mit seinem Vermögen" },
+        { word: "PROKURA", clue: "Umfassende, ins Handelsregister eingetragene Vollmacht" },
+        { word: "AKTIENGESELLSCHAFT", clue: "Grundkapital von mindestens 50.000 Euro, in Aktien zerlegt" },
+        { word: "AUFSICHTSRAT", clue: "Überwacht und bestellt den Vorstand der AG" },
+        { word: "VORSTAND", clue: "Führt die Geschäfte der Aktiengesellschaft" },
+        { word: "FIRMENGRUNDSATZ", clue: "Regel wie Firmenwahrheit oder Firmenöffentlichkeit" },
+        { word: "GESELLSCHAFTSVERTRAG", clue: "Notariell zu beurkunden bei Gründung einer AG" }
+      ],
+      hangmanTerms: [
+        { word: "KOMPLEMENTAER", clue: "Vollhaftender Gesellschafter der KG" },
+        { word: "KOMMANDITIST", clue: "Teilhaftender Gesellschafter der KG" },
+        { word: "HANDLUNGSVOLLMACHT", clue: "Erlaubnis, in fremdem Namen Rechtsgeschäfte abzuschließen" },
+        { word: "GESAMTPROKURA", clue: "Mehrere Prokuristen müssen gemeinschaftlich handeln" },
+        { word: "EINZELPROKURA", clue: "Ein Prokurist darf allein handeln" },
+        { word: "ISTKAUFMANN", clue: "Auch ohne Handelsregistereintrag Kaufmann" },
+        { word: "KANNKAUFMANN", clue: "Kann sich freiwillig ins Handelsregister eintragen lassen" },
+        { word: "FIKTIVKAUFMANN", clue: "Versehentlich eingetragen, eigentlich kein Kaufmann" }
+      ],
       summary: [
         {
           q: "Was ist die „Firma“ eines Kaufmanns – und welche Grundsätze gelten?",
@@ -1362,6 +1602,22 @@ const APP_DATA = {
       code: "N",
       title: "Datenschutz & Datensicherung",
       subtitle: "Personenbezogene Daten, Rechte der Betroffenen, technische Datensicherung",
+      terms: [
+        { word: "DATENSCHUTZ", clue: "Schutz personenbezogener Daten vor Missbrauch" },
+        { word: "AUSKUNFTSRECHT", clue: "Recht zu erfahren, wer welche Daten besitzt" },
+        { word: "BERICHTIGUNGSRECHT", clue: "Recht auf Korrektur unrichtiger Daten" },
+        { word: "LOESCHUNGSRECHT", clue: "Recht auf Entfernung unzulässig gespeicherter Daten" },
+        { word: "SPERRUNGSRECHT", clue: "Greift, wenn Daten nicht mehr benötigt werden" },
+        { word: "DATENSICHERUNG", clue: "Technischer Schutz vor Verlust und unerlaubtem Zugriff" }
+      ],
+      hangmanTerms: [
+        { word: "BENACHRICHTIGUNGSRECHT", clue: "Information bei erstmaliger Speicherung der Daten" },
+        { word: "DATENSCHUTZBEAUFTRAGTER", clue: "Überwacht die Einhaltung der Vorschriften im Unternehmen" },
+        { word: "PERSONENBEZOGEN", clue: "Angaben über Alter, Gesundheit oder Vermögen einer Person" },
+        { word: "ZUGRIFFSSCHUTZ", clue: "Nur berechtigte Mitarbeiter dürfen sensible Daten einsehen" },
+        { word: "BACKUP", clue: "Regelmäßige Sicherungskopie digitaler Daten" },
+        { word: "BDSG", clue: "Abkürzung des deutschen Gesetzes zum Datenschutz" }
+      ],
       summary: [
         {
           q: "Was ist Datenschutz – und welches Gesetz regelt ihn?",
