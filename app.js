@@ -1330,36 +1330,26 @@
         '<span class="search-result-title">' + item.title + "</span>" +
         '<span class="search-result-snippet">' + snippetize(item.text, query) + "</span>";
       btn.addEventListener("click", () => {
-        closeSearch();
         goChapter(item.chId, item.sub);
       });
       container.appendChild(btn);
     });
   }
 
-  function openSearch() {
-    $("#searchOverlay").hidden = false;
-    $("#searchInput").value = "";
-    renderSearchResults("");
-    window.setTimeout(() => $("#searchInput").focus(), 30);
+  function focusDashSearch() {
+    goDashboard();
+    window.setTimeout(() => {
+      $("#dashSearch").scrollIntoView({ behavior: "smooth", block: "center" });
+      $("#searchInput").focus();
+    }, 60);
   }
 
-  function closeSearch() {
-    $("#searchOverlay").hidden = true;
-  }
-
-  $("#searchBtn").addEventListener("click", openSearch);
-  $("#searchClose").addEventListener("click", closeSearch);
-  $("#searchOverlay").addEventListener("click", (e) => {
-    if (e.target.id === "searchOverlay") closeSearch();
-  });
+  $("#searchBtn").addEventListener("click", focusDashSearch);
   $("#searchInput").addEventListener("input", (e) => renderSearchResults(e.target.value));
   document.addEventListener("keydown", (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
       e.preventDefault();
-      openSearch();
-    } else if (e.key === "Escape" && !$("#searchOverlay").hidden) {
-      closeSearch();
+      focusDashSearch();
     }
   });
 
