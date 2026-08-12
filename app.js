@@ -1243,6 +1243,127 @@
   $("#examsimRestart").addEventListener("click", resetExamSim);
 
   /* ---------------------------------------------------------------- */
+  /* Kapitelübergreifende Suche                                        */
+  /* ---------------------------------------------------------------- */
+
+  let searchIndex = null;
+
+  function buildSearchIndex() {
+    const idx = [];
+    DATA.forEach((ch) => {
+      (ch.summary || []).forEach((s) =>
+        idx.push({ chId: ch.id, chCode: ch.code, sub: "summary", type: "Zusammenfassung", title: s.q, text: s.a })
+      );
+      (ch.diagrams || []).forEach((d) =>
+        idx.push({ chId: ch.id, chCode: ch.code, sub: "diagrams", type: "Diagramm", title: d.title, text: d.note })
+      );
+      (ch.flashcards || []).forEach((f) =>
+        idx.push({ chId: ch.id, chCode: ch.code, sub: "flashcards", type: "Karteikarte", title: f.front, text: f.back })
+      );
+      (ch.quiz || []).forEach((q) =>
+        idx.push({ chId: ch.id, chCode: ch.code, sub: "quiz", type: "Quiz", title: q.q, text: (q.options || []).join(" · ") })
+      );
+      (ch.exam || []).forEach((e) =>
+        idx.push({ chId: ch.id, chCode: ch.code, sub: "exam", type: "Prüfungsaufgabe", title: e.title, text: e.task })
+      );
+      (ch.terms || []).forEach((t) =>
+        idx.push({ chId: ch.id, chCode: ch.code, sub: "crossword", type: "Kreuzworträtsel", title: t.word, text: t.clue })
+      );
+      (ch.hangmanTerms || []).forEach((t) =>
+        idx.push({ chId: ch.id, chCode: ch.code, sub: "hangman", type: "Begriffe raten", title: t.word, text: t.clue })
+      );
+    });
+    return idx;
+  }
+
+  function getSearchIndex() {
+    if (!searchIndex) searchIndex = buildSearchIndex();
+    return searchIndex;
+  }
+
+  function runSearch(query) {
+    const q = query.trim().toLowerCase();
+    if (q.length < 2) return [];
+    const results = [];
+    for (const item of getSearchIndex()) {
+      const haystack = (item.title + " " + item.text).toLowerCase();
+      if (haystack.includes(q)) {
+        results.push(item);
+        if (results.length >= 60) break;
+      }
+    }
+    return results;
+  }
+
+  function snippetize(text, query, len) {
+    if (!text) return "";
+    len = len || 110;
+    const lower = text.toLowerCase();
+    let idx = lower.indexOf(query.trim().toLowerCase());
+    if (idx === -1) idx = 0;
+    const start = Math.max(0, idx - 40);
+    const end = Math.min(text.length, start + len);
+    let snippet = text.slice(start, end);
+    if (start > 0) snippet = "…" + snippet;
+    if (end < text.length) snippet = snippet + "…";
+    return snippet;
+  }
+
+  function renderSearchResults(query) {
+    const container = $("#searchResults");
+    if (query.trim().length < 2) {
+      container.innerHTML =
+        '<p class="search-hint">Tippe mind. 2 Zeichen, um in Zusammenfassungen, Karteikarten, Quiz, Prüfungsaufgaben und Begriffslisten zu suchen.</p>';
+      return;
+    }
+    const results = runSearch(query);
+    if (results.length === 0) {
+      container.innerHTML = '<p class="search-hint">Keine Treffer für „' + query + '".</p>';
+      return;
+    }
+    container.innerHTML = "";
+    results.forEach((item) => {
+      const btn = el("button", "search-result-item");
+      btn.innerHTML =
+        '<span class="search-result-meta"><span class="search-result-chapter">Kapitel ' + item.chCode + '</span>' +
+        '<span class="search-result-type">' + item.type + "</span></span>" +
+        '<span class="search-result-title">' + item.title + "</span>" +
+        '<span class="search-result-snippet">' + snippetize(item.text, query) + "</span>";
+      btn.addEventListener("click", () => {
+        closeSearch();
+        goChapter(item.chId, item.sub);
+      });
+      container.appendChild(btn);
+    });
+  }
+
+  function openSearch() {
+    $("#searchOverlay").hidden = false;
+    $("#searchInput").value = "";
+    renderSearchResults("");
+    window.setTimeout(() => $("#searchInput").focus(), 30);
+  }
+
+  function closeSearch() {
+    $("#searchOverlay").hidden = true;
+  }
+
+  $("#searchBtn").addEventListener("click", openSearch);
+  $("#searchClose").addEventListener("click", closeSearch);
+  $("#searchOverlay").addEventListener("click", (e) => {
+    if (e.target.id === "searchOverlay") closeSearch();
+  });
+  $("#searchInput").addEventListener("input", (e) => renderSearchResults(e.target.value));
+  document.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      openSearch();
+    } else if (e.key === "Escape" && !$("#searchOverlay").hidden) {
+      closeSearch();
+    }
+  });
+
+  /* ---------------------------------------------------------------- */
   /* Mobile menu wiring                                                 */
   /* ---------------------------------------------------------------- */
 
