@@ -342,10 +342,13 @@
     $("#subtabDiagrams").hidden = !hasDiagrams;
     if (state.sub === "diagrams" && !hasDiagrams) state.sub = "summary";
 
-    const hasGames = !!(ch.terms && ch.terms.length);
-    $("#subtabHangman").hidden = !hasGames;
-    $("#subtabCrossword").hidden = !hasGames;
-    if ((state.sub === "hangman" || state.sub === "crossword") && !hasGames) state.sub = "summary";
+    const hasHangman = !!(ch.hangmanTerms && ch.hangmanTerms.length);
+    $("#subtabHangman").hidden = !hasHangman;
+    if (state.sub === "hangman" && !hasHangman) state.sub = "summary";
+
+    const hasCrossword = !!(ch.terms && ch.terms.length);
+    $("#subtabCrossword").hidden = !hasCrossword;
+    if (state.sub === "crossword" && !hasCrossword) state.sub = "summary";
 
     const s = chapterStats(ch);
     $("#topbarStamp").hidden = false;
@@ -454,7 +457,7 @@
   function initHangman(ch) {
     if (hangState.chapterId === ch.id) return;
     hangState.chapterId = ch.id;
-    hangState.order = shuffle(ch.terms.map((_, i) => i));
+    hangState.order = shuffle(ch.hangmanTerms.map((_, i) => i));
     hangState.index = 0;
     hangState.guessed = new Set();
     hangState.wrong = 0;
@@ -463,7 +466,7 @@
   }
 
   function currentHangmanTerm(ch) {
-    return ch.terms[hangState.order[hangState.index]];
+    return ch.hangmanTerms[hangState.order[hangState.index]];
   }
 
   function hangmanStageSVG(wrong) {
@@ -516,7 +519,7 @@
     }
 
     $("#hangmanTally").textContent =
-      "Fehler: " + hangState.wrong + " / " + HANGMAN_MAX_WRONG + " · Begriff " + (hangState.index + 1) + " / " + ch.terms.length;
+      "Fehler: " + hangState.wrong + " / " + HANGMAN_MAX_WRONG + " · Begriff " + (hangState.index + 1) + " / " + ch.hangmanTerms.length;
 
     const kb = $("#hangmanKeyboard");
     kb.innerHTML = "";
@@ -552,7 +555,7 @@
     const ch = findChapter(state.chapterId);
     hangState.index += 1;
     if (hangState.index >= hangState.order.length) {
-      hangState.order = shuffle(ch.terms.map((_, i) => i));
+      hangState.order = shuffle(ch.hangmanTerms.map((_, i) => i));
       hangState.index = 0;
     }
     hangState.guessed = new Set();
