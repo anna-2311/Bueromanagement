@@ -57,10 +57,29 @@
         <span id="topbarEyebrow" class="topbar-eyebrow">Dashboard</span>
         <h1 id="topbarTitle">Willkommen zurück</h1>
       </div>
+      <button class="search-btn" id="searchBtn" aria-label="Suche öffnen">
+        <span class="search-btn-icon">⌕</span>
+        <span class="search-btn-label">Suchen</span>
+      </button>
       <div class="topbar-stamp" id="topbarStamp" hidden>
         <span class="stamp" id="topbarStampValue">0%</span>
       </div>
     </header>
+
+    <!-- ============ SEARCH OVERLAY ============ -->
+    <div class="search-overlay" id="searchOverlay" hidden>
+      <div class="search-panel">
+        <div class="search-input-row">
+          <span class="search-input-icon">⌕</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Alle 14 Kapitel durchsuchen … (Begriff, Frage, Stichwort)" autocomplete="off">
+          <button class="search-close" id="searchClose" aria-label="Suche schließen">✕</button>
+        </div>
+        <div class="search-results" id="searchResults">
+          <p class="search-hint">Tippe mind. 2 Zeichen, um in Zusammenfassungen, Karteikarten, Quiz, Prüfungsaufgaben und Begriffslisten zu suchen.</p>
+        </div>
+      </div>
+    </div>
+
 
     <!-- ============ DASHBOARD VIEW ============ -->
     <section class="view" id="view-dashboard">
