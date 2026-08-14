@@ -168,6 +168,53 @@ const APP_DATA = {
       code: "B",
       title: "Verträge & Beschaffung",
       subtitle: "Geschäftsfähigkeit, Rechtsgeschäfte, Kaufvertragsarten, Kaufvertragsstörungen, Verjährung",
+      diagrams: [
+        {
+          title: "Geschäftsfähigkeit nach Alter",
+          note: "Drei Stufen der Geschäftsfähigkeit im Überblick.",
+          svg: `<svg viewBox="0 0 560 200" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="40" y="70" width="120" height="50" class="df-stamp"/>
+            <rect x="160" y="70" width="200" height="50" class="df-ochre"/>
+            <rect x="360" y="70" width="160" height="50" class="df-success"/>
+            <text x="100" y="90" text-anchor="middle" class="dt-white" font-size="10">geschäfts-</text>
+            <text x="100" y="104" text-anchor="middle" class="dt-white" font-size="10">unfähig</text>
+            <text x="260" y="100" text-anchor="middle" class="dt-white" font-size="12">beschränkt geschäftsfähig</text>
+            <text x="440" y="100" text-anchor="middle" class="dt-white" font-size="12">voll geschäftsfähig</text>
+            <text x="40" y="142" class="dt-mono" font-size="11">0</text>
+            <text x="140" y="142" class="dt-mono" font-size="11">7 Jahre</text>
+            <text x="340" y="142" class="dt-mono" font-size="11">18 Jahre</text>
+            <line x1="160" y1="70" x2="160" y2="130" class="ds-border" stroke-width="1.5"/>
+            <line x1="360" y1="70" x2="360" y2="130" class="ds-border" stroke-width="1.5"/>
+          </svg>`
+        },
+        {
+          title: "Rechte bei Schlechtleistung",
+          note: "Nacherfüllung ist vorrangig – erst danach greifen die nachrangigen Rechte.",
+          svg: `<svg viewBox="0 0 500 280" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="170" y="10" width="160" height="44" rx="8" class="df-stamp"/>
+            <text x="250" y="37" text-anchor="middle" class="dt-white" font-size="13">Mangel entdeckt</text>
+            <line x1="250" y1="54" x2="250" y2="80" class="ds-ink" stroke-width="1.5"/>
+            <rect x="150" y="80" width="200" height="50" rx="8" class="df-ink"/>
+            <text x="250" y="102" text-anchor="middle" class="dt-white" font-size="13">Nacherfüllung</text>
+            <text x="250" y="118" text-anchor="middle" class="dt-white-mono" font-size="9">vorrangiges Recht</text>
+            <text x="250" y="148" text-anchor="middle" class="dt-mono" font-size="10">bei 2x Fehlschlag / Verweigerung</text>
+            <line x1="250" y1="130" x2="250" y2="168" class="ds-ink" stroke-width="1.5"/>
+            <line x1="100" y1="168" x2="400" y2="168" class="ds-ink" stroke-width="1.5"/>
+            <line x1="100" y1="168" x2="100" y2="188" class="ds-ink" stroke-width="1.5"/>
+            <line x1="250" y1="168" x2="250" y2="188" class="ds-ink" stroke-width="1.5"/>
+            <line x1="400" y1="168" x2="400" y2="188" class="ds-ink" stroke-width="1.5"/>
+            <rect x="30" y="188" width="140" height="50" rx="8" class="df-ochre"/>
+            <text x="100" y="216" text-anchor="middle" class="dt-white" font-size="12">Rücktritt</text>
+            <rect x="180" y="188" width="140" height="50" rx="8" class="df-ochre"/>
+            <text x="250" y="210" text-anchor="middle" class="dt-white" font-size="12">Preis-</text>
+            <text x="250" y="224" text-anchor="middle" class="dt-white" font-size="12">minderung</text>
+            <rect x="330" y="188" width="140" height="50" rx="8" class="df-ochre"/>
+            <text x="400" y="210" text-anchor="middle" class="dt-white" font-size="11">Schaden-</text>
+            <text x="400" y="224" text-anchor="middle" class="dt-white" font-size="11">ersatz</text>
+            <text x="250" y="262" text-anchor="middle" class="dt-mono" font-size="10">nachrangige Rechte</text>
+          </svg>`
+        }
+      ],
       terms: [
         { word: "KAUFVERTRAG", clue: "Mehrseitig verpflichtendes Rechtsgeschäft zwischen Käufer und Verkäufer" },
         { word: "VERJAEHRUNG", clue: "Verlust des gerichtlichen Durchsetzungsrechts nach Fristablauf" },
@@ -405,6 +452,60 @@ const APP_DATA = {
       code: "D",
       title: "Kalkulation & Kosten",
       subtitle: "Vor-/Rückwärtskalkulation, Deckungsbeitrag, Break-Even, Kostenrechnung",
+      diagrams: [
+        {
+          title: "Von der Vorwärtskalkulation zum Verkaufspreis",
+          note: "Die wichtigsten Zwischenstopps auf dem Weg vom Einkaufs- zum Verkaufspreis.",
+          svg: `<svg viewBox="0 0 560 200" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="70" width="100" height="50" rx="6" class="df-ink"/>
+            <text x="60" y="90" text-anchor="middle" class="dt-white" font-size="9">Listeneinkaufs-</text>
+            <text x="60" y="103" text-anchor="middle" class="dt-white" font-size="9">preis</text>
+            <rect x="125" y="70" width="100" height="50" rx="6" class="df-ink-soft"/>
+            <text x="175" y="90" text-anchor="middle" class="dt-white" font-size="10">Bezugs-</text>
+            <text x="175" y="103" text-anchor="middle" class="dt-white" font-size="10">preis</text>
+            <rect x="240" y="70" width="100" height="50" rx="6" class="df-ochre"/>
+            <text x="290" y="90" text-anchor="middle" class="dt-white" font-size="10">Selbst-</text>
+            <text x="290" y="103" text-anchor="middle" class="dt-white" font-size="10">kosten</text>
+            <rect x="355" y="70" width="100" height="50" rx="6" class="df-success"/>
+            <text x="405" y="90" text-anchor="middle" class="dt-white" font-size="9">Barverkaufs-</text>
+            <text x="405" y="103" text-anchor="middle" class="dt-white" font-size="9">preis</text>
+            <rect x="470" y="70" width="80" height="50" rx="6" class="df-stamp"/>
+            <text x="510" y="90" text-anchor="middle" class="dt-white" font-size="8.5">Brutto-</text>
+            <text x="510" y="103" text-anchor="middle" class="dt-white" font-size="8.5">verkaufspreis</text>
+            <line x1="110" y1="95" x2="125" y2="95" class="ds-ink" stroke-width="1.5"/>
+            <line x1="225" y1="95" x2="240" y2="95" class="ds-ink" stroke-width="1.5"/>
+            <line x1="340" y1="95" x2="355" y2="95" class="ds-ink" stroke-width="1.5"/>
+            <line x1="455" y1="95" x2="470" y2="95" class="ds-ink" stroke-width="1.5"/>
+            <text x="117" y="52" text-anchor="middle" class="dt-mono" font-size="8.5">− Rabatt</text>
+            <text x="117" y="145" text-anchor="middle" class="dt-mono" font-size="8.5">+ Bezugskosten</text>
+            <text x="232" y="52" text-anchor="middle" class="dt-mono" font-size="8.5">+ Handlungs-</text>
+            <text x="232" y="62" text-anchor="middle" class="dt-mono" font-size="8.5">kostenzuschlag</text>
+            <text x="347" y="52" text-anchor="middle" class="dt-mono" font-size="8.5">+ Gewinn-</text>
+            <text x="347" y="62" text-anchor="middle" class="dt-mono" font-size="8.5">zuschlag</text>
+            <text x="462" y="52" text-anchor="middle" class="dt-mono" font-size="8.5">+ Skonto</text>
+            <text x="462" y="145" text-anchor="middle" class="dt-mono" font-size="8.5">+ USt.</text>
+          </svg>`
+        },
+        {
+          title: "Break-Even-Point",
+          note: "Dort, wo sich Gesamtkosten und Erlöse schneiden, liegt der Gewinn bei null.",
+          svg: `<svg viewBox="0 0 420 320" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <line x1="60" y1="20" x2="60" y2="280" class="ds-ink" stroke-width="1.5"/>
+            <line x1="60" y1="280" x2="390" y2="280" class="ds-ink" stroke-width="1.5"/>
+            <text x="14" y="24" class="dt-mono" font-size="10">Erlöse/Kosten</text>
+            <text x="356" y="298" class="dt-mono" font-size="11">Menge</text>
+            <line x1="60" y1="240" x2="390" y2="240" class="ds-border" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <text x="64" y="234" class="dt-mono" font-size="9">Fixkosten</text>
+            <polyline points="60,240 390,100" fill="none" class="ds-stamp" stroke-width="2"/>
+            <text x="392" y="98" class="dt" font-size="11">Gesamtkosten</text>
+            <polyline points="60,280 390,60" fill="none" class="ds-success" stroke-width="2"/>
+            <text x="392" y="58" class="dt" font-size="11">Erlöse</text>
+            <circle cx="225" cy="170" r="4" class="df-ink"/>
+            <line x1="225" y1="170" x2="225" y2="280" stroke-dasharray="3 4" class="ds-border" stroke-width="1.5"/>
+            <text x="160" y="300" class="dt-mono" font-size="10">Break-Even-Point</text>
+          </svg>`
+        }
+      ],
       terms: [
         { word: "DECKUNGSBEITRAG", clue: "Verkaufspreis minus variable Stückkosten" },
         { word: "SELBSTKOSTEN", clue: "Bezugspreis plus Handlungskostenzuschlag" },
@@ -505,6 +606,65 @@ const APP_DATA = {
       code: "E",
       title: "Büroprozesse & Arbeitsorganisation",
       subtitle: "Ergonomie, Zeitmanagement, Termine, Aufbewahrungsfristen, Auftragsbearbeitung",
+      diagrams: [
+        {
+          title: "Der ergonomische Arbeitsplatz",
+          note: "Bildschirmabstand, Augenhöhe und Sitzwinkel im Überblick.",
+          svg: `<svg viewBox="0 0 440 320" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20" y1="290" x2="420" y2="290" class="ds-border" stroke-width="1.5"/>
+            <rect x="80" y="220" width="70" height="14" rx="4" class="df-ink-soft"/>
+            <line x1="150" y1="150" x2="150" y2="220" class="ds-ink" stroke-width="4"/>
+            <line x1="85" y1="234" x2="85" y2="290" class="ds-ink" stroke-width="4"/>
+            <line x1="145" y1="234" x2="145" y2="290" class="ds-ink" stroke-width="4"/>
+            <circle cx="140" cy="120" r="16" class="df-stamp"/>
+            <line x1="140" y1="136" x2="140" y2="210" class="ds-stamp" stroke-width="3"/>
+            <line x1="140" y1="210" x2="185" y2="210" class="ds-stamp" stroke-width="3"/>
+            <line x1="185" y1="210" x2="185" y2="290" class="ds-stamp" stroke-width="3"/>
+            <text x="195" y="205" class="dt-mono" font-size="11">90°</text>
+            <rect x="185" y="150" width="14" height="140" class="df-ink-soft"/>
+            <rect x="185" y="150" width="200" height="10" class="df-ink"/>
+            <rect x="230" y="90" width="90" height="60" rx="4" class="df-ink"/>
+            <rect x="265" y="150" width="20" height="10" class="df-ink-soft"/>
+            <line x1="156" y1="120" x2="230" y2="120" class="ds-border" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <text x="193" y="112" text-anchor="middle" class="dt-mono" font-size="9">50–60 cm</text>
+            <line x1="100" y1="120" x2="420" y2="120" class="ds-ochre" stroke-width="1.5" stroke-dasharray="2 5"/>
+            <text x="330" y="114" class="dt-mono" font-size="9">Augenhöhe</text>
+          </svg>`
+        },
+        {
+          title: "Auftragsbearbeitung in 8 Schritten",
+          note: "Von der ersten Anfrage bis zur Überweisung.",
+          svg: `<svg viewBox="0 0 560 180" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="115" height="50" rx="6" class="df-ink"/>
+            <text x="67" y="40" text-anchor="middle" class="dt-white" font-size="11">1. Anfrage</text>
+            <rect x="150" y="10" width="115" height="50" rx="6" class="df-ink"/>
+            <text x="207" y="40" text-anchor="middle" class="dt-white" font-size="11">2. Angebot</text>
+            <rect x="290" y="10" width="115" height="50" rx="6" class="df-ink"/>
+            <text x="347" y="34" text-anchor="middle" class="dt-white" font-size="10">3. Bonitäts-</text>
+            <text x="347" y="47" text-anchor="middle" class="dt-white" font-size="10">prüfung</text>
+            <rect x="430" y="10" width="115" height="50" rx="6" class="df-ink"/>
+            <text x="487" y="40" text-anchor="middle" class="dt-white" font-size="11">4. Bestellung</text>
+            <line x1="125" y1="35" x2="150" y2="35" class="ds-ink" stroke-width="1.5"/>
+            <line x1="265" y1="35" x2="290" y2="35" class="ds-ink" stroke-width="1.5"/>
+            <line x1="405" y1="35" x2="430" y2="35" class="ds-ink" stroke-width="1.5"/>
+            <line x1="487" y1="60" x2="487" y2="85" class="ds-ink" stroke-width="1.5"/>
+            <line x1="487" y1="85" x2="67" y2="85" class="ds-ink" stroke-width="1.5"/>
+            <line x1="67" y1="85" x2="67" y2="110" class="ds-ink" stroke-width="1.5"/>
+            <rect x="10" y="110" width="115" height="50" rx="6" class="df-ochre"/>
+            <text x="67" y="132" text-anchor="middle" class="dt-white" font-size="8.5">5. Auftrags-</text>
+            <text x="67" y="145" text-anchor="middle" class="dt-white" font-size="8.5">bestätigung</text>
+            <rect x="150" y="110" width="115" height="50" rx="6" class="df-ochre"/>
+            <text x="207" y="140" text-anchor="middle" class="dt-white" font-size="11">6. Lieferschein</text>
+            <rect x="290" y="110" width="115" height="50" rx="6" class="df-ochre"/>
+            <text x="347" y="140" text-anchor="middle" class="dt-white" font-size="11">7. Rechnung</text>
+            <rect x="430" y="110" width="115" height="50" rx="6" class="df-success"/>
+            <text x="487" y="140" text-anchor="middle" class="dt-white" font-size="10">8. Überweisung</text>
+            <line x1="125" y1="135" x2="150" y2="135" class="ds-ink" stroke-width="1.5"/>
+            <line x1="265" y1="135" x2="290" y2="135" class="ds-ink" stroke-width="1.5"/>
+            <line x1="405" y1="135" x2="430" y2="135" class="ds-ink" stroke-width="1.5"/>
+          </svg>`
+        }
+      ],
       terms: [
         { word: "ERGONOMIE", clue: "Gestaltung der Arbeitsumgebung zur Optimierung und Entlastung" },
         { word: "BUEROSTUHL", clue: "Sollte 5 Abstützpunkte und höhenverstellbare Sitzfläche haben" },
@@ -903,6 +1063,52 @@ const APP_DATA = {
       code: "H",
       title: "Personalwirtschaft",
       subtitle: "Personalbedarf & -beschaffung, Arbeitszeitgesetz, Lohn & Gehalt, Kündigung, Sozialversicherung",
+      diagrams: [
+        {
+          title: "Ermittlung des Personalbedarfs",
+          note: "So berechnet sich der Nettopersonalbedarf.",
+          svg: `<svg viewBox="0 0 560 140" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="40" width="100" height="50" rx="6" class="df-ink"/>
+            <text x="60" y="62" text-anchor="middle" class="dt-white" font-size="8.5">Soll-Personal-</text>
+            <text x="60" y="75" text-anchor="middle" class="dt-white" font-size="8.5">bestand</text>
+            <text x="122" y="70" text-anchor="middle" class="dt" font-size="16">−</text>
+            <rect x="134" y="40" width="90" height="50" rx="6" class="df-ink-soft"/>
+            <text x="179" y="62" text-anchor="middle" class="dt-white" font-size="8.5">Ist-Personal-</text>
+            <text x="179" y="75" text-anchor="middle" class="dt-white" font-size="8.5">bestand</text>
+            <text x="236" y="70" text-anchor="middle" class="dt" font-size="16">+</text>
+            <rect x="248" y="40" width="80" height="50" rx="6" class="df-stamp"/>
+            <text x="288" y="70" text-anchor="middle" class="dt-white" font-size="10">Abgänge</text>
+            <text x="340" y="70" text-anchor="middle" class="dt" font-size="16">−</text>
+            <rect x="352" y="40" width="80" height="50" rx="6" class="df-success"/>
+            <text x="392" y="70" text-anchor="middle" class="dt-white" font-size="10">Zugänge</text>
+            <text x="444" y="70" text-anchor="middle" class="dt" font-size="16">=</text>
+            <rect x="456" y="40" width="95" height="50" rx="6" class="df-ochre"/>
+            <text x="503" y="62" text-anchor="middle" class="dt-white" font-size="8">Netto-Personal-</text>
+            <text x="503" y="75" text-anchor="middle" class="dt-white" font-size="8">bedarf</text>
+          </svg>`
+        },
+        {
+          title: "Sozialversicherungsbeiträge",
+          note: "Alle vier Zweige werden je zur Hälfte von Arbeitgeber und Arbeitnehmer getragen.",
+          svg: `<svg viewBox="0 0 480 260" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="220" x2="440" y2="220" class="ds-ink" stroke-width="1.5"/>
+            <rect x="60" y="103" width="60" height="117" class="df-ink"/>
+            <line x1="60" y1="161" x2="120" y2="161" class="ds-border" stroke-width="1" stroke-dasharray="2 3"/>
+            <text x="90" y="238" text-anchor="middle" class="dt-mono" font-size="10">KV 14,6%</text>
+            <rect x="160" y="191" width="60" height="29" class="df-ochre"/>
+            <line x1="160" y1="205" x2="220" y2="205" class="ds-border" stroke-width="1" stroke-dasharray="2 3"/>
+            <text x="190" y="238" text-anchor="middle" class="dt-mono" font-size="10">PV 3,6%</text>
+            <rect x="260" y="199" width="60" height="21" class="df-success"/>
+            <line x1="260" y1="209" x2="320" y2="209" class="ds-border" stroke-width="1" stroke-dasharray="2 3"/>
+            <text x="290" y="238" text-anchor="middle" class="dt-mono" font-size="10">AV 2,6%</text>
+            <rect x="360" y="71" width="60" height="149" class="df-stamp"/>
+            <line x1="360" y1="145" x2="420" y2="145" class="ds-border" stroke-width="1" stroke-dasharray="2 3"/>
+            <text x="390" y="238" text-anchor="middle" class="dt-mono" font-size="10">RV 18,6%</text>
+            <text x="20" y="55" class="dt-mono" font-size="10">je 50% Arbeitgeber</text>
+            <text x="20" y="69" class="dt-mono" font-size="10">und Arbeitnehmer</text>
+          </svg>`
+        }
+      ],
       terms: [
         { word: "PERSONALBEDARF", clue: "Ermittlung der benötigten Mitarbeiterzahl" },
         { word: "PERSONALBESCHAFFUNG", clue: "Deckung des festgestellten Personalbedarfs" },
@@ -1010,6 +1216,64 @@ const APP_DATA = {
       code: "I",
       title: "Liquidität & Finanzierung",
       subtitle: "Investition vs. Finanzierung, Goldene Finanzregel, Leasing, Factoring, Kreditsicherheiten, Darlehen",
+      diagrams: [
+        {
+          title: "Finanzierungsarten im Überblick",
+          note: "Eigen- und Fremdfinanzierung mit ihren wichtigsten Unterformen.",
+          svg: `<svg viewBox="0 0 560 240" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="220" y="10" width="120" height="44" rx="8" class="df-ink"/>
+            <text x="280" y="37" text-anchor="middle" class="dt-white" font-size="13">Finanzierung</text>
+            <line x1="280" y1="54" x2="280" y2="75" class="ds-ink" stroke-width="1.5"/>
+            <line x1="140" y1="75" x2="420" y2="75" class="ds-ink" stroke-width="1.5"/>
+            <line x1="140" y1="75" x2="140" y2="95" class="ds-ink" stroke-width="1.5"/>
+            <line x1="420" y1="75" x2="420" y2="95" class="ds-ink" stroke-width="1.5"/>
+            <rect x="60" y="95" width="160" height="44" rx="8" class="df-success"/>
+            <text x="140" y="122" text-anchor="middle" class="dt-white" font-size="12">Eigenfinanzierung</text>
+            <rect x="340" y="95" width="160" height="44" rx="8" class="df-stamp"/>
+            <text x="420" y="122" text-anchor="middle" class="dt-white" font-size="12">Fremdfinanzierung</text>
+            <line x1="140" y1="139" x2="140" y2="155" class="ds-ink" stroke-width="1.5"/>
+            <line x1="60" y1="155" x2="220" y2="155" class="ds-ink" stroke-width="1.5"/>
+            <line x1="60" y1="155" x2="60" y2="175" class="ds-ink" stroke-width="1.5"/>
+            <line x1="220" y1="155" x2="220" y2="175" class="ds-ink" stroke-width="1.5"/>
+            <rect x="10" y="175" width="100" height="50" rx="6" class="df-success-soft"/>
+            <text x="60" y="195" text-anchor="middle" class="dt" font-size="10">Beteiligungs-</text>
+            <text x="60" y="209" text-anchor="middle" class="dt" font-size="10">finanzierung</text>
+            <rect x="170" y="175" width="100" height="50" rx="6" class="df-success-soft"/>
+            <text x="220" y="195" text-anchor="middle" class="dt" font-size="10">Selbst-</text>
+            <text x="220" y="209" text-anchor="middle" class="dt" font-size="10">finanzierung</text>
+            <line x1="420" y1="139" x2="420" y2="155" class="ds-ink" stroke-width="1.5"/>
+            <line x1="340" y1="155" x2="500" y2="155" class="ds-ink" stroke-width="1.5"/>
+            <line x1="340" y1="155" x2="340" y2="175" class="ds-ink" stroke-width="1.5"/>
+            <line x1="500" y1="155" x2="500" y2="175" class="ds-ink" stroke-width="1.5"/>
+            <rect x="290" y="175" width="100" height="50" rx="6" class="df-stamp-soft"/>
+            <text x="340" y="195" text-anchor="middle" class="dt" font-size="10">Kredit-</text>
+            <text x="340" y="209" text-anchor="middle" class="dt" font-size="10">finanzierung</text>
+            <rect x="450" y="175" width="100" height="50" rx="6" class="df-stamp-soft"/>
+            <text x="500" y="195" text-anchor="middle" class="dt" font-size="9">Rückstellungs-</text>
+            <text x="500" y="209" text-anchor="middle" class="dt" font-size="9">finanzierung</text>
+          </svg>`
+        },
+        {
+          title: "Die Goldene Finanzregel",
+          note: "Fristigkeit von Vermögen und Kapital müssen übereinstimmen.",
+          svg: `<svg viewBox="0 0 480 200" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="20" width="180" height="50" rx="8" class="df-ink"/>
+            <text x="100" y="42" text-anchor="middle" class="dt-white" font-size="11">Langfristiges</text>
+            <text x="100" y="58" text-anchor="middle" class="dt-white" font-size="11">Vermögen</text>
+            <text x="228" y="52" text-anchor="middle" class="dt" font-size="18">=</text>
+            <rect x="266" y="20" width="180" height="50" rx="8" class="df-ink-soft"/>
+            <text x="356" y="42" text-anchor="middle" class="dt-white" font-size="11">Langfristiges</text>
+            <text x="356" y="58" text-anchor="middle" class="dt-white" font-size="11">Kapital</text>
+            <rect x="10" y="120" width="180" height="50" rx="8" class="df-ochre"/>
+            <text x="100" y="142" text-anchor="middle" class="dt-white" font-size="11">Kurzfristiges</text>
+            <text x="100" y="158" text-anchor="middle" class="dt-white" font-size="11">Vermögen</text>
+            <text x="228" y="152" text-anchor="middle" class="dt" font-size="18">=</text>
+            <rect x="266" y="120" width="180" height="50" rx="8" class="df-success"/>
+            <text x="356" y="142" text-anchor="middle" class="dt-white" font-size="11">Kurzfristiges</text>
+            <text x="356" y="158" text-anchor="middle" class="dt-white" font-size="11">Kapital</text>
+          </svg>`
+        }
+      ],
       terms: [
         { word: "LEASING", clue: "Rechtlich ein Mietvertrag über einen Gegenstand" },
         { word: "FACTORING", clue: "Verkauf von Forderungen an ein spezialisiertes Unternehmen" },
@@ -1252,6 +1516,53 @@ const APP_DATA = {
       code: "K",
       title: "Veranstaltungen & Geschäftsreisen",
       subtitle: "Protokolle, Checklisten, Sitzung vs. Besprechung, Reiseplanung, Reisekostenabrechnung",
+      diagrams: [
+        {
+          title: "Ablauf einer Geschäftsreise",
+          note: "5 Schritte von der Genehmigung bis zur Abrechnung.",
+          svg: `<svg viewBox="0 0 560 140" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="40" width="100" height="50" rx="6" class="df-ink"/>
+            <text x="55" y="62" text-anchor="middle" class="dt-white" font-size="8.5">1. Genehmi-</text>
+            <text x="55" y="75" text-anchor="middle" class="dt-white" font-size="8.5">gung</text>
+            <rect x="120" y="40" width="100" height="50" rx="6" class="df-ink"/>
+            <text x="170" y="62" text-anchor="middle" class="dt-white" font-size="8.5">2. Reise-</text>
+            <text x="170" y="75" text-anchor="middle" class="dt-white" font-size="8.5">profil</text>
+            <rect x="235" y="40" width="100" height="50" rx="6" class="df-ink"/>
+            <text x="285" y="62" text-anchor="middle" class="dt-white" font-size="8.5">3. Vergleich</text>
+            <text x="285" y="75" text-anchor="middle" class="dt-white" font-size="8.5">&amp; Auswahl</text>
+            <rect x="350" y="40" width="100" height="50" rx="6" class="df-ink"/>
+            <text x="400" y="62" text-anchor="middle" class="dt-white" font-size="8.5">4. Reise-</text>
+            <text x="400" y="75" text-anchor="middle" class="dt-white" font-size="8.5">dokumente</text>
+            <rect x="465" y="40" width="90" height="50" rx="6" class="df-success"/>
+            <text x="510" y="62" text-anchor="middle" class="dt-white" font-size="8">5. Reisekosten-</text>
+            <text x="510" y="75" text-anchor="middle" class="dt-white" font-size="8">abrechnung</text>
+            <line x1="105" y1="65" x2="120" y2="65" class="ds-ink" stroke-width="1.5"/>
+            <line x1="220" y1="65" x2="235" y2="65" class="ds-ink" stroke-width="1.5"/>
+            <line x1="335" y1="65" x2="350" y2="65" class="ds-ink" stroke-width="1.5"/>
+            <line x1="450" y1="65" x2="465" y2="65" class="ds-ink" stroke-width="1.5"/>
+          </svg>`
+        },
+        {
+          title: "Bestandteile der Reisekostenabrechnung",
+          note: "Vier Kostenblöcke ergeben zusammen die Reisekostenabrechnung.",
+          svg: `<svg viewBox="0 0 480 260" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <text x="240" y="20" text-anchor="middle" class="dt-mono" font-size="11">REISEKOSTENABRECHNUNG</text>
+            <rect x="20" y="34" width="200" height="80" rx="8" class="df-ink"/>
+            <text x="120" y="70" text-anchor="middle" class="dt-white" font-size="13">Fahrtkosten</text>
+            <text x="120" y="88" text-anchor="middle" class="dt-white-mono" font-size="9">z. B. 0,30 €/km</text>
+            <rect x="260" y="34" width="200" height="80" rx="8" class="df-ochre"/>
+            <text x="360" y="62" text-anchor="middle" class="dt-white" font-size="11">Verpflegungs-</text>
+            <text x="360" y="78" text-anchor="middle" class="dt-white" font-size="11">mehraufwand</text>
+            <text x="360" y="94" text-anchor="middle" class="dt-white-mono" font-size="9">12 € / 24 € Pauschale</text>
+            <rect x="20" y="130" width="200" height="80" rx="8" class="df-success"/>
+            <text x="120" y="166" text-anchor="middle" class="dt-white" font-size="13">Übernachtungs-</text>
+            <text x="120" y="184" text-anchor="middle" class="dt-white" font-size="13">kosten</text>
+            <rect x="260" y="130" width="200" height="80" rx="8" class="df-stamp"/>
+            <text x="360" y="166" text-anchor="middle" class="dt-white" font-size="13">Reisenebenkosten</text>
+            <text x="360" y="184" text-anchor="middle" class="dt-white-mono" font-size="9">Taxi, Parkgebühren, Porto</text>
+          </svg>`
+        }
+      ],
       terms: [
         { word: "VOLLPROTOKOLL", clue: "Hält den genauen Wortlaut einer Sitzung fest" },
         { word: "ERGEBNISPROTOKOLL", clue: "Hält nur Kernaussagen und Entscheidungen fest" },
@@ -1499,6 +1810,46 @@ const APP_DATA = {
       code: "M",
       title: "Firma & Rechtsformen",
       subtitle: "Handelsregister, Einzelunternehmen, OHG, KG, GmbH, AG, Prokura, Kaufmannsarten",
+      diagrams: [
+        {
+          title: "Rechtsformen im Überblick",
+          note: "Von Einzelunternehmen über Personen- bis zu Kapitalgesellschaften.",
+          svg: `<svg viewBox="0 0 580 220" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="220" y="10" width="120" height="44" rx="8" class="df-ink"/>
+            <text x="280" y="37" text-anchor="middle" class="dt-white" font-size="12">Rechtsformen</text>
+            <line x1="280" y1="54" x2="280" y2="70" class="ds-ink" stroke-width="1.5"/>
+            <line x1="80" y1="70" x2="480" y2="70" class="ds-ink" stroke-width="1.5"/>
+            <line x1="80" y1="70" x2="80" y2="90" class="ds-ink" stroke-width="1.5"/>
+            <line x1="280" y1="70" x2="280" y2="90" class="ds-ink" stroke-width="1.5"/>
+            <line x1="480" y1="70" x2="480" y2="90" class="ds-ink" stroke-width="1.5"/>
+            <rect x="10" y="90" width="140" height="50" rx="8" class="df-success"/>
+            <text x="80" y="112" text-anchor="middle" class="dt-white" font-size="11">Einzelunter-</text>
+            <text x="80" y="127" text-anchor="middle" class="dt-white" font-size="11">nehmen</text>
+            <rect x="210" y="90" width="140" height="50" rx="8" class="df-ochre"/>
+            <text x="280" y="112" text-anchor="middle" class="dt-white" font-size="11">Personen-</text>
+            <text x="280" y="127" text-anchor="middle" class="dt-white" font-size="11">gesellschaften</text>
+            <rect x="410" y="90" width="140" height="50" rx="8" class="df-stamp"/>
+            <text x="480" y="112" text-anchor="middle" class="dt-white" font-size="11">Kapital-</text>
+            <text x="480" y="127" text-anchor="middle" class="dt-white" font-size="11">gesellschaften</text>
+            <line x1="280" y1="140" x2="280" y2="155" class="ds-ink" stroke-width="1.5"/>
+            <line x1="230" y1="155" x2="330" y2="155" class="ds-ink" stroke-width="1.5"/>
+            <line x1="230" y1="155" x2="230" y2="170" class="ds-ink" stroke-width="1.5"/>
+            <line x1="330" y1="155" x2="330" y2="170" class="ds-ink" stroke-width="1.5"/>
+            <rect x="190" y="170" width="80" height="40" rx="6" class="df-ochre-soft"/>
+            <text x="230" y="194" text-anchor="middle" class="dt" font-size="12">OHG</text>
+            <rect x="290" y="170" width="80" height="40" rx="6" class="df-ochre-soft"/>
+            <text x="330" y="194" text-anchor="middle" class="dt" font-size="12">KG</text>
+            <line x1="480" y1="140" x2="480" y2="155" class="ds-ink" stroke-width="1.5"/>
+            <line x1="430" y1="155" x2="530" y2="155" class="ds-ink" stroke-width="1.5"/>
+            <line x1="430" y1="155" x2="430" y2="170" class="ds-ink" stroke-width="1.5"/>
+            <line x1="530" y1="155" x2="530" y2="170" class="ds-ink" stroke-width="1.5"/>
+            <rect x="390" y="170" width="80" height="40" rx="6" class="df-stamp-soft"/>
+            <text x="430" y="194" text-anchor="middle" class="dt" font-size="12">GmbH</text>
+            <rect x="490" y="170" width="80" height="40" rx="6" class="df-stamp-soft"/>
+            <text x="530" y="194" text-anchor="middle" class="dt" font-size="12">AG</text>
+          </svg>`
+        }
+      ],
       terms: [
         { word: "HANDELSREGISTER", clue: "Öffentliches Register, Abteilung A und B" },
         { word: "EINZELUNTERNEHMEN", clue: "Ein Inhaber haftet unbeschränkt mit seinem Vermögen" },
@@ -1602,6 +1953,37 @@ const APP_DATA = {
       code: "N",
       title: "Datenschutz & Datensicherung",
       subtitle: "Personenbezogene Daten, Rechte der Betroffenen, technische Datensicherung",
+      diagrams: [
+        {
+          title: "Die 5 Rechte der Betroffenen",
+          note: "Alle Rechte, die Personen gegenüber Unternehmen bei ihren gespeicherten Daten haben.",
+          svg: `<svg viewBox="0 0 440 440" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+            <line x1="220" y1="220" x2="220" y2="70" class="ds-border" stroke-width="1.5"/>
+            <line x1="220" y1="220" x2="363" y2="174" class="ds-border" stroke-width="1.5"/>
+            <line x1="220" y1="220" x2="308" y2="341" class="ds-border" stroke-width="1.5"/>
+            <line x1="220" y1="220" x2="132" y2="341" class="ds-border" stroke-width="1.5"/>
+            <line x1="220" y1="220" x2="77" y2="174" class="ds-border" stroke-width="1.5"/>
+            <circle cx="220" cy="220" r="62" class="df-ink"/>
+            <text x="220" y="215" text-anchor="middle" class="dt-white" font-size="12">Rechte der</text>
+            <text x="220" y="231" text-anchor="middle" class="dt-white" font-size="12">Betroffenen</text>
+            <circle cx="220" cy="70" r="46" class="df-success"/>
+            <text x="220" y="66" text-anchor="middle" class="dt-white" font-size="10">Auskunfts-</text>
+            <text x="220" y="80" text-anchor="middle" class="dt-white" font-size="10">recht</text>
+            <circle cx="363" cy="174" r="46" class="df-ochre"/>
+            <text x="363" y="170" text-anchor="middle" class="dt-white" font-size="9">Berichtigungs-</text>
+            <text x="363" y="184" text-anchor="middle" class="dt-white" font-size="9">recht</text>
+            <circle cx="308" cy="341" r="46" class="df-stamp"/>
+            <text x="308" y="337" text-anchor="middle" class="dt-white" font-size="10">Löschungs-</text>
+            <text x="308" y="351" text-anchor="middle" class="dt-white" font-size="10">recht</text>
+            <circle cx="132" cy="341" r="46" class="df-ink-soft"/>
+            <text x="132" y="333" text-anchor="middle" class="dt-white" font-size="8.5">Benachrichti-</text>
+            <text x="132" y="345" text-anchor="middle" class="dt-white" font-size="8.5">gungsrecht</text>
+            <circle cx="77" cy="174" r="46" class="df-success-soft"/>
+            <text x="77" y="170" text-anchor="middle" class="dt-white" font-size="10">Sperrungs-</text>
+            <text x="77" y="184" text-anchor="middle" class="dt-white" font-size="10">recht</text>
+          </svg>`
+        }
+      ],
       terms: [
         { word: "DATENSCHUTZ", clue: "Schutz personenbezogener Daten vor Missbrauch" },
         { word: "AUSKUNFTSRECHT", clue: "Recht zu erfahren, wer welche Daten besitzt" },
