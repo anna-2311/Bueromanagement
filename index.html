@@ -105,6 +105,7 @@
 
       <nav class="subtabs" id="subtabs">
         <button class="subtab is-active" data-sub="summary">Zusammenfassung</button>
+        <button class="subtab" data-sub="videos" id="subtabVideos" hidden>Videos</button>
         <button class="subtab" data-sub="diagrams" id="subtabDiagrams" hidden>Diagramme</button>
         <button class="subtab" data-sub="flashcards">Karteikarten</button>
         <button class="subtab" data-sub="quiz">Quiz</button>
@@ -116,6 +117,11 @@
       <!-- SUMMARY / ERKLÄR-KARTEN -->
       <div class="subview" id="sub-summary">
         <div class="explainer-grid" id="explainerGrid"></div>
+      </div>
+
+      <!-- VIDEOS -->
+      <div class="subview" id="sub-videos" hidden>
+        <div class="videos-grid" id="videosGrid"></div>
       </div>
 
       <!-- DIAGRAMME -->
