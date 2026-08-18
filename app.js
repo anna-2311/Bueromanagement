@@ -342,6 +342,10 @@
     $("#subtabDiagrams").hidden = !hasDiagrams;
     if (state.sub === "diagrams" && !hasDiagrams) state.sub = "summary";
 
+    const hasVideos = !!(ch.videos && ch.videos.length);
+    $("#subtabVideos").hidden = !hasVideos;
+    if (state.sub === "videos" && !hasVideos) state.sub = "summary";
+
     const hasHangman = !!(ch.hangmanTerms && ch.hangmanTerms.length);
     $("#subtabHangman").hidden = !hasHangman;
     if (state.sub === "hangman" && !hasHangman) state.sub = "summary";
@@ -362,7 +366,7 @@
 
   function setActiveSubtab() {
     $all(".subtab").forEach((t) => t.classList.toggle("is-active", t.dataset.sub === state.sub));
-    ["summary", "diagrams", "flashcards", "quiz", "exam", "hangman", "crossword"].forEach((s) => {
+    ["summary", "videos", "diagrams", "flashcards", "quiz", "exam", "hangman", "crossword"].forEach((s) => {
       $("#sub-" + s).hidden = s !== state.sub;
     });
   }
@@ -370,6 +374,7 @@
   function renderSub() {
     const ch = findChapter(state.chapterId);
     if (state.sub === "summary") renderSummary(ch);
+    if (state.sub === "videos") renderVideos(ch);
     if (state.sub === "diagrams") renderDiagrams(ch);
     if (state.sub === "flashcards") renderFlashcards(ch);
     if (state.sub === "quiz") renderQuiz(ch);
@@ -386,6 +391,38 @@
     setActiveSubtab();
     renderSub();
   });
+
+  /* ---------------------------------------------------------------- */
+  /* Sub-view: Videos                                                   */
+  /* ---------------------------------------------------------------- */
+
+  function getYoutubeId(url) {
+    const m = url.match(/[?&]v=([^&]+)/);
+    return m ? m[1] : null;
+  }
+
+  function renderVideos(ch) {
+    const grid = $("#videosGrid");
+    grid.innerHTML = "";
+    (ch.videos || []).forEach((v) => {
+      const vid = getYoutubeId(v.url);
+      const thumb = vid ? "https://img.youtube.com/vi/" + vid + "/hqdefault.jpg" : "";
+      const card = el("a", "video-card");
+      card.href = v.url;
+      card.target = "_blank";
+      card.rel = "noopener noreferrer";
+      card.innerHTML =
+        '<div class="video-thumb-wrap">' +
+          (thumb ? '<img src="' + thumb + '" alt="" loading="lazy">' : "") +
+          '<span class="video-play">▶</span>' +
+        "</div>" +
+        '<div class="video-info">' +
+          '<span class="video-title">' + v.title + "</span>" +
+          '<span class="video-source">YouTube</span>' +
+        "</div>";
+      grid.appendChild(card);
+    });
+  }
 
   /* ---------------------------------------------------------------- */
   /* Sub-view: Zusammenfassung / Erklär-Karten                        */
