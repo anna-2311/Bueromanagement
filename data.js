@@ -13,6 +13,9 @@ const APP_DATA = {
       code: "A",
       title: "Ausbildung & Wirtschaft",
       subtitle: "Ausbildungsordnung, Bedürfnisse, Wirtschaftskreislauf, Konjunktur- & Geldpolitik",
+      videos: [
+        { title: "Duale Ausbildung einfach erklärt", url: "https://www.youtube.com/watch?v=qL-6DZmS7a8" }
+      ],
       diagrams: [
         {
           title: "Bedürfnispyramide nach Maslow",
@@ -168,6 +171,9 @@ const APP_DATA = {
       code: "B",
       title: "Verträge & Beschaffung",
       subtitle: "Geschäftsfähigkeit, Rechtsgeschäfte, Kaufvertragsarten, Kaufvertragsstörungen, Verjährung",
+      videos: [
+        { title: "Geschäftsfähigkeit einfach erklärt – Prüfungswissen für Azubis", url: "https://www.youtube.com/watch?v=tpbFWC-Rl0g" }
+      ],
       diagrams: [
         {
           title: "Geschäftsfähigkeit nach Alter",
@@ -319,6 +325,9 @@ const APP_DATA = {
       code: "C",
       title: "Wertströme & Buchführung",
       subtitle: "Bilanz, Bestands- & Erfolgskonten, Umsatzsteuer, Abschreibungen",
+      videos: [
+        { title: "Bilanz einfach erklärt – Bilanzaufbau, Aktiva, Passiva", url: "https://www.youtube.com/watch?v=2JHvElSL7Gw" }
+      ],
       diagrams: [
         {
           title: "Bilanz-Schema",
@@ -452,6 +461,9 @@ const APP_DATA = {
       code: "D",
       title: "Kalkulation & Kosten",
       subtitle: "Vor-/Rückwärtskalkulation, Deckungsbeitrag, Break-Even, Kostenrechnung",
+      videos: [
+        { title: "Übungsaufgaben: Deckungsbeitragsrechnung, Break-Even (Abschlussprüfung Büromanagement)", url: "https://www.youtube.com/watch?v=GdNc-ODUUPM" }
+      ],
       diagrams: [
         {
           title: "Von der Vorwärtskalkulation zum Verkaufspreis",
@@ -606,6 +618,9 @@ const APP_DATA = {
       code: "E",
       title: "Büroprozesse & Arbeitsorganisation",
       subtitle: "Ergonomie, Zeitmanagement, Termine, Aufbewahrungsfristen, Auftragsbearbeitung",
+      videos: [
+        { title: "Zeitmanagement: ABC-Analyse, Eisenhower-Prinzip, Alpen-Methode, Pareto-Prinzip", url: "https://www.youtube.com/watch?v=dWQoldjrB1s" }
+      ],
       diagrams: [
         {
           title: "Der ergonomische Arbeitsplatz",
@@ -771,6 +786,9 @@ const APP_DATA = {
       code: "F",
       title: "Kundenakquise & Marketing",
       subtitle: "Marketingmix, Produktlebenszyklus, Preis- & Kommunikationspolitik, Angebot & Nachfrage, Marktformen",
+      videos: [
+        { title: "AIDA-Formel einfach erklärt mit Beispiel", url: "https://www.youtube.com/watch?v=WrsHe0p7XWo" }
+      ],
       terms: [
         { word: "MARKETINGMIX", clue: "Zusammenspiel aus Produkt-, Preis-, Kommunikations- und Distributionspolitik" },
         { word: "PRODUKTLEBENSZYKLUS", clue: "Von der Innovation bis zur Elimination eines Produkts" },
@@ -919,6 +937,9 @@ const APP_DATA = {
       code: "G",
       title: "Gesprächssituationen & Kommunikation",
       subtitle: "4 Seiten einer Nachricht, Sender-Empfänger-Modell, Fragetypen, Konfliktgespräche",
+      videos: [
+        { title: "4 Seiten einer Nachricht nach Schulz von Thun – mit Beispiel", url: "https://www.youtube.com/watch?v=G8KzUYqZyR4" }
+      ],
       terms: [
         { word: "KOMMUNIKATION", clue: "Austausch von Informationen auf verschiedene Arten" },
         { word: "SACHINHALT", clue: "Ebene der Nachricht: worüber ich informiere" },
@@ -1063,6 +1084,9 @@ const APP_DATA = {
       code: "H",
       title: "Personalwirtschaft",
       subtitle: "Personalbedarf & -beschaffung, Arbeitszeitgesetz, Lohn & Gehalt, Kündigung, Sozialversicherung",
+      videos: [
+        { title: "Die Kündigung: Kündigungsarten, Kündigungsschutz, Kündigungsfristen", url: "https://www.youtube.com/watch?v=-FKr8nnZ_EA" }
+      ],
       diagrams: [
         {
           title: "Ermittlung des Personalbedarfs",
@@ -1216,6 +1240,9 @@ const APP_DATA = {
       code: "I",
       title: "Liquidität & Finanzierung",
       subtitle: "Investition vs. Finanzierung, Goldene Finanzregel, Leasing, Factoring, Kreditsicherheiten, Darlehen",
+      videos: [
+        { title: "Unterschiede zwischen Factoring & Leasing", url: "https://www.youtube.com/watch?v=CTOo2c9t3iY" }
+      ],
       diagrams: [
         {
           title: "Finanzierungsarten im Überblick",
@@ -1376,6 +1403,9 @@ const APP_DATA = {
       code: "J",
       title: "Geschäftsprozesse & Organisation",
       subtitle: "Aufbau- & Ablauforganisation, Stellenarten, Leitungssysteme, Flowchart & EPK",
+      videos: [
+        { title: "Aufbauorganisation & Ablauforganisation einfach erklärt", url: "https://www.youtube.com/watch?v=dbuB2SVjgTI" }
+      ],
       terms: [
         { word: "AUFBAUORGANISATION", clue: "Legt fest, wer welche Aufgaben übernimmt" },
         { word: "ABLAUFORGANISATION", clue: "Regelt, wie und wann Aufgaben erledigt werden" },
@@ -1516,6 +1546,9 @@ const APP_DATA = {
       code: "K",
       title: "Veranstaltungen & Geschäftsreisen",
       subtitle: "Protokolle, Checklisten, Sitzung vs. Besprechung, Reiseplanung, Reisekostenabrechnung",
+      videos: [
+        { title: "Das Ergebnisprotokoll | alpha Lernen erklärt Deutsch", url: "https://www.youtube.com/watch?v=W-xB_h_MwZQ" }
+      ],
       diagrams: [
         {
           title: "Ablauf einer Geschäftsreise",
@@ -1659,6 +1692,9 @@ const APP_DATA = {
       code: "L",
       title: "Projektplanung & -durchführung",
       subtitle: "Projektmerkmale, Goldenes Dreieck, Projektorganisation, PSP, Angebotsvergleich, Gantt-Diagramm",
+      videos: [
+        { title: "Das Magische Dreieck im Projektmanagement einfach erklärt", url: "https://www.youtube.com/watch?v=b-QaadP1v9c" }
+      ],
       terms: [
         { word: "PROJEKTSTRUKTURPLAN", clue: "Hierarchische Top-Down-Darstellung aller Projektarbeiten" },
         { word: "GANTTDIAGRAMM", clue: "Horizontales Balkendiagramm zur Zeitplanung" },
@@ -1810,6 +1846,9 @@ const APP_DATA = {
       code: "M",
       title: "Firma & Rechtsformen",
       subtitle: "Handelsregister, Einzelunternehmen, OHG, KG, GmbH, AG, Prokura, Kaufmannsarten",
+      videos: [
+        { title: "Rechtsformen einfach erklärt: Einzelunternehmen, GmbH & AG im Vergleich", url: "https://www.youtube.com/watch?v=djtpvkuu0f0" }
+      ],
       diagrams: [
         {
           title: "Rechtsformen im Überblick",
@@ -1953,6 +1992,9 @@ const APP_DATA = {
       code: "N",
       title: "Datenschutz & Datensicherung",
       subtitle: "Personenbezogene Daten, Rechte der Betroffenen, technische Datensicherung",
+      videos: [
+        { title: "Datenschutz: Diese Grundlagen solltest du kennen – DSGVO einfach erklärt", url: "https://www.youtube.com/watch?v=pXWMbQInubU" }
+      ],
       diagrams: [
         {
           title: "Die 5 Rechte der Betroffenen",
