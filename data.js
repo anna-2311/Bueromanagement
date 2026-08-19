@@ -2103,6 +2103,98 @@ const APP_DATA = {
         }
       ]
     }
+  ],
+
+  formulaCategories: [
+    {
+      title: "Kalkulation",
+      chapterCode: "D",
+      items: [
+        {
+          name: "Vorwärtskalkulation (Kette)",
+          formula: "Listeneinkaufspreis − Rabatt = Zieleinkaufspreis − Skonto = Bareinkaufspreis + Bezugskosten = Bezugspreis + Handlungskostenzuschlag = Selbstkosten + Gewinnzuschlag = Barverkaufspreis",
+          note: "Der komplette Weg vom Einkaufs- zum Verkaufspreis."
+        },
+        {
+          name: "Kalkulationsfaktor",
+          formula: "Listenverkaufspreis ÷ Bezugspreis",
+          note: "Multiplikatives Verhältnis von Verkaufs- zu Bezugspreis."
+        },
+        {
+          name: "Kalkulationszuschlagssatz",
+          formula: "(Listenverkaufspreis − Bezugspreis) ÷ Bezugspreis × 100",
+          note: "Prozentualer Aufschlag auf den Bezugspreis."
+        },
+        {
+          name: "Handelsspanne",
+          formula: "(Listenverkaufspreis − Bezugspreis) ÷ Listenverkaufspreis × 100",
+          note: "Anteil des Verkaufspreises, der im Unternehmen verbleibt."
+        },
+        {
+          name: "Stückdeckungsbeitrag",
+          formula: "Verkaufspreis − variable Stückkosten",
+          note: "Beitrag eines Produkts zur Deckung der Fixkosten."
+        },
+        {
+          name: "Break-Even-Menge",
+          formula: "Fixkosten ÷ Stückdeckungsbeitrag",
+          note: "Ab dieser Menge erwirtschaftet das Unternehmen Gewinn."
+        }
+      ]
+    },
+    {
+      title: "Buchführung & Bilanz",
+      chapterCode: "C",
+      items: [
+        {
+          name: "Lineare Abschreibung",
+          formula: "Anschaffungskosten ÷ Nutzungsdauer (in Jahren)",
+          note: "Ergibt den jährlichen, gleichbleibenden Abschreibungsbetrag."
+        },
+        {
+          name: "Eigenkapitalquote",
+          formula: "Eigenkapital × 100 ÷ Bilanzsumme",
+          note: "Zeigt den Anteil des Eigenkapitals an der Gesamtfinanzierung."
+        },
+        {
+          name: "Zahllast",
+          formula: "Umsatzsteuer − Vorsteuer",
+          note: "Nur wenn die Umsatzsteuer größer ist als die Vorsteuer – sonst Vorsteuerüberhang."
+        }
+      ]
+    },
+    {
+      title: "Personalwirtschaft",
+      chapterCode: "H",
+      items: [
+        {
+          name: "Nettopersonalbedarf",
+          formula: "Soll-Personalbestand − Ist-Personalbestand + Abgänge − Zugänge",
+          note: "Wie viele Mitarbeiter zusätzlich benötigt werden."
+        },
+        {
+          name: "Sozialversicherungsbeiträge",
+          formula: "KV 14,6 % · PV 3,6 % · AV 2,6 % · RV 18,6 %",
+          note: "Alle vier Zweige werden je zur Hälfte von Arbeitgeber und Arbeitnehmer getragen."
+        }
+      ]
+    },
+    {
+      title: "Reisekosten",
+      chapterCode: "K",
+      items: [
+        {
+          name: "Fahrtkosten (PKW)",
+          formula: "gefahrene Kilometer × 0,30 €",
+          note: "Kilometerpauschale für privat gefahrene Dienstreisen."
+        },
+        {
+          name: "Verpflegungsmehraufwand",
+          formula: "12 € (> 8 bis < 24 Std.) · 24 € (24 Std.)",
+          note: "Pauschale je nach Abwesenheitsdauer; wird bei gestellten Mahlzeiten gekürzt."
+        }
+      ]
+    }
   ]
 };
 
