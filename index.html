@@ -32,6 +32,10 @@
         <span class="tab-code">⏱</span>
         <span class="tab-label">Prüfungssimulation</span>
       </button>
+      <button class="tab tab-formulas" data-target="formulas">
+        <span class="tab-code">∑</span>
+        <span class="tab-label">Formelsammlung</span>
+      </button>
       <!-- Kapitel-Tabs werden per JS eingefügt -->
     </nav>
 
@@ -276,6 +280,16 @@
         <div class="exam-list" id="examsimReview"></div>
       </div>
 
+    </section>
+
+    <!-- ============ FORMULA SHEET VIEW ============ -->
+    <section class="view" id="view-formulas" hidden>
+      <div class="chapter-head">
+        <span class="chapter-tag">Formelsammlung</span>
+        <h2>Alle Formeln auf einen Blick</h2>
+        <p class="chapter-subtitle">Kalkulation, Buchführung, Personalwirtschaft und Reisekosten – kompakt zum Nachschlagen.</p>
+      </div>
+      <div class="formulas-wrap" id="formulasWrap"></div>
     </section>
 
   </main>
