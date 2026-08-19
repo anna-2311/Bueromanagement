@@ -223,6 +223,8 @@
         goDashboard();
       } else if (target === "examsim") {
         goExamSim();
+      } else if (target === "formulas") {
+        goFormulas();
       } else {
         goChapter(target.split(":")[1]);
       }
@@ -236,6 +238,8 @@
       $(".tab-dashboard").classList.add("is-active");
     } else if (state.view === "examsim") {
       $(".tab-examsim").classList.add("is-active");
+    } else if (state.view === "formulas") {
+      $(".tab-formulas").classList.add("is-active");
     } else {
       const btn = $('.tab[data-target="chapter:' + state.chapterId + '"]');
       if (btn) btn.classList.add("is-active");
@@ -261,6 +265,7 @@
     $("#view-dashboard").hidden = false;
     $("#view-chapter").hidden = true;
     $("#view-examsim").hidden = true;
+    $("#view-formulas").hidden = true;
     $("#topbarEyebrow").textContent = "Dashboard";
     $("#topbarTitle").textContent = "Willkommen zurück";
     $("#topbarStamp").hidden = true;
@@ -329,6 +334,7 @@
     $("#view-dashboard").hidden = true;
     $("#view-chapter").hidden = false;
     $("#view-examsim").hidden = true;
+    $("#view-formulas").hidden = true;
 
     const ch = findChapter(id);
     const idx = DATA.indexOf(ch) + 1;
@@ -1079,6 +1085,7 @@
     $("#view-dashboard").hidden = true;
     $("#view-chapter").hidden = true;
     $("#view-examsim").hidden = false;
+    $("#view-formulas").hidden = true;
     $("#topbarEyebrow").textContent = "Prüfungssimulation";
     $("#topbarTitle").textContent = "Große Prüfungssimulation";
     $("#topbarStamp").hidden = true;
@@ -1278,6 +1285,57 @@
   $("#examsimNext").addEventListener("click", () => goExamQuestion(1));
   $("#examsimSubmit").addEventListener("click", finishExamSim);
   $("#examsimRestart").addEventListener("click", resetExamSim);
+
+  /* ---------------------------------------------------------------- */
+  /* View: Formelsammlung                                              */
+  /* ---------------------------------------------------------------- */
+
+  function goFormulas() {
+    state.view = "formulas";
+    $("#view-dashboard").hidden = true;
+    $("#view-chapter").hidden = true;
+    $("#view-examsim").hidden = true;
+    $("#view-formulas").hidden = false;
+    $("#topbarEyebrow").textContent = "Formelsammlung";
+    $("#topbarTitle").textContent = "Alle Formeln auf einen Blick";
+    $("#topbarStamp").hidden = true;
+    setActiveTab();
+    renderFormulas();
+    window.scrollTo(0, 0);
+  }
+
+  function renderFormulas() {
+    const wrap = $("#formulasWrap");
+    wrap.innerHTML = "";
+    (window.APP_DATA.formulaCategories || []).forEach((cat) => {
+      const section = el("div", "formula-category");
+      const linkedChapter = DATA.find((c) => c.code === cat.chapterCode);
+
+      const tag = el("button", "formula-category-tag", "Kapitel " + cat.chapterCode);
+      if (linkedChapter) {
+        tag.addEventListener("click", () => goChapter(linkedChapter.id, "summary"));
+      } else {
+        tag.disabled = true;
+      }
+
+      const heading = el("h3", "formula-category-title", cat.title);
+
+      section.appendChild(tag);
+      section.appendChild(heading);
+
+      const grid = el("div", "formula-grid");
+      cat.items.forEach((item) => {
+        const card = el("div", "formula-card");
+        card.innerHTML =
+          '<span class="formula-name">' + item.name + "</span>" +
+          '<code class="formula-expression">' + item.formula + "</code>" +
+          '<span class="formula-note">' + item.note + "</span>";
+        grid.appendChild(card);
+      });
+      section.appendChild(grid);
+      wrap.appendChild(section);
+    });
+  }
 
   /* ---------------------------------------------------------------- */
   /* Kapitelübergreifende Suche                                        */
