@@ -381,6 +381,44 @@ p { margin: 0; }
 .folder-meta .progress-fill { background: linear-gradient(90deg, var(--success), #6FAE87); }
 .folder-percent { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); flex: none; }
 
+.companion-heading { margin-top: 40px; }
+
+.companion-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--ink);
+  border-radius: var(--radius-l);
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-card);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.companion-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-pop); }
+
+.companion-icon {
+  font-size: 30px;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companion-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.companion-title { font-family: var(--font-display); font-size: 17px; color: #fff; }
+.companion-desc { font-size: 13px; color: #C7CEDB; line-height: 1.5; }
+
+.companion-arrow {
+  flex: none;
+  font-size: 20px;
+  color: var(--ochre-soft);
+}
+
 /* ==========================================================================
    CHAPTER HEAD
    ========================================================================== */
